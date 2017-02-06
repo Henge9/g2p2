@@ -1,3 +1,5 @@
+* {margin: 0; padding: 0;}
+
 .App {
   text-align: center;
 }
@@ -14,11 +16,37 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
-}
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+div.user-story {
+  cursor: pointer;
+  transition: 1s;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 8px 6px 10px rgba(0, 0, 0, 0.7);
+  margin: 20px 12px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 100px;
+  height: 130px;
+}
+
+div.user-story p {
+  display: inline-block;
+  margin: 3px 2px;
+}
+
+div.user-story p.header, div.user-story p.value {
+  margin: 0;
+  width: 50%;
+}
+
+div.user-story .points {
+  position: absolute;
+  bottom: 10px;
 }
