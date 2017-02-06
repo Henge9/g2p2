@@ -1,4 +1,15 @@
+================================================
+Instruktioner för det här projektet.
+================================================
+Ifall du inte har greate react app installerat kör:
+npm install -g create-react-app
 
+Sen kör förljande steg
+1. Git clone
+2. npm install (i mappen som du har inteallerat detta.)
+3. npm start
+
+=================================================
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
