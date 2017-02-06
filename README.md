@@ -5,9 +5,32 @@ Ifall du inte har greate react app installerat kör:
 npm install -g create-react-app
 
 Sen kör förljande steg
+
 - 1. Git clone
+
 - 2. npm install (i mappen som du har installerat detta.)
+
 - 3. npm start
+
+Our structure
+```
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    components/
+      ##Place all components here##
+    App.css
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
+```
 
 =================================================
 
