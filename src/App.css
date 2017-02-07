@@ -1,32 +1,37 @@
 * {margin: 0; padding: 0;}
 
+::selection {
+  background: #ffb7b7;
+}
+
 .App {
   text-align: center;
 }
 
 div.user-story {
   cursor: pointer;
-  transition: 1s;
   background-color: white;
   position: relative;
   display: inline-block;
   text-align: left;
-  box-shadow: 8px 6px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   margin: 20px 12px;
   padding: 12px;
   border-radius: 5px;
-  width: 100px;
-  height: 130px;
+  width: 8vw;
+  height: 8vw;
 }
 
 div.user-story p {
   display: inline-block;
   margin: 3px 2px;
+  font-size: 1.2vw;
 }
 
 div.user-story p.header, div.user-story p.value {
   margin: 0;
   width: 50%;
+  font-weight: bold;
 }
 
 div.user-story > .points {
@@ -35,7 +40,7 @@ div.user-story > .points {
 }
 
 div.nav {
-  color: blue;
+  background-color: white;
   border: 2px solid black;
   box-sizing: border-box;
 }
@@ -58,6 +63,11 @@ div.members {
   float: left;
   background-color: white;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+div.members > p {
+  font-size: 1.4vw;
 }
 
 div.releaseplan {
@@ -69,21 +79,30 @@ div.releaseplan {
   float: right;
   background-color: white;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+div.releaseplan > h2 {
+  font-size: 2vw;
 }
 
 div.columns {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
   overflow: auto;
+  width: max-content;
+  margin: auto;
+  height: 40vw;
 }
 
 div.column {
   display: inline-block;
-  width: 12%;
-  height: 300px;
+  width: 12.5vw;
+  height: 100%;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
   background-color: white;
+  box-sizing: border-box;
 }
 
 div.column:first-child {

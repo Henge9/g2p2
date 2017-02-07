@@ -4,6 +4,6 @@ body {
   width: 100%;
   height: 100%;
   font-family: sans-serif;
-  background-color: lightgrey;
+  background-color: rgba(0, 255, 255, 0.2);
   text-align: center;
 }
