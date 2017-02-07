@@ -8,6 +8,8 @@
   text-align: center;
 }
 
+/*--------------------------------------------------------------------------------CARDS*/
+
 div.user-story {
   cursor: pointer;
   background-color: white;
@@ -39,6 +41,8 @@ div.user-story > .points {
   bottom: 10px;
 }
 
+/*--------------------------------------------------------------------------------NAVBAR*/
+
 div.nav {
   background-color: white;
   border: 2px solid black;
@@ -53,6 +57,8 @@ header {
   padding-top: 2%;
   padding-bottom: 2%;
 }
+
+/*--------------------------------------------------------------------------------MEMBERS*/
 
 div.members {
   height: 200px;
@@ -70,6 +76,8 @@ div.members > p {
   font-size: 1.4vw;
 }
 
+/*--------------------------------------------------------------------------------RELEASEPLAN*/
+
 div.releaseplan {
   width: 50%;
   height: 200px;
@@ -85,6 +93,26 @@ div.releaseplan {
 div.releaseplan > h2 {
   font-size: 2vw;
 }
+
+.releaseplan_table
+{
+   display:table;
+   width: 100%;
+   height: 100%;
+}
+
+.releaseplan_table_row
+{
+   display:table-row;
+}
+
+.releaseplan_table_cell
+{
+   display:table-cell;
+   border: solid black;
+}
+
+/*--------------------------------------------------------------------------------COLUMNS*/
 
 div.columns {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
