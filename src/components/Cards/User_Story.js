@@ -1,38 +1,13 @@
 import React from 'react';
 
 export default class UserStory extends React.Component {
+
 	componentDidMount() {
-		for (var i = 0; i < this.props.analytics; i++) {
-
-			// Create new element
-			var newElement = document.createElement('p');
-
-			newElement.innerHTML = 'A';
-
-			// Insert new element into div
-			this.refs.analytics.appendChild(newElement);
-		}
-		for (var i = 0; i < this.props.development; i++) {
-
-			// Create new element
-			var newElement = document.createElement('p');
-
-			newElement.innerHTML = 'D';
-
-			// Insert new element into div
-			this.refs.development.appendChild(newElement);
-		}
-		for (var i = 0; i < this.props.test; i++) {
-
-			// Create new element
-			var newElement = document.createElement('p');
-
-			newElement.innerHTML = 'T';
-
-			// Insert new element into div
-			this.refs.test.appendChild(newElement);
-		}
+		insertLetters(this.props.analytics, this.refs.analytics, 'A');
+		insertLetters(this.props.development, this.refs.development, 'D');
+		insertLetters(this.props.test, this.refs.test, 'T');
 	}
+
     render(){
 	return (
 	  	<div className='user-story'>
@@ -46,3 +21,15 @@ export default class UserStory extends React.Component {
 	  );
     }
 }
+
+function insertLetters(amount, ref, letter) {
+	for (var i = 0; i < amount; i++) {
+
+		// Create new element
+		var newElement = document.createElement('p');
+		newElement.innerHTML = letter;
+
+		// Insert new element into div
+		ref.appendChild(newElement);
+	}
+} // Creates one letter for each point

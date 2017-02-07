@@ -4,23 +4,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 div.user-story {
   cursor: pointer;
   transition: 1s;
@@ -46,7 +29,68 @@ div.user-story p.header, div.user-story p.value {
   width: 50%;
 }
 
-div.user-story .points {
+div.user-story > .points {
   position: absolute;
   bottom: 10px;
+}
+
+div.nav {
+  color: blue;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  display: block;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+div.members {
+  height: 200px;
+  width: 30%;
+  border: 2px solid black;
+  margin-left: 5%;
+  box-sizing: border-box;
+  float: left;
+  background-color: white;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+}
+
+div.releaseplan {
+  width: 50%;
+  height: 200px;
+  border: 2px solid black;
+  margin-right: 5%;
+  box-sizing: border-box;
+  float: right;
+  background-color: white;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+}
+
+div.columns {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+div.column {
+  display: inline-block;
+  width: 12%;
+  height: 300px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
+}
+
+div.column:first-child {
+  border-left: 2px solid black;
+}
+
+div.column > h3 {
+  padding: 10px;
+  border-bottom: 2px solid black;
 }
