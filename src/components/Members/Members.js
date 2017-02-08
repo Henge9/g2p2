@@ -5,7 +5,7 @@ export default class Members extends React.Component {
     render(){
 		return (
 		  	<div className='members'>
-		  		<p>Team members list</p>
+		  		<p className="text members-text">Team members list</p>
 		  	</div>
 		);
     }

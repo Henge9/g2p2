@@ -14,7 +14,7 @@ export default class ScrumBoard extends React.Component {
 		return (
 			<div className="scrumboard">
 				<NavBar />
-				<header>
+				<header className="header">
 					<Members />
 					<ReleasePlan />
 				</header>

@@ -10,8 +10,8 @@ export default class UserStory extends React.Component {
 
     render(){
 	return (
-	  	<div className='user-story'>
-	  		<p className='header'>US{this.props.number}</p><p className='value'>${this.props.value}</p>
+	  	<div className='card'>
+	  		<p className='h5'>US{this.props.number}</p><p className='h5'>${this.props.value}</p>
 	  		<div className='points'>
 	  			<div ref='analytics'></div>
 	  			<div ref='development'></div>

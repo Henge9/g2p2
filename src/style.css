@@ -1,0 +1,174 @@
+/*=====================*\
+     Global design
+\*=====================*/
+/*Global variables*/
+:root {
+	--border: 2px solid black;
+	--nav-background: white;
+	--box-background: white;
+	--box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+/*End global variables*/
+
+body {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.h1 {
+	font-family: sans-serif;
+	font-size: 4vw;
+    font-weight: bold;
+}
+.h3 {
+    font-family: sans-serif;
+    font-size: 2vw;
+    font-weight: bold;
+}
+.h5{
+	font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+.text {
+	font-family: sans-serif;
+	font-size: 1.4vw;
+}
+
+/*=====================*\
+   Component placement
+\*=====================*/
+/*Navbar*/
+.nav {
+	background-color: var(--nav-background);
+    border: var(--border);
+    box-sizing: border-box;
+    text-align: center;
+}
+/*header*/
+.header {
+	width: 100%; 
+    overflow: auto;
+    box-sizing: border-box;
+    padding-top: 2%; 
+    padding-bottom: 2%;
+}
+/*Team members*/
+.members {
+	height: 20vw;
+	width: 30vw;
+	margin-left: 5vw;
+	float: left;
+	text-align: center;
+	box-shadow: var(--box-shadow);
+	border: var(--border);
+	box-sizing: border-box;
+	background-color: var(--box-background);
+}
+.members-text{
+	margin-top: 2vw;
+}
+/*Releaseplan */
+.ReleasePlan {
+    display: table;
+    width: 50vw;
+    height: 20vw;
+	padding: 2vw;
+    margin-right: 5vw;
+    box-sizing: border-box;
+    float: right;
+    background-color: var(--box-background);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+.ReleasePlanRow {
+    display: table-row;
+}
+.ReleasePlanCell {
+    background-color: #f3f3f3;
+    display: table-cell;
+    border: 1px solid black;
+    width: 12.5%;
+}
+/*columns*/
+.columns {
+    overflow: auto;
+    width: max-content;
+    margin: auto;
+    height: 40vw;
+    box-shadow: var(--box-shadow);
+}
+.column:first-child {
+    border-left: 2px solid black;
+}
+.column {
+    display: inline-block;
+    width: 12.5vw;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--box-background);
+    box-shadow: var(--box-shadow);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    border-right: var(--border);
+}
+.column-name {
+	padding: 1vw;
+	border-bottom: var(--border);
+}
+.columns-bottom {
+    width: max-content;
+    margin: auto;
+    height: 10vw;
+    box-shadow: var(--box-shadow);
+}
+
+/*||||||||||||||||||||||||||||||*/
+/*orkade bara fixa hit*/
+/*||||||||||||||||||||||||||||||*/
+
+.dice-area {
+    display: inline-block;
+    width: 62.5vw;
+    height: inherit;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    background-color: white;
+    box-sizing: border-box;
+}
+.column-buttons {
+    display: inline-block;
+    width: 25vw;
+    height: 100%;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+
+
+
+/*cards*/
+
+
+
+.card {
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    margin: 20px 12px;
+    padding: 12px;
+    border-radius: 5px;
+    width: 8vw;
+    height: 8vw;
+}
+.points p{
+	display: inline-block;
+}

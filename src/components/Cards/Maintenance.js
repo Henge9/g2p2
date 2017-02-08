@@ -9,8 +9,8 @@ export default class Maintenance extends React.Component {
 
 	render() {
 		return (
-			<div className='maintenanceCard'>
-				<p className='header'>Maintenance{this.props.number}</p>
+			<div className='card'>
+				<p className='h5'>Maintenance{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>
 	  				<div ref='development'></div>
