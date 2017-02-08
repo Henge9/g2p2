@@ -5,6 +5,8 @@ export default class ColumnDice extends React.Component {
 		return (
 			<div className='column-dice'>
 				
+				test
+				
 			</div>
 		);
 	}
