@@ -215,6 +215,7 @@ Columns
   padding: 10px;
   border-bottom: 2px solid black;
 }
+
 .column-bottom {
   display: inline-block;
   width: 12.5vw;
@@ -242,3 +243,4 @@ Columns
   margin: auto;
   height: 10vw;
 }
+
