@@ -162,20 +162,22 @@ div.releaseplan > h2 {
   font-size: 2vw;
 }
 
-.releaseplan_table
-{
+.releaseplan_table {
    display:table;
    width: 100%;
    height: 100%;
 }
 
-.releaseplan_table_row
-{
+.releaseplan_table_row {
    display:table-row;
 }
 
-.releaseplan_table_cell
-{
+.releaseplan_table_row_heading {
+   display:table-row;
+   width: 50%;
+}
+
+.releaseplan_table_cell {
    display:table-cell;
    border: solid black;
 }
