@@ -1,7 +1,9 @@
 import React from 'react';
 import Column from './Column.js';
-import ColumnBottom from './ColumnBottom.js';
-import ColumnDice from './ColumnDice.js';
+import DiceArea from '../DiceArea/DiceArea.js';
+import ColumnButtons from './ColumnButtons.js';
+
+//import DiceArea from 
 
 export default class Columns extends React.Component{
 	render() {
@@ -17,12 +19,8 @@ export default class Columns extends React.Component{
 					<Column name='points' />
 				</div>
 				<div className='columns-bottom'>
-					<ColumnDice />
-					<ColumnBottom />
-					<ColumnBottom />
-					<ColumnBottom />
-					<ColumnBottom />
-					<ColumnBottom />
+					<DiceArea />
+ 					<ColumnButtons />
 				</div>
 			</div>
 		);

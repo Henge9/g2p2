@@ -180,9 +180,9 @@ div.members > p {
    width: 12.5%;
 }
 
-/*---------
-Columns
----------*/
+/*===============================*\
+|             Columns             |
+\*===============================*/
 
 
 
@@ -213,6 +213,7 @@ Columns
   padding: 10px;
   border-bottom: 2px solid black;
 }
+
 .column-bottom {
   display: inline-block;
   width: 12.5vw;
@@ -222,13 +223,12 @@ Columns
   background-color: white;
   box-sizing: border-box;
 }
-.column-dice {
+.column-buttons {
   display: inline-block;
   width: 25vw;
   height: 100%;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
-  border-left: 2px solid black;
   background-color: white;
   box-sizing: border-box;
  
@@ -240,3 +240,4 @@ Columns
   margin: auto;
   height: 10vw;
 }
+
