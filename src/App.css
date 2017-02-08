@@ -41,6 +41,74 @@ div.user-story > .points {
   bottom: 10px;
 }
 
+/*Maintenance*/
+
+.maintenanceCard {
+  cursor: pointer;
+  background-color: #c1f6b2;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  margin: 20px 12px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 8vw;
+  height: 10vw;
+}
+
+.maintenanceCard p {
+  display: inline-block;
+  margin: 3px 2px;
+  font-size: 1.2vw;
+}
+
+.maintenanceCard p.header{
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+}
+
+.maintenanceCard > .points {
+  position: absolute;
+  bottom: 10px;
+}
+
+/*Defects*/
+
+.defectsCard {
+  cursor: pointer;
+  background-color: #f6b8b8;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  margin: 20px 12px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 8vw;
+  height: 10vw;
+}
+
+.defectsCard p {
+  display: inline-block;
+  margin: 3px 2px;
+  font-size: 1.2vw;
+}
+
+.defectsCard p.header{
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+}
+
+.defectsCard > .points {
+  position: absolute;
+  bottom: 10px;
+}
+
+
+
 /*--------------------------------------------------------------------------------NAVBAR*/
 
 div.nav {
@@ -114,9 +182,13 @@ div.releaseplan > h2 {
    border: solid black;
 }
 
-/*--------------------------------------------------------------------------------COLUMNS*/
+/*---------
+Columns
+---------*/
 
-div.columns {
+
+
+.columns {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
   overflow: auto;
   width: max-content;
@@ -124,7 +196,7 @@ div.columns {
   height: 40vw;
 }
 
-div.column {
+.column {
   display: inline-block;
   width: 12.5vw;
   height: 100%;
@@ -135,11 +207,38 @@ div.column {
   box-sizing: border-box;
 }
 
-div.column:first-child {
+.column:first-child {
   border-left: 2px solid black;
 }
 
-div.column > h3 {
+.column > h3 {
   padding: 10px;
   border-bottom: 2px solid black;
+}
+.column-bottom {
+  display: inline-block;
+  width: 12.5vw;
+  height: 100%;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+}
+.column-dice {
+  display: inline-block;
+  width: 25vw;
+  height: 100%;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+ 
+}
+.columns-bottom {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  width: max-content;
+  margin: auto;
+  height: 10vw;
 }
