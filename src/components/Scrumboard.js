@@ -4,7 +4,7 @@ import Hold from './Hold.js';
 import HoldMaint from './HoldMaint.js';
 import HoldDefects from './HoldDefects.js';
 import Members from './Members/Members.js';
-import ReleasePlan from './Releaseplan/Releaseplan.js';
+import ReleasePlan from './ReleasePlan/ReleasePlan.js';
 import Columns from './Columns/Columns.js';
 
 
