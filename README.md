@@ -1,4 +1,15 @@
 ================================================
+PULLA alltid innan push annars skär det ihop
+================================================
+Lite bra git komandon:
+
+- git add * (lägger till alla filer till stageing området)
+- git add . (lägger även till bortagna filer och annat gott)
+- :wq (sparar och skriver ifall man har hamnat i texteditorn)
+- Länk till info om mergekonflikter -> https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/
+
+
+================================================
 Instruktioner för det här projektet.
 ================================================
 Ifall du inte har greate react app installerat kör:
