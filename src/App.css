@@ -182,9 +182,9 @@ div.releaseplan > h2 {
    border: solid black;
 }
 
-/*---------
-Columns
----------*/
+/*===============================*\
+|             Columns             |
+\*===============================*/
 
 
 
@@ -225,7 +225,7 @@ Columns
   background-color: white;
   box-sizing: border-box;
 }
-.column-dice {
+.column-buttons {
   display: inline-block;
   width: 25vw;
   height: 100%;
