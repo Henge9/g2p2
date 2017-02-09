@@ -6,6 +6,7 @@ export default class Column extends React.Component {
 		return (
 			<div className='column'>
 				<h3>{this.props.name}</h3>
+				<div className='container'></div>
 			</div>
 		);
 	}
