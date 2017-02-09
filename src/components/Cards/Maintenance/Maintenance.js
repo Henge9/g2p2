@@ -1,6 +1,7 @@
+import './Maintenance.css';
 import React from 'react';
 
-export default class Defects extends React.Component {
+export default class Maintenance extends React.Component {
 	componentDidMount() {
 		insertLetters(this.props.analytics, this.refs.analytics, 'A');
 		insertLetters(this.props.development, this.refs.development, 'D');
@@ -9,8 +10,8 @@ export default class Defects extends React.Component {
 
 	render() {
 		return (
-			<div className='defectsCard'>
-				<p className='header'>Defects{this.props.number}</p>
+			<div className='maintenanceCard'>
+				<p className='header'>Maintenance{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>
 	  				<div ref='development'></div>

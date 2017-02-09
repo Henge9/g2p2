@@ -1,0 +1,31 @@
+.defectsCard {
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  margin: 20px 12px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 8vw;
+  background-color: #f6b8b8;
+  height: 10vw;
+}
+
+.defectsCard p {
+  display: inline-block;
+  margin: 3px 2px;
+  font-size: 1.2vw;
+}
+
+.defectsCard p.header {
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+}
+
+.defectsCard > .points {
+  position: absolute;
+  bottom: 10px;
+}

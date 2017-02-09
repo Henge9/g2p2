@@ -1,5 +1,6 @@
+import './Columns.css';
 import React from 'react';
-import Column from './Column.js';
+import Column from './Column/Column.js';
 import DiceArea from '../DiceArea/DiceArea.js';
 import ColumnButtons from './ColumnButtons.js';
 

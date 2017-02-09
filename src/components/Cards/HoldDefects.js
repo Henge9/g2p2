@@ -1,5 +1,5 @@
 import React from 'react';
-import Defects from './Cards/Defects.js';
+import Defects from './Defects/Defects.js';
 
 export default class HoldDefects extends React.Component {
 	render() {

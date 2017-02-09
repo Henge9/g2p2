@@ -1,3 +1,4 @@
+import './ReleasePlan.css';
 import React from 'react';
 import ReleasePlanCell from './ReleasePlanCell/ReleasePlanCell.js';
 import ReleasePlanCellRetrospective from './ReleasePlanCell/ReleasePlanCellRetrospective.js';

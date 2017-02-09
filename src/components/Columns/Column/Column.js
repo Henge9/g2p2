@@ -1,3 +1,4 @@
+import './Column.css';
 import React from 'react';
 
 export default class Column extends React.Component {

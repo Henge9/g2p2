@@ -1,0 +1,31 @@
+.maintenanceCard {
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  margin: 20px 12px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 8vw;
+  background-color: #c1f6b2;
+  height: 10vw;
+}
+
+.maintenanceCard p {
+  display: inline-block;
+  margin: 3px 2px;
+  font-size: 1.2vw;
+}
+
+.maintenanceCard p.header {
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+}
+
+.maintenanceCard > .points {
+  position: absolute;
+  bottom: 10px;
+}

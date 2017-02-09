@@ -1,5 +1,5 @@
 import React from 'react';
-import Maintenance from './Cards/Maintenance.js';
+import Maintenance from './Maintenance/Maintenance.js';
 
 export default class HoldMaint extends React.Component {
 	render() {

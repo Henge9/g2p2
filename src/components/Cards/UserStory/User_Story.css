@@ -12,6 +12,12 @@ div.user-story {
 	height: 8vw;
 }
 
+div.user-story p {
+	display: inline-block;
+	margin: 3px 2px;
+	font-size: 1.2vw;
+}
+
 div.user-story p.header, div.user-story p.value {
 	margin: 0;
  	width: 50%;

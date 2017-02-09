@@ -1,3 +1,4 @@
+import './Members.css';
 import React from 'react';
 
 export default class Members extends React.Component {
