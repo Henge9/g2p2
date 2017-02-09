@@ -8,7 +8,7 @@ import ColumnButtons from './ColumnButtons.js';
 export default class Columns extends React.Component{
 	render() {
 		return(
-			<div>
+			<article>
 				<div className='columns'>
 					<Column name='Cards'/>
 					<Column name='Backlog' />
@@ -16,13 +16,12 @@ export default class Columns extends React.Component{
 					<Column name='Development' />
 					<Column name='testing' />
 					<Column name='done' />
-					<Column name='points' />
 				</div>
 				<div className='columns-bottom'>
 					<DiceArea />
  					<ColumnButtons />
 				</div>
-			</div>
+			</article>
 		);
 	}
 }
