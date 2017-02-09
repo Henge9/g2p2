@@ -1,0 +1,200 @@
+* {margin: 0; padding: 0;}
+
+::selection {
+  background: #ffb7b7;
+}
+
+.App {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------------------------CARDS*/
+
+div.user-story, .maintenanceCard, .defectsCard  {
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  margin: 20px 12px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 8vw;
+  height: 8vw;
+}
+
+div.user-story p, .maintenanceCard p, .defectsCard p {
+  display: inline-block;
+  margin: 3px 2px;
+  font-size: 1.2vw;
+}
+
+div.user-story p.header, div.user-story p.value, .maintenanceCard p.header, .defectsCard p.header {
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+}
+
+div.user-story > .points, .maintenanceCard > .points, .defectsCard > .points  {
+  position: absolute;
+  bottom: 10px;
+}
+
+/*Maintenance*/
+
+.maintenanceCard {
+  background-color: #c1f6b2;
+  height: 10vw;
+}
+
+/*Defects*/
+
+.defectsCard {
+  background-color: #f6b8b8;
+  height: 10vw;
+}
+
+
+/*--------------------------------------------------------------------------------NAVBAR*/
+
+nav.nav {
+  padding: 10px 0;
+  background-color: white;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+nav.nav > ul > li {
+  display: inline-block;
+}
+
+nav.nav > ul > li > a {
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  display: block;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/*--------------------------------------------------------------------------------MEMBERS*/
+
+div.members {
+  height: 200px;
+  width: 30%;
+  border: 2px solid black;
+  margin-left: 5%;
+  box-sizing: border-box;
+  float: left;
+  background-color: white;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+div.members > p {
+  font-size: 1.4vw;
+}
+
+/*--------------------------------------------------------------------------------RELEASEPLAN*/
+
+.ReleasePlan {
+  display:table;
+  width: 50%;
+  height: 200px;
+  border: 2px solid black;
+  margin-right: 5%;
+  box-sizing: border-box;
+  float: right;
+  background-color: white;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+.ReleasePlan > h2 {
+  font-size: 2vw;
+}
+
+.ReleasePlanRow {
+   display:table-row;
+}
+
+.ReleasePlanRowTop {
+}
+
+.releasePlanRowHeadings {
+}
+
+.ReleasePlanCell {
+  background-color: #f3f3f3;
+   display:table-cell;
+   border: 1px solid black;
+   width: 12.5%;
+}
+
+/*===============================*\
+|             Columns             |
+\*===============================*/
+
+
+
+.columns {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  width: max-content;
+  margin: auto;
+  height: 40vw;
+}
+
+.column {
+  display: inline-block;
+  width: 12.5vw;
+  height: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.column:first-child {
+  border-left: 2px solid black;
+}
+
+.column > h3 {
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+
+.column-bottom {
+  display: inline-block;
+  width: 12.5vw;
+  height: 100%;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+}
+.column-buttons {
+  display: inline-block;
+  width: 25vw;
+  height: 100%;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+ 
+}
+.columns-bottom {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  width: max-content;
+  margin: auto;
+  height: 10vw;
+}
+
