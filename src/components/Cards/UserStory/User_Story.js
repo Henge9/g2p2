@@ -1,4 +1,5 @@
 import React from 'react';
+import './User_Story.css';
 
 export default class UserStory extends React.Component {
 

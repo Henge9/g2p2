@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './Navbar/Navbar.js';
-import Hold from './Hold.js';
+import Hold from './Cards/Hold.js';
 import HoldMaint from './HoldMaint.js';
 import HoldDefects from './HoldDefects.js';
 import Members from './Members/Members.js';
@@ -19,6 +19,7 @@ export default class ScrumBoard extends React.Component {
 					<ReleasePlan />
 				</header>
 				<Columns />
+				<Hold />
 			</div>
 		);
 	}
