@@ -1,23 +1,16 @@
+* {margin: 0; padding: 0;}
+
 ::selection {
   background: #ffb7b7;
 }
 
 .App {
   text-align: center;
-  width: 800px;
-  height: 600px;
-  position: relative;
-}
-
-.scrumboard {
-  position: relative;
-  width: 100%;
-  height: 1000px;
 }
 
 /*--------------------------------------------------------------------------------CARDS*/
 
-.maintenanceCard, .defectsCard  {
+div.user-story, .maintenanceCard, .defectsCard  {
   cursor: pointer;
   background-color: white;
   position: relative;
@@ -37,13 +30,13 @@ div.user-story p, .maintenanceCard p, .defectsCard p {
   font-size: 1.2vw;
 }
 
-.maintenanceCard p.header, .defectsCard p.header {
+div.user-story p.header, div.user-story p.value, .maintenanceCard p.header, .defectsCard p.header {
   margin: 0;
   width: 50%;
   font-weight: bold;
 }
 
-.maintenanceCard > .points, .defectsCard > .points  {
+div.user-story > .points, .maintenanceCard > .points, .defectsCard > .points  {
   position: absolute;
   bottom: 10px;
 }
@@ -68,7 +61,7 @@ div.user-story p, .maintenanceCard p, .defectsCard p {
 nav.nav {
   padding: 10px 0;
   background-color: white;
-  border-bottom: 2px solid black;
+  border: 2px solid black;
   box-sizing: border-box;
 }
 
@@ -151,13 +144,16 @@ div.members > p {
 
 
 .columns {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  width: max-content;
   margin: auto;
-  height: 500px;
+  height: 40vw;
 }
 
 .column {
   display: inline-block;
-  width: 16%;
+  width: 12.5vw;
   height: 100%;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -175,14 +171,6 @@ div.members > p {
   border-bottom: 2px solid black;
 }
 
-.columns-bottom {
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  width: 96%;
-  margin: auto;
-  height: 10vw;
-}
-
 .column-bottom {
   display: inline-block;
   width: 12.5vw;
@@ -192,16 +180,21 @@ div.members > p {
   background-color: white;
   box-sizing: border-box;
 }
-
-.columns-bottom > .dice-area {
-  width: 70%;
-}
-
-.columns-bottom > .column-buttons {
+.column-buttons {
   display: inline-block;
-  width: 30%;
+  width: 25vw;
   height: 100%;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
   background-color: white;
   box-sizing: border-box;
+ 
+}
+.columns-bottom {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  width: max-content;
+  margin: auto;
+  height: 10vw;
+}
+
