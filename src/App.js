@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+//import './oldApp.css';
 import './App.css';
 import ScrumBoard from './components/Scrumboard.js'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <ScrumBoard />
       </div>
     );
