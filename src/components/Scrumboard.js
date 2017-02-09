@@ -19,9 +19,6 @@ export default class ScrumBoard extends React.Component {
 					<ReleasePlan />
 				</header>
 				<Columns />
-				<Hold />
-				<HoldMaint />
-				<HoldDefects />
 			</div>
 		);
 	}
