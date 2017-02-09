@@ -10,7 +10,7 @@
 
 /*--------------------------------------------------------------------------------CARDS*/
 
-div.user-story {
+div.user-story, .maintenanceCard, .defectsCard  {
   cursor: pointer;
   background-color: white;
   position: relative;
@@ -24,19 +24,19 @@ div.user-story {
   height: 8vw;
 }
 
-div.user-story p {
+div.user-story p, .maintenanceCard p, .defectsCard p {
   display: inline-block;
   margin: 3px 2px;
   font-size: 1.2vw;
 }
 
-div.user-story p.header, div.user-story p.value {
+div.user-story p.header, div.user-story p.value, .maintenanceCard p.header, .defectsCard p.header {
   margin: 0;
   width: 50%;
   font-weight: bold;
 }
 
-div.user-story > .points {
+div.user-story > .points, .maintenanceCard > .points, .defectsCard > .points  {
   position: absolute;
   bottom: 10px;
 }
@@ -44,69 +44,16 @@ div.user-story > .points {
 /*Maintenance*/
 
 .maintenanceCard {
-  cursor: pointer;
   background-color: #c1f6b2;
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-  margin: 20px 12px;
-  padding: 12px;
-  border-radius: 5px;
-  width: 8vw;
   height: 10vw;
-}
-
-.maintenanceCard p {
-  display: inline-block;
-  margin: 3px 2px;
-  font-size: 1.2vw;
-}
-
-.maintenanceCard p.header{
-  margin: 0;
-  width: 50%;
-  font-weight: bold;
-}
-
-.maintenanceCard > .points {
-  position: absolute;
-  bottom: 10px;
 }
 
 /*Defects*/
 
 .defectsCard {
-  cursor: pointer;
   background-color: #f6b8b8;
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-  margin: 20px 12px;
-  padding: 12px;
-  border-radius: 5px;
-  width: 8vw;
   height: 10vw;
 }
-
-.defectsCard p {
-  display: inline-block;
-  margin: 3px 2px;
-  font-size: 1.2vw;
-}
-
-.defectsCard p.header{
-  margin: 0;
-  width: 50%;
-  font-weight: bold;
-}
-
-.defectsCard > .points {
-  position: absolute;
-  bottom: 10px;
-}
-
 
 
 /*--------------------------------------------------------------------------------NAVBAR*/
