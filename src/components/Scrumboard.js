@@ -22,6 +22,7 @@ export default class ScrumBoard extends React.Component {
 				<Hold />
 				<HoldMaint />
 				<HoldDefects />
+				
 			</div>
 		);
 	}
