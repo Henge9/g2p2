@@ -4,7 +4,7 @@ import Defects from './Defects/Defects.js';
 export default class HoldDefects extends React.Component {
 	render() {
 		return(
-			<div className='holdMaint'>
+			<div className='holdDef'>
 	  			<Defects number="01" value="0" analytics="1" development="6" test="4" />
 	  			<Defects number="02" value="0" analytics="3" development="4" test="7" />
 	  			<Defects number="03" value="0" analytics="2" development="7" test="5" />

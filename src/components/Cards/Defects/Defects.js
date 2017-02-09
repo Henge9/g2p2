@@ -1,5 +1,6 @@
 import './Defects.css';
 import React from 'react';
+import './Defects.css';
 
 export default class Defects extends React.Component {
 	componentDidMount() {
@@ -10,7 +11,7 @@ export default class Defects extends React.Component {
 
 	render() {
 		return (
-			<div className='defectsCard'>
+			<div className='defects-card'>
 				<p className='header'>Defects{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>

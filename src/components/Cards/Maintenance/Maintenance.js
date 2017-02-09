@@ -1,5 +1,6 @@
 import './Maintenance.css';
 import React from 'react';
+import './Maintenance.css';
 
 export default class Maintenance extends React.Component {
 	componentDidMount() {
@@ -10,7 +11,7 @@ export default class Maintenance extends React.Component {
 
 	render() {
 		return (
-			<div className='maintenanceCard'>
+			<div className='maintenance-card'>
 				<p className='header'>Maintenance{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>
