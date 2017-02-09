@@ -1,6 +1,5 @@
 import './Maintenance.css';
 import React from 'react';
-import './Maintenance.css';
 
 export default class Maintenance extends React.Component {
 	componentDidMount() {

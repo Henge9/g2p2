@@ -1,4 +1,4 @@
-.defectsCard {
+.defects-card {
   cursor: pointer;
   background-color: white;
   position: relative;
@@ -13,19 +13,19 @@
   height: 10vw;
 }
 
-.defectsCard p {
+.defects-card p {
   display: inline-block;
   margin: 3px 2px;
   font-size: 1.2vw;
 }
 
-.defectsCard p.header {
+.defects-card p.header {
   margin: 0;
   width: 50%;
   font-weight: bold;
 }
 
-.defectsCard > .points {
+.defects-card > .points {
   position: absolute;
   bottom: 10px;
 }

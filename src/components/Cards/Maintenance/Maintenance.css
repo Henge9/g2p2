@@ -1,4 +1,4 @@
-.maintenanceCard {
+.maintenance-card {
   cursor: pointer;
   background-color: white;
   position: relative;
@@ -13,19 +13,19 @@
   height: 10vw;
 }
 
-.maintenanceCard p {
+.maintenance-card p {
   display: inline-block;
   margin: 3px 2px;
   font-size: 1.2vw;
 }
 
-.maintenanceCard p.header {
+.maintenance-card p.header {
   margin: 0;
   width: 50%;
   font-weight: bold;
 }
 
-.maintenanceCard > .points {
+.maintenance-card > .points {
   position: absolute;
   bottom: 10px;
 }

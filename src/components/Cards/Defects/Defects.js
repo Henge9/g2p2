@@ -1,6 +1,5 @@
 import './Defects.css';
 import React from 'react';
-import './Defects.css';
 
 export default class Defects extends React.Component {
 	componentDidMount() {
