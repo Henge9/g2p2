@@ -1,0 +1,30 @@
+div.user-story {
+	cursor: pointer;
+	background-color: white;
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	margin: 20px 12px;
+	padding: 12px;
+	border-radius: 5px;
+	width: 8vw;
+	height: 8vw;
+}
+
+div.user-story p {
+	display: inline-block;
+	margin: 3px 2px;
+	font-size: 1.2vw;
+}
+
+div.user-story p.header, div.user-story p.value {
+	margin: 0;
+ 	width: 50%;
+ 	font-weight: bold;
+}
+
+div.user-story > .points {
+	position: absolute;
+  	bottom: 10px;
+}

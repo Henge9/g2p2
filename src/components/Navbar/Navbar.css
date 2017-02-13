@@ -1,0 +1,15 @@
+nav.nav {
+  padding: 10px 0;
+  background-color: white;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+}
+
+nav.nav > ul > li {
+  display: inline-block;
+}
+
+nav.nav > ul > li > a {
+  padding: 10px 20px;
+  text-decoration: none;
+}

@@ -1,25 +1,25 @@
+import './Defects.css';
 import React from 'react';
 
-export default class UserStory extends React.Component {
-
+export default class Defects extends React.Component {
 	componentDidMount() {
 		insertLetters(this.props.analytics, this.refs.analytics, 'A');
 		insertLetters(this.props.development, this.refs.development, 'D');
 		insertLetters(this.props.test, this.refs.test, 'T');
 	}
 
-    render(){
-	return (
-	  	<div className='user-story'>
-	  		<p className='header'>US{this.props.number}</p><p className='value'>${this.props.value}</p>
-	  		<div className='points'>
-	  			<div ref='analytics'></div>
-	  			<div ref='development'></div>
-	  			<div ref='test'></div>
-	  		</div>
-	  	</div>
-	  );
-    }
+	render() {
+		return (
+			<div className='defects-card'>
+				<p className='header'>Defects{this.props.number}</p>
+				<div className='points'>
+					<div ref='analytics'></div>
+	  				<div ref='development'></div>
+	  				<div ref='test'></div>
+				</div>
+			</div>
+		);
+	}
 }
 
 function insertLetters(amount, ref, letter) {

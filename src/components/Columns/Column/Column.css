@@ -1,0 +1,19 @@
+.column {
+  display: inline-block;
+  width: 16%;
+  height: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.column:first-child {
+  border-left: 2px solid black;
+}
+
+.column > h3 {
+  padding: 10px;
+  border-bottom: 2px solid black;
+}

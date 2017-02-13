@@ -1,5 +1,5 @@
 import React from 'react';
-import UserStory from './Cards/User_Story.js';
+import UserStory from './UserStory/User_Story.js';
 
 export default class Hold extends React.Component {
     render(){
