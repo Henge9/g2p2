@@ -14,8 +14,8 @@ export default class Columns extends React.Component{
 					<Column name='Backlog' />
 					<Column name='Analysis' />
 					<Column name='Development' />
-					<Column name='testing' />
-					<Column name='done' />
+					<Column name='Testing' />
+					<Column name='Done' />
 				</div>
 				<ColumnBottom />
 			</article>
