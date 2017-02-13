@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import './oldApp.css';
 import './App.css';
 import ScrumBoard from './components/Scrumboard.js'
 

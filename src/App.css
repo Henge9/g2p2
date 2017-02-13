@@ -1,6 +1,11 @@
-.App {
-  text-align: center;
-  width: 800px;
-  height: 600px;
-  position: relative;
+@import './variables.css';
+
+.app {
+	width: 800px;
+  	height: 600px;
+	box-sizing: border-box;
+	margin: auto;
+  	text-align: center;
+  	position: relative;
+  	border: 3px solid black;
 }

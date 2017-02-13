@@ -1,4 +1,6 @@
+@import '../../variables.css';
+
 .columns {
   margin: auto;
-  height: 500px;
+  height: 420px;
 }
