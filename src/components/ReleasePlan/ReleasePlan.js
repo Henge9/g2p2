@@ -3,6 +3,10 @@ import ReleasePlanCell from './ReleasePlanCell/ReleasePlanCell.js';
 import ReleasePlanCellRetrospective from './ReleasePlanCell/ReleasePlanCellRetrospective.js';
 import ReleasePlanCellMoney from './ReleasePlanCell/ReleasePlanCellMoney.js';
 
+function daysPassed() {
+	
+}
+
 export default class ReleasePlan extends React.Component {
 
     render(){
