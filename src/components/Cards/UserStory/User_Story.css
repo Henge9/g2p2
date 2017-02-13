@@ -16,6 +16,17 @@ div.user-story {
 	border-radius: 5px;
 	width: 70px;
 	height: 70px;
+	border: 1px solid black;
+}
+
+div.user-story:nth-last-child(2) {
+	top: 5px;
+	left: -2px;
+}
+
+div.user-story:nth-last-child(3) {
+	top: 10px;
+	left: 2px;
 }
 
 div.user-story p {
