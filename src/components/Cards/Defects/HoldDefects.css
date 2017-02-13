@@ -1,0 +1,7 @@
+@import '../../../variables.css';
+
+.holdDef {
+	position: absolute;
+	top: 355px;
+	left: 32px;
+}

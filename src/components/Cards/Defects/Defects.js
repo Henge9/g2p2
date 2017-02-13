@@ -11,7 +11,7 @@ export default class Defects extends React.Component {
 	render() {
 		return (
 			<div className='defects-card'>
-				<p className='header'>Defects{this.props.number}</p>
+				<p className='header'>D{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>
 	  				<div ref='development'></div>

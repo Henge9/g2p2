@@ -1,21 +1,27 @@
+@import '../../../variables.css';
+
 div.user-story {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-image: url('../../../images/paper.png');
+	background-position: left top;
+	background-size: 120px;
 	cursor: pointer;
-	background-color: white;
-	position: relative;
 	display: inline-block;
 	text-align: left;
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-	margin: 20px 12px;
 	padding: 12px;
 	border-radius: 5px;
-	width: 8vw;
-	height: 8vw;
+	width: 70px;
+	height: 70px;
 }
 
 div.user-story p {
 	display: inline-block;
 	margin: 3px 2px;
-	font-size: 1.2vw;
+	font-size: 0.7em;
 }
 
 div.user-story p.header, div.user-story p.value {

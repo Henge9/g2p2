@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   background-color: lightblue;
+  box-sizing: border-box;
 }
 
 header.header {

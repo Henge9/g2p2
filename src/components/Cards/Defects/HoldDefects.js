@@ -1,5 +1,6 @@
+import './HoldDefects.css';
 import React from 'react';
-import Defects from './Defects/Defects.js';
+import Defects from './Defects.js';
 
 export default class HoldDefects extends React.Component {
 	render() {
