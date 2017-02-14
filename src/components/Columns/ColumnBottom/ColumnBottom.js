@@ -8,7 +8,7 @@ export default class ColumnBottom extends React.Component {
 		return (
 			<div className='column-bottom'>
 				<DiceArea />
- 				<ColumnButtons />
+				<ColumnButtons />
 			</div>
 		);
 	}

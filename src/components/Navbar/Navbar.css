@@ -1,15 +1,23 @@
+@import '../../variables.css';
+
 nav.nav {
-  padding: 10px 0;
-  background-color: white;
-  border-bottom: 2px solid black;
-  box-sizing: border-box;
+  	padding: 10px 0;
+  	background-color: white;
+  	border-bottom: var(--border);
+  	box-sizing: border-box;
 }
 
 nav.nav > ul > li {
-  display: inline-block;
+  	display: inline-block;
 }
 
 nav.nav > ul > li > a {
-  padding: 10px 20px;
-  text-decoration: none;
+	transition: 0.3s;
+  	padding: 10px 20px;
+  	text-decoration: none;
+  	color: var(--font-color);
+}
+
+nav.nav > ul > li > a:hover {
+	color: var(--hover-color);
 }

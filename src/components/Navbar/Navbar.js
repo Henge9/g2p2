@@ -6,9 +6,8 @@ export default class NavBar extends React.Component {
 		return (
 		<nav className='nav'>
 			<ul>
+				<li><a href='#'>Releaseplan</a></li>
 				<li><a href='#'>New game</a></li>
-				<li><a href='#'>Save</a></li>
-				<li><a href='#'>Load</a></li>
 				<li><a href='#'>Rules</a></li>
 				<li><a href='#'>Highscore</a></li>
 				<li><a href='#'>About</a></li>

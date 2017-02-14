@@ -1,4 +1,10 @@
+@import '../../variables.css';
+
+article {
+	padding: 15px 0;
+}
+
 .columns {
   margin: auto;
-  height: 500px;
+  height: 420px;
 }

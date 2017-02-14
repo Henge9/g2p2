@@ -1,22 +1,38 @@
+@import '../../../variables.css';
+
 .maintenance-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-image: url('../../../images/paper.png');
+  background-position: left top;
+  background-size: 120px;
   cursor: pointer;
-  background-color: white;
-  position: relative;
   display: inline-block;
   text-align: left;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-  margin: 20px 12px;
   padding: 12px;
   border-radius: 5px;
-  width: 8vw;
-  background-color: #c1f6b2;
-  height: 10vw;
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+}
+
+div.maintenance-card:nth-last-child(2) {
+  top: 5px;
+  left: -2px;
+}
+
+div.maintenance-card:nth-last-child(3) {
+  top: 10px;
+  left: 2px;
 }
 
 .maintenance-card p {
   display: inline-block;
   margin: 3px 2px;
-  font-size: 1.2vw;
+  font-size: 0.7em;
 }
 
 .maintenance-card p.header {

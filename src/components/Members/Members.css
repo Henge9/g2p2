@@ -6,10 +6,5 @@ div.members {
   box-sizing: border-box;
   float: left;
   background-color: white;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
   padding: 10px;
-}
-
-div.members > p {
-  font-size: 1.4vw;
 }

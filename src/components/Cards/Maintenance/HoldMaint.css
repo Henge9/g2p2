@@ -1,0 +1,7 @@
+@import '../../../variables.css';
+
+.holdMaint {
+	position: absolute;
+	top: 240px;
+	left: 32px;
+}
