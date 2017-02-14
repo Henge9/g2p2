@@ -1,5 +1,6 @@
 import React from 'react';
 import './ColumnButtons.css';
+//importera tärningar
 
 export default class ColumnButtons extends React.Component {
 	render() {

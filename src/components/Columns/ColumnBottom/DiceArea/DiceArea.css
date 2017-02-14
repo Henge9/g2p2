@@ -11,3 +11,9 @@
   box-sizing: border-box;
   box-shadow: var(--inset-shadow);
 }
+
+.dice-group {
+	width: 130px;
+	padding-top: 7px;
+	padding-left: 7px;
+}
