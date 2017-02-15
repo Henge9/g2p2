@@ -3,6 +3,16 @@ import './User_Story.css';
 
 export default class UserStory extends React.Component {
 
+	onMouseEnter() {
+		this.refs.card.style.border = '4px solid cyan';
+		this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
+	}
+
+	onMouseLeave() {
+		this.refs.card.style.border = '2px solid black';
+		this.refs.card.style.boxShadow = 'none';
+	}
+
 	componentDidMount() {
 
 		// Insert points
@@ -17,7 +27,7 @@ export default class UserStory extends React.Component {
 
     render(){
 	return (
-	  	<div ref='card' className='user-story'>
+	  	<div ref='card' className='user-story' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
 	  		<p className='header'>US{this.props.number}</p><p className='value'>${this.props.value}</p>
 	  		<div className='points'>
 	  			<div ref='analytics'></div>

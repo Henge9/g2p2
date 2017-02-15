@@ -34,6 +34,8 @@ export default class ScrumBoard extends React.Component {
 				<NavBar />
 				<Columns addX={this.addX} />
 				<Hold />
+				<HoldMaint />
+				<HoldDefects />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan}/>
 			</div>
 		);
