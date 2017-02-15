@@ -1,13 +1,17 @@
+
 .column-buttons {
 	float: right;
 	padding-top: 10px;
+  border-top: var(--border);
 }
 
-button {
+.column-buttons > button {
 	background-color: red;
 	color: white;
 	font-size: 1.3em;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
+	cursor: pointer;
 }
+

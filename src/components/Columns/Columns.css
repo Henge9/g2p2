@@ -1,10 +1,11 @@
 @import '../../variables.css';
 
 article {
-	padding: 15px 0;
+	position: relative;
+	top: 39px;
 }
 
 .columns {
-  margin: auto;
-  height: 420px;
+  	height: 415px;
+  	width: auto;
 }
