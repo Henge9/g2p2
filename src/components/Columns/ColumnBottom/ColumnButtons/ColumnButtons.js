@@ -7,9 +7,10 @@ export default class ColumnButtons extends React.Component {
 		return (
 			<div className='column-buttons'>
 				
-				<button>Go!</button>
+				<button onClick={this.props.onClick}>Go!</button>
 				
 			</div>
 		);
 	}
 }
+// <button ånnklick=this.props.fuynktion>Go!</button>

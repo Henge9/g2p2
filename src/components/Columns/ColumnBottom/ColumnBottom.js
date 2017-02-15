@@ -4,11 +4,16 @@ import DiceArea from './DiceArea/DiceArea.js';
 import ColumnButtons from './ColumnButtons/ColumnButtons.js';
 
 export default class ColumnBottom extends React.Component {
+	
+	createX(event){
+		this.props.addX(event);
+	}
+
 	render() {
 		return (
 			<div className='column-bottom'>
 				<DiceArea />
-				<ColumnButtons />
+				<ColumnButtons onClick={(e) => this.createX(e)}/>
 			</div>
 		);
 	}

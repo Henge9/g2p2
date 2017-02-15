@@ -30,77 +30,11 @@ export default class ReleasePlan extends React.Component {
 	  		
 	  		<div className="ReleasePlanRow">
 	  			<div className="ReleasePlanCell">Sprint 1</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCellRetrospective />
-	  			<ReleasePlanCellMoney />
-	  		</div>
-
-	  		<div className="ReleasePlanRow">
-	  			<div className="ReleasePlanCell">Sprint 2</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCellRetrospective />
-	  			<ReleasePlanCellMoney />
-	  		</div>
-
-	  		<div className="ReleasePlanRow">
-	  			<div className="ReleasePlanCell">Sprint 3</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCellRetrospective />
-	  			<ReleasePlanCellMoney />
-	  		</div>
-
-	  		<div className="ReleasePlanRow">
-	  			<div className="ReleasePlanCell">Sprint 4</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCellRetrospective />
-	  			<ReleasePlanCellMoney />
-	  		</div>
-
-	  		<div className="ReleasePlanRow">
-	  			<div className="ReleasePlanCell">Sprint 5</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCellRetrospective />
-	  			<ReleasePlanCellMoney />
-	  		</div>
-
-	  		<div className="ReleasePlanRow">
-	  			<div className="ReleasePlanCell">Sprint 6</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCellRetrospective />
-	  			<ReleasePlanCellMoney />
-	  		</div>
-
-	  		<div className="ReleasePlanRow">
-	  			<div className="ReleasePlanCell">Sprint 7</div>
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
-	  			<ReleasePlanCell />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan}/>
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
 	  			<ReleasePlanCellRetrospective />
 	  			<ReleasePlanCellMoney />
 	  		</div>
