@@ -2,6 +2,7 @@
 .column-buttons {
 	float: right;
 	padding-top: 10px;
+  border-top: var(--border);
 }
 
 .column-buttons > button {

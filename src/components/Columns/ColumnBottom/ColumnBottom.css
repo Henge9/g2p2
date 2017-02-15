@@ -4,19 +4,14 @@
   display: inline-block;
   background-color: white;
   box-sizing: border-box;
-  width: 96%;
+  width: 95%;
   height: 100px;
-}
-
-.column-bottom > .dice-area {
-  width: 70%;
 }
 
 .column-bottom > .column-buttons {
   display: inline-block;
-  width: 30%;
+  width: 20%;
   height: 100%;
-  border-bottom: 2px solid black;
   border-right: 2px solid black;
   background-color: white;
   box-sizing: border-box;

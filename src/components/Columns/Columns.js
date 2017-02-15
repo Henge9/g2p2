@@ -10,7 +10,6 @@ export default class Columns extends React.Component{
 		return(
 			<article>
 				<div className='columns'>
-					<Column name='Cards'/>
 					<Column name='Backlog' />
 					<Column name='Analysis' />
 					<Column name='Development' />
