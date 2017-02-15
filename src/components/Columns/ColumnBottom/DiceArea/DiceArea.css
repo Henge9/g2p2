@@ -10,6 +10,7 @@
   background-color: white;
   box-sizing: border-box;
   box-shadow: var(--inset-shadow);
+  border-radius: 2px;
 }
 
 .dice-group {
