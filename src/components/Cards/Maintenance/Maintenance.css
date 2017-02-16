@@ -17,16 +17,11 @@
   width: 70px;
   height: 70px;
   border: 1px solid black;
-}
 
-div.maintenance-card:nth-last-child(2) {
-  top: 5px;
-  left: -2px;
-}
-
-div.maintenance-card:nth-last-child(3) {
-  top: 10px;
-  left: 2px;
+  transition:
+  border-color 0.3s ease,
+  box-shadow 0.3s ease,
+  left 4s ease;
 }
 
 .maintenance-card p {
