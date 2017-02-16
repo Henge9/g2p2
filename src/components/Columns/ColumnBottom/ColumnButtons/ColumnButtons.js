@@ -23,24 +23,16 @@ export default class ColumnButtons extends React.Component {
   		console.log("---------");
 
   		return [number1, number2, number3, number4, number5, number6];
-		}
+	}
 		
-
-		
-	
-
-
-		
-		
- 	
-
+		createX(event){
+		this.props.addX(event);
+	}
 
 	render() {
 		return (
 			<div className='column-buttons'>
-				
-				<button onClick={this.RollDice}>Go!</button>
-				
+				<button onClick={this.RollDice} onClick={(e) => this.createX(e)}>Go!</button>
 			</div>
 		);
 	}
