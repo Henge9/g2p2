@@ -12,11 +12,11 @@ export default class ReleasePlan extends React.Component {
 	  	<div className='release-plan'>
 	  		<div className="release-plan-row">
 	  			<ReleasePlanCellSprint />
-	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan}/>
-	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
-	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
-	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
-	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} dayArray={this.props.dayArray} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} dayArray={this.props.dayArray} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} dayArray={this.props.dayArray} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} dayArray={this.props.dayArray} />
+	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} dayArray={this.props.dayArray} />
 	  			<ReleasePlanCellRetrospective />
 	  			<ReleasePlanCellMoney />
 	  		</div>

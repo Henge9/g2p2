@@ -9,7 +9,7 @@ import ReleasePlan from './ReleasePlan/ReleasePlan.js';
 import ReleasePlanCell from './ReleasePlan/ReleasePlanCell/ReleasePlanCell.js';
 import Columns from './Columns/Columns.js';
 
-
+ 
 
 export default class ScrumBoard extends React.Component {
 	
@@ -20,12 +20,13 @@ export default class ScrumBoard extends React.Component {
 		//getInitialState
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
+			dayArray: [],
 		};
 	}
 
+
 	//ReleasePlanCell.js - ColumnButton.js
 	addX(dayX){
-		alert('hejhej');
 		const releaseplan = {...this.state.releaseplan};
 		releaseplan[``] = true;
 		this.setState({releaseplan});
@@ -35,7 +36,7 @@ export default class ScrumBoard extends React.Component {
 		return (
 			<div className="scrumboard">
 				<NavBar />
-				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan}/>
+				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} dayArray={this.state.dayArray}/>
 				<Columns addX={this.addX} />
 				<Hold />
 				<HoldMaint />

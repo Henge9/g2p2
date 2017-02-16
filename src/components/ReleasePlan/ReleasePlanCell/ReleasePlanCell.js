@@ -10,6 +10,9 @@ export default class ReleasePlanCell extends React.Component {
 	 		var checked = " ";
 		}
 
+		var dayArray = this.props.dayArray; 
+		console.log(dayArray);
+
 		return(
 			<div className="release-plan-cell">{checked}</div>
 		);
