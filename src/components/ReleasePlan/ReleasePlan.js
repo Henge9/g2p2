@@ -31,6 +31,12 @@ export default class ReleasePlan extends React.Component {
 	  		<div className="ReleasePlanRow">
 	  			<div className="ReleasePlanCell">Sprint 1</div>
 	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan}/>
+	  			
+
+
+
+
+
 	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
 	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />
 	  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} />

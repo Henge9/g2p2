@@ -12,6 +12,7 @@ import Columns from './Columns/Columns.js';
 
 
 export default class ScrumBoard extends React.Component {
+	
 	constructor(){
 		super();
 		this.addX = this.addX.bind(this);

@@ -29,7 +29,7 @@ export default class ReleasePlanCell extends React.Component {
 	render() {
 		
 		if (this.props.releaseplan){
-			console.log(this.props.releaseplan);
+			//console.log(this.props.releaseplan);
 	 		var checked = "y";
 	 	} else {
 	 		var checked = " ";
