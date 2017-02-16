@@ -13,7 +13,7 @@ export default class ColumnBottom extends React.Component {
 		return (
 			<div className='column-bottom'>
 				<DiceArea />
-				<ColumnButtons onClick={(e) => this.createX(e)}/>
+				<ColumnButtons addX={this.props.addX}/>
 			</div>
 		);
 	}
