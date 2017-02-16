@@ -20,16 +20,20 @@ export default class ScrumBoard extends React.Component {
 		//getInitialState
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
-			dayArray: [],
+			dayArray: {number: 0},
 		};
 	}
-
 
 	//ReleasePlanCell.js - ColumnButton.js
 	addX(dayX){
 		const releaseplan = {...this.state.releaseplan};
+		var dayArray = {...this.state.dayArray};
+		
 		releaseplan[``] = true;
+		dayArray[`number`] += 1;
+		
 		this.setState({releaseplan});
+		this.setState({dayArray});
 	}
 
 	render() {
