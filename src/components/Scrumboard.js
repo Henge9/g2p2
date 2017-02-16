@@ -15,7 +15,6 @@ export default class ScrumBoard extends React.Component {
 	
 	constructor(){
 		super();
-
 		this.addX = this.addX.bind(this); //ReleasePlanCell.js - ColumnButton.js
 		
 		//getInitialState
@@ -26,6 +25,7 @@ export default class ScrumBoard extends React.Component {
 
 	//ReleasePlanCell.js - ColumnButton.js
 	addX(dayX){
+		alert('hejhej');
 		const releaseplan = {...this.state.releaseplan};
 		releaseplan[``] = true;
 		this.setState({releaseplan});
@@ -35,11 +35,11 @@ export default class ScrumBoard extends React.Component {
 		return (
 			<div className="scrumboard">
 				<NavBar />
+				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan}/>
 				<Columns addX={this.addX} />
 				<Hold />
 				<HoldMaint />
 				<HoldDefects />
-				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan}/>
 			</div>
 		);
 	}

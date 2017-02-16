@@ -32,9 +32,7 @@ export default class ColumnButtons extends React.Component {
 	render() {
 		return (
 			<div className='column-buttons'>
-				
 				<button onClick={this.RollDice} onClick={(e) => this.createX(e)}>Go!</button>
-				
 			</div>
 		);
 	}
