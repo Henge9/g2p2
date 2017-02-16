@@ -4,21 +4,30 @@ import './User_Story.css';
 export default class UserStory extends React.Component {
 
 	onMouseEnter() {
-		this.refs.card.style.border = '4px solid cyan';
+		this.refs.card.style.border = '1px solid cyan';
 		this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
 	}
 
 	onMouseLeave() {
-		this.refs.card.style.border = '2px solid black';
+		this.refs.card.style.border = '1px solid black';
 		this.refs.card.style.boxShadow = 'none';
 	}
 
 	componentDidMount() {
 
+		let analEl = this.refs.analytics;
+		let devEl = this.refs.development;
+		let testEl = this.refs.test;
+
 		// Insert points
-		insertLetters(this.props.analytics, this.refs.analytics, 'A');
-		insertLetters(this.props.development, this.refs.development, 'D');
-		insertLetters(this.props.test, this.refs.test, 'T');
+		insertLetters(this.props.analytics, analEl, 'A');
+		insertLetters(this.props.development, devEl, 'D');
+		insertLetters(this.props.test, testEl, 'T');
+
+		// Change points font size
+		analEl.style.fontSize = (analEl.childElementCount* -1) + 20 + 'px';
+		devEl.style.fontSize = (devEl.childElementCount* -1) + 20 + 'px'
+		testEl.style.fontSize = (testEl.childElementCount* -1) + 20 + 'px'
 
 		// Randomize card position
 		var card = this.refs.card;
@@ -40,7 +49,6 @@ export default class UserStory extends React.Component {
 }
 
 function randomCardPos(card) {
-
 	var randomNumber = Math.random();
 	var top = (Math.random() * 10).toString() + 'px';
 
@@ -52,7 +60,7 @@ function randomCardPos(card) {
 
 	card.style.top = top;
 	card.style.left = left;
-}
+} // Randomizes card starting position
 
 function insertLetters(amount, ref, letter) {
 	for (var i = 0; i < amount; i++) {
