@@ -3,6 +3,7 @@ import React from 'react';
 import Rules from './Rules.js';
 import NewGame from './NewGame.js';
 import About from './About.js';
+import Highscore from './Highscore.js';
 
 export default class NavBar extends React.Component {
 
@@ -12,68 +13,88 @@ export default class NavBar extends React.Component {
 		console.log(this);
 		//getInitialState
 		this.state = {
-			newGame: false,
-			rules: false,
-			highscore: false,
-			about: false,
+			navBar: {
+				newGame: false, 
+				rules: false, 
+				highscore: false, 
+				about: false
+			},
 		};
 	}
-	show(input){
-		const newGame = {...this.state.newGame};
-		const rules = {...this.state.rules};
-		const highscore = {...this.state.highscore};
-		
 
+	show(input){
+		const navBar = {...this.state.navBar};
+		
 		switch (input) {
 		  	case "newGame":
-		   		console.log("asdf");
+		   		if (navBar[`newGame`]) {
+
+		   			navBar[`newGame`] = false;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = false;
+		   		}else {
+			   		navBar[`newGame`] = true;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = false;
+		   		}
 		    	break;
 
 		  	case "rules":
-		  		console.log("rules");
+		  		if (navBar[`rules`]) {
+
+		   			navBar[`newGame`] = false;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = false;
+		   		}else {
+			  		navBar[`newGame`] = false;
+			   		navBar[`rules`] = true;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = false;
+		   		}
 		   		break;
 	
 		  	case "highscore":
-		  		console.log("highscore");
-		  			this.State = {
-					newGame: false,
-					rules: false,
-					highscore: true,
-					about: true,
-				};
+		  		if (navBar[`highscore`]) {
+
+		   			navBar[`newGame`] = false;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = false;
+		   		}else {
+			  		navBar[`newGame`] = false;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = true;
+			   		navBar[`about`] = false;
+		   		}
+		  	
 		    	break;
 		    case "about":
-		    	if (this.state.about.value){
-		    		this.State = {
-						newGame: false,
-						rules: false,
-						highscore: false,
-						about: false,
-					};
-		    		console.log("if");
-		    	} else {
-		  			this.setState = {
-						newGame: false,
-						rules: false,
-						highscore: false,
-						about: true,
-					};
-		  			console.log("else");
-		  		}
-				//this.setState({about});
-				console.log(this.state.about);
+		    	if (navBar[`about`]) {
+
+		   			navBar[`newGame`] = false;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = false;
+		   		}else {
+			    	navBar[`newGame`] = false;
+			   		navBar[`rules`] = false;
+			   		navBar[`highscore`] = false;
+			   		navBar[`about`] = true;
+			   	}
+		    	
 		    	break;
 		  	default:
-		  		console.log("default");
-		  		this.setState = {
-					newGame: false,
-					rules: false,
-					highscore: false,
-					about: false,
-				};
+		  		navBar[`newGame`] = false;
+		   		navBar[`rules`] = false;
+		   		navBar[`highscore`] = false;
+		   		navBar[`about`] = false;	  		
 		   		break;
-}
-		
+     	}
+	
+	 this.setState({navBar});
 	}
 	
 	render() {
@@ -87,10 +108,10 @@ export default class NavBar extends React.Component {
 					<li><a onClick={(e) => this.show("about")}>About</a></li>
 				</ul>
 			</nav>
-			{this.state.newGame ? <NewGame /> : null}
-			{this.state.rules ? <Rules /> : null}
-			{this.state.newGame ? <NewGame /> : null}
-			{this.state.about ? <About /> : null}
+			{this.state.navBar[`newGame`] ? <NewGame /> : null}
+			{this.state.navBar[`rules`] ? <Rules /> : null}
+			{this.state.navBar[`highscore`] ? <Highscore /> : null}
+			{this.state.navBar[`about`] ? <About /> : null}
 
 			
 		</div>
