@@ -2,10 +2,12 @@
 
 article {
 	position: relative;
-	top: 39px;
+	top: 0px;
+	float: left;
+	width: 100%;
 }
 
 .columns {
-  	height: 415px;
+  	height: 411px;
   	width: auto;
 }

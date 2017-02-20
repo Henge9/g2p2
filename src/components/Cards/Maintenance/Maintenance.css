@@ -40,4 +40,5 @@
 .maintenance-card > .points {
   position: absolute;
   bottom: 5px;
+  letter-spacing: -2px;
 }
