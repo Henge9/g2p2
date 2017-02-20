@@ -20,19 +20,27 @@ export default class ScrumBoard extends React.Component {
 		//getInitialState
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
-			dayArray: {number: 0},
+			dayArray: {number: 0}, //Releaseplan.js
+			sprintArray: {number: 1}, //Releaseplan.js
 		};
 	}
 
 	//ReleasePlanCell.js - ColumnButton.js
 	addX(dayX){
 		const releaseplan = {...this.state.releaseplan};
-		var dayArray = {...this.state.dayArray};
+		let sprintArray = {...this.state.sprintArray};
+		let dayArray = {...this.state.dayArray};
 		
 		releaseplan[``] = true;
 		dayArray[`number`] += 1;
+
+		if (dayArray[`number`] == 6) {
+			dayArray[`number`] = 1;
+			sprintArray[`number`] += 1;
+		}
 		
 		this.setState({releaseplan});
+		this.setState({sprintArray});
 		this.setState({dayArray});
 	}
 
@@ -40,7 +48,7 @@ export default class ScrumBoard extends React.Component {
 		return (
 			<div className="scrumboard">
 				<NavBar />
-				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} dayArray={this.state.dayArray}/>
+				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
 				<Columns addX={this.addX} />
 				<Hold />
 				<HoldMaint />
