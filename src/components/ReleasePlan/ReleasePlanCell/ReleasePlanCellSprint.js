@@ -4,7 +4,7 @@ export default class ReleasePlanCellSprint extends React.Component {
 
 	render(){
 		return(
-			<div className="release-plan-cell">Sprint</div>
+			<div className="release-plan-cell">{this.props.content}</div>
 		);
 	}
 }
