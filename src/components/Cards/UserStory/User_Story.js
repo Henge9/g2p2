@@ -23,6 +23,7 @@ export default class UserStory extends React.Component {
 	onClick() {
 		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
 			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
+			
 			this.setState({
 				isMoving: true,
 			});
@@ -44,14 +45,9 @@ export default class UserStory extends React.Component {
 		let testEl = this.refs.test;
 
 		// Insert points
-		insertLetters(analEl, 'A');
-		insertLetters(devEl, 'D');
-		insertLetters(testEl, 'T');
-
-		// Change points font size
-		analEl.style.fontSize = (analEl.childElementCount* -1) + 20 + 'px';
-		devEl.style.fontSize = (devEl.childElementCount* -1) + 20 + 'px'
-		testEl.style.fontSize = (testEl.childElementCount* -1) + 20 + 'px'
+		insertLetters(this.props.analytics, analEl, 'A');
+		insertLetters(this.props.development, devEl, 'D');
+		insertLetters(this.props.test, testEl, 'T');
 
 		// Randomize card position
 		var card = this.refs.card;
@@ -86,14 +82,9 @@ function randomCardPos(card) {
 	card.style.left = left;
 } // Randomizes card starting position
 
-function insertLetters(ref, letter) {
+function insertLetters(prop, ref, letter) {
 
-	// Randomize amount
-	var amount = parseInt(Math.random() * 8);
-
-	console.log(amount);
-
-	for (var i = 0; i < amount; i++) {
+	for (var i = 0; i < prop; i++) {
 
 		// Create new element
 		var newElement = document.createElement('p');

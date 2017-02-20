@@ -40,4 +40,9 @@ div.user-story p.header, div.user-story p.value {
 div.user-story > .points {
 	position: absolute;
   	bottom: 5px;
+  	letter-spacing: -2px;
+}
+
+div.user-story > .points p {
+	font-weight: bold;
 }
