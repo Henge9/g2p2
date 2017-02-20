@@ -3,6 +3,13 @@ import './User_Story.css';
 
 export default class UserStory extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			isMoving: false,
+		};
+	}
+
 	onMouseEnter() {
 		this.refs.card.style.border = '1px solid cyan';
 		this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
@@ -13,6 +20,23 @@ export default class UserStory extends React.Component {
 		this.refs.card.style.boxShadow = 'none';
 	}
 
+	onClick() {
+		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
+			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
+			this.setState({
+				isMoving: true,
+			});
+
+			let that = this;
+
+			setTimeout(function() {
+				that.setState({
+					isMoving: false,
+				});
+			}, 3000);
+		}
+	}
+
 	componentDidMount() {
 
 		let analEl = this.refs.analytics;
@@ -20,9 +44,9 @@ export default class UserStory extends React.Component {
 		let testEl = this.refs.test;
 
 		// Insert points
-		insertLetters(this.props.analytics, analEl, 'A');
-		insertLetters(this.props.development, devEl, 'D');
-		insertLetters(this.props.test, testEl, 'T');
+		insertLetters(analEl, 'A');
+		insertLetters(devEl, 'D');
+		insertLetters(testEl, 'T');
 
 		// Change points font size
 		analEl.style.fontSize = (analEl.childElementCount* -1) + 20 + 'px';
@@ -36,7 +60,7 @@ export default class UserStory extends React.Component {
 
     render(){
 	return (
-	  	<div ref='card' className='user-story' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+	  	<div ref='card' className='user-story' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} onClick={this.onClick.bind(this)}>
 	  		<p className='header'>US{this.props.number}</p><p className='value'>${this.props.value}</p>
 	  		<div className='points'>
 	  			<div ref='analytics'></div>
@@ -62,7 +86,13 @@ function randomCardPos(card) {
 	card.style.left = left;
 } // Randomizes card starting position
 
-function insertLetters(amount, ref, letter) {
+function insertLetters(ref, letter) {
+
+	// Randomize amount
+	var amount = parseInt(Math.random() * 8);
+
+	console.log(amount);
+
 	for (var i = 0; i < amount; i++) {
 
 		// Create new element
@@ -72,4 +102,4 @@ function insertLetters(amount, ref, letter) {
 		// Insert new element into div
 		ref.appendChild(newElement);
 	}
-} // Creates one letter for each point
+} // Creates one letter for each point8

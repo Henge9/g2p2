@@ -4,7 +4,6 @@
   display: inline-block;
   width: 19%;
   height: 100%;
-  border-top: var(--border);
   border-right: var(--border);
   background-color: white;
   box-sizing: border-box;

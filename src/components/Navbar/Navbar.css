@@ -3,7 +3,6 @@
 nav.nav {
   	padding: 10px 0;
   	background-color: white;
-  	border-bottom: var(--border);
   	box-sizing: border-box;
 }
 

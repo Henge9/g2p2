@@ -13,6 +13,12 @@ export default class Maintenance extends React.Component {
 		this.refs.card.style.boxShadow = 'none';
 	}
 
+	onClick() {
+		if (parseInt(this.refs.card.style.left) < 550) {
+			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
+		}
+	}
+
 	componentDidMount() {
 		let analEl = this.refs.analytics;
 		let devEl = this.refs.development;
@@ -35,7 +41,7 @@ export default class Maintenance extends React.Component {
 
 	render() {
 		return (
-			<div ref='card' className='maintenance-card' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+			<div ref='card' className='maintenance-card' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} onClick={this.onClick.bind(this)}>
 				<p className='header'>M{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>
