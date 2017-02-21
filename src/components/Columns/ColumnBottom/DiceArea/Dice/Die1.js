@@ -13,7 +13,7 @@ export default class Die1 extends React.Component {
 		}
 
 		return (
-			<div className="die1" style={'backgroundImage: `url(${stylee})`'}>
+			<div className="die1">
 			</div>
 		);
 	}
