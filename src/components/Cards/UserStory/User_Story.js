@@ -4,9 +4,12 @@ import './User_Story.css';
 export default class UserStory extends React.Component {
 
 	constructor(props) {
+
 		super(props);
+
 		this.state = {
 			isMoving: false,
+			column: 'backlog',
 		};
 	}
 
@@ -21,6 +24,7 @@ export default class UserStory extends React.Component {
 	}
 
 	onClick() {
+
 		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
 			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
 			
@@ -35,6 +39,24 @@ export default class UserStory extends React.Component {
 					isMoving: false,
 				});
 			}, 3000);
+
+			switch(this.state.column) {
+				case 'backlog':
+					this.setState({
+						column: 'analysis',	
+					});
+					break;
+
+				case 'analysis':
+					this.setState({
+						column: 'development'
+					});
+
+				case 'development':
+					this.setState({
+						column: 'test'
+					});
+			}
 		}
 	}
 
@@ -64,7 +86,7 @@ export default class UserStory extends React.Component {
 	  			<div ref='test'></div>
 	  		</div>
 	  	</div>
-	  );
+	  	);
     }
 }
 

@@ -9,6 +9,9 @@ export default class Hold extends React.Component {
 	}
 
     render() {
+
+    	let cards = [];
+
     	return (
 	  	<div className='hold'>
 	  		<UserStory number="04" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />

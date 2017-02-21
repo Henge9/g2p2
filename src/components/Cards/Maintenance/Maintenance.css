@@ -42,3 +42,7 @@
   bottom: 5px;
   letter-spacing: -2px;
 }
+
+.maintenance-card > .points p {
+  font-weight: bold;
+}

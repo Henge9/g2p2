@@ -43,3 +43,7 @@
   bottom: 5px;
   letter-spacing: -2px;
 }
+
+.defects-card > .points p {
+  font-weight: bold;
+}
