@@ -6,11 +6,13 @@ import './Dice.css';
 
 
 export default class Die1 extends React.Component {
-	render() {
-        
-		console.log("hej " + this.props.rollDice1[`number`]);
 
-		var numb = this.props.rollDice1[`number`];
+	render() {
+
+        
+		console.log("hej " + this.props.rollDice1[`numberI`]);
+
+		var numb = this.props.rollDice1[`numberI`];
 		
 
 		if(numb === 1) {
@@ -47,7 +49,9 @@ export default class Die1 extends React.Component {
 
 		return (
 			<div ref='die1' className='die1' style={d1}>	
+
 			</div>
 		);
 	}
 }
+

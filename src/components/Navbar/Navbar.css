@@ -1,23 +1,33 @@
 @import '../../variables.css';
 
-nav.nav {
+.nav {
   	padding: 10px 0;
   	background-color: white;
-  	border-bottom: var(--border);
   	box-sizing: border-box;
 }
 
-nav.nav > ul > li {
+.nav > ul > li {
   	display: inline-block;
 }
 
-nav.nav > ul > li > a {
+.nav > ul > li > a {
 	transition: 0.2s;
   	padding: 10px 20px;
   	text-decoration: none;
   	color: var(--font-color);
 }
 
-nav.nav > ul > li > a:hover {
+.nav > ul > li > a:hover {
 	color: var(--hover-color);
+}
+.nav-component {
+  position: absolute;
+  position: center;
+  padding: 10px;
+  background-color: white;
+  border: var(--border);
+  box-sizing: border-box;
+  left: 0px;
+  top: 40px;
+  z-index: 1;
 }

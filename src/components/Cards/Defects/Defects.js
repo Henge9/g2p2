@@ -3,6 +3,13 @@ import React from 'react';
 
 export default class Defects extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			isMoving: false,
+		};
+	}
+
 	onMouseEnter() {
 		this.refs.card.style.border = '1px solid cyan';
 		this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
@@ -11,6 +18,24 @@ export default class Defects extends React.Component {
 	onMouseLeave() {
 		this.refs.card.style.border = '1px solid black';
 		this.refs.card.style.boxShadow = 'none';
+	}
+
+	onClick() {
+		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
+			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
+
+			this.setState({
+				isMoving: true,
+			});
+
+			let that = this;
+
+			setTimeout(function() {
+				that.setState({
+					isMoving: false,
+				});
+			}, 3000);
+		}
 	}
 
 	componentDidMount() {
@@ -23,11 +48,6 @@ export default class Defects extends React.Component {
 		insertLetters(this.props.development, devEl, 'D');
 		insertLetters(this.props.test, testEl, 'T');
 
-		// Change points font size
-		analEl.style.fontSize = (analEl.childElementCount* -1) + 20 + 'px';
-		devEl.style.fontSize = (devEl.childElementCount* -1) + 20 + 'px'
-		testEl.style.fontSize = (testEl.childElementCount* -1) + 20 + 'px'
-
 		// Randomize card position
 		var card = this.refs.card;
 		randomCardPos(card);
@@ -35,7 +55,7 @@ export default class Defects extends React.Component {
 
 	render() {
 		return (
-			<div ref='card' className='defects-card' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+			<div ref='card' className='defects-card' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} onClick={this.onClick.bind(this)}>
 				<p className='header'>D{this.props.number}</p>
 				<div className='points'>
 					<div ref='analytics'></div>

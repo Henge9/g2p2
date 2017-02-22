@@ -22,7 +22,7 @@ div.user-story {
 	transition: 
 	border-color 0.3s ease,
 	box-shadow 0.3s ease,
-	left 4s ease;
+	left 3s ease;
 }
 
 div.user-story p {
@@ -40,4 +40,9 @@ div.user-story p.header, div.user-story p.value {
 div.user-story > .points {
 	position: absolute;
   	bottom: 5px;
+  	letter-spacing: -2px;
+}
+
+div.user-story > .points p {
+	font-weight: bold;
 }
