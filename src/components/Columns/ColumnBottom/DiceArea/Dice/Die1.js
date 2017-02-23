@@ -19,7 +19,10 @@ export default class Die1 extends React.Component {
 			console.log("ETT");
 			//var d1 = { backgroundImage: "url('./DicePics/One2.png')" };
 			//var d1 = { backgroundImage: "./DicePics/One2.png" };
-			var d1 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One2.png" };
+			// var d1 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One2.png" };
+			// var d1 = {backgroundImage: "url('../Dice/DicePics/Two2.png')"};
+			//var d1 = {background: "url('../../../../../images/Two2.png')"};
+			var d1 = {background: 'red'};
 		}
 		else if(numb === 2) {
 			console.log("TVÅ");
