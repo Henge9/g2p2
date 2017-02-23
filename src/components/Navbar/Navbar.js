@@ -11,7 +11,6 @@ export default class NavBar extends React.Component {
 		super();
 		this.show = this.show.bind(this);
 		console.log(this);
-		//getInitialState
 		this.state = {
 			navBar: {
 				newGame: false, 
@@ -21,7 +20,7 @@ export default class NavBar extends React.Component {
 			},
 		};
 	}
-
+	
 	show(input){
 		const navBar = {...this.state.navBar};
 		
@@ -109,7 +108,7 @@ export default class NavBar extends React.Component {
 				</ul>
 			</nav>
 			{this.state.navBar[`newGame`] ? <NewGame /> : null}
-			{this.state.navBar[`rules`] ? <Rules /> : null}
+			{this.state.navBar[`rules`] ? <Rules navClose={(e) => this.show("rules")} /> : null}
 			{this.state.navBar[`highscore`] ? <Highscore /> : null}
 			{this.state.navBar[`about`] ? <About /> : null}
 
