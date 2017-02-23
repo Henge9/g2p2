@@ -19,30 +19,32 @@ export default class ReleasePlan extends React.Component {
 	    			break;
 
 	    		case 2:
-	    			var checked1 = 'X'
+	    			checked1 = 'X'
 	    			var checked2 = 'X'
 	    			break;
 
 	    		case 3:
-	    			var checked1 = 'X'
-	    			var checked2 = 'X'
+	    			checked1 = 'X'
+	    			checked2 = 'X'
 	    			var checked3 = 'X'
 	    			break;
 
 	    		case 4:
-	    			var checked1 = 'X'
-	    			var checked2 = 'X'
-	    			var checked3 = 'X'
+	    			checked1 = 'X'
+	    			checked2 = 'X'
+	    			checked3 = 'X'
 	    			var checked4 = 'X'
 	    			break;
 
 	    		case 5:
-	    			var checked1 = 'X'
-	    			var checked2 = 'X'
-	    			var checked3 = 'X'
-	    			var checked4 = 'X'
+	    			checked1 = 'X'
+	    			checked2 = 'X'
+	    			checked3 = 'X'
+	    			checked4 = 'X'
 	    			var checked5 = 'X'
 	    			break;
+
+	    		default:
 	    	}
     	}
 

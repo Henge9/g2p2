@@ -2,7 +2,7 @@
 
 .column {
   display: inline-block;
-  width: 19%;
+  width: 20%;
   height: 100%;
   border-right: var(--border);
   background-color: white;

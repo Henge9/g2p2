@@ -4,35 +4,20 @@ import './ColumnButtons.css';
 
 export default class ColumnButtons extends React.Component {
 
-	RollDice(min, max){
-		min = Math.ceil(1);
-  		max = Math.floor(7);
-  		let number1 = Math.floor(Math.random() * (max - min)) + min;
-  		let number2 = Math.floor(Math.random() * (max - min)) + min;
-  		let number3 = Math.floor(Math.random() * (max - min)) + min;
-  		let number4 = Math.floor(Math.random() * (max - min)) + min;
-  		let number5 = Math.floor(Math.random() * (max - min)) + min;
-  		let number6 = Math.floor(Math.random() * (max - min)) + min;
-  		
-  		console.log("tärning 1: " + number1);
-  		console.log("tärning 2: " + number2);
-  		console.log("tärning 3: " + number3);
-  		console.log("tärning 4: " + number4);
-  		console.log("tärning 5: " + number5);
-  		console.log("tärning 6: " + number6);
-  		console.log("---------");
+  roll(event) {
+    this.props.pushB(event);
+  }
 
-  		return [number1, number2, number3, number4, number5, number6];
-	}
 		
 		createX(event){
 		this.props.addX(event);
 	}
 
+
 	render() {
 		return (
 			<div className='column-buttons'>
-				<button onClick={this.RollDice} onClick={(e) => this.createX(e)}>Go!</button>
+				<button onClick={(e) => { this.roll(e); this.createX(e)}}>Go!</button>
 			</div>
 		);
 	}

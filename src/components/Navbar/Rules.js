@@ -1,23 +1,16 @@
 import './Navbar.css';
 import React from 'react';
-import asdf from'./HengesTestBum.js';
+import {rulesHeader, rulesText} from './navbarBackEnd.js';
 
-export default class Rules extends React.Component {
 
-	constructor(){
-		super();
-		this.State = {
-			rules: {}
-		};
-
-	}
-
-    render(){
-		return (
-		  	<div className="nav-component">
-		  		<h1>{console.log(asdf[`rules`])}</h1>
-		  		<p>rules</p>
-		  	</div>
-		);
-    }
+const Rules = () => {
+	return (
+	  	<div className="nav-component nav-rules">
+	  		<h1>{rulesHeader}</h1>
+	  		<div>{rulesText}</div>
+	  	</div>
+	);
+    
 }
+
+export default Rules;

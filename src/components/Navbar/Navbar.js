@@ -94,7 +94,7 @@ export default class NavBar extends React.Component {
 		   		break;
      	}
 	
-	 this.setState({navBar});
+	this.setState({navBar});
 	}
 	
 	render() {
