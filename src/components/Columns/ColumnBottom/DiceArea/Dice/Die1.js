@@ -1,7 +1,6 @@
 import React from 'react';
 import './Dice.css';
-// import ColumnBottom from '../../ColumnBottom.js';
-// import DiceArea from '../DiceArea.js';
+
 
 
 
