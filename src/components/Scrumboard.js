@@ -27,7 +27,7 @@ export default class ScrumBoard extends React.Component {
 	}
 
 	//ReleasePlanCell.js - ColumnButton.js
-	addX(){
+	addX(e){
 		const releaseplan = {...this.state.releaseplan};
 		let sprintArray = {...this.state.sprintArray};
 		let dayArray = {...this.state.dayArray};
