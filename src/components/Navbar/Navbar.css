@@ -30,10 +30,12 @@
   box-sizing: border-box;
   left: 0px;
   top: 40px;
-  z-index: 1;
+  z-index: 2;
 }
 .nav-close {
-  z-index: 2;
+  color: black;
+  float: right;
+  font-weight: bolder;
 }
 .nav-rules {
   height: 500px;
