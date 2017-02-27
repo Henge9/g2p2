@@ -22,7 +22,6 @@ export default class ScrumBoard extends React.Component {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
 			dayArray: {number: 0}, //Releaseplan.js
 			sprintArray: {number: 1}, //Releaseplan.js
-			card: {isMoving: false},
 		};
 	}
 
@@ -51,7 +50,7 @@ export default class ScrumBoard extends React.Component {
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
 				<Columns addX={this.addX} />
-				<Hold card={this.state.card} />
+				<Hold />
 				<HoldMaint />
 				<HoldDefects />
 			</div>

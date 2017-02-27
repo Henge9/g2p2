@@ -43,7 +43,7 @@ export default class UserStory extends React.Component {
 			switch(this.state.column) {
 				case 'backlog':
 					this.setState({
-						column: 'analysis',	
+						column: 'analysis'	
 					});
 					break;
 

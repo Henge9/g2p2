@@ -10,14 +10,15 @@ export default class Hold extends React.Component {
 
     render() {
 
+    	// Generate cards
     	let cards = [];
 
     	return (
 	  	<div className='hold'>
-	  		<UserStory number="04" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} card={this.props.card} />
-	  		<UserStory number="03" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} card={this.props.card} />
-	  		<UserStory number="02" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} card={this.props.card} />
-	  		<UserStory number="01" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} card={this.props.card} />
+	  		<UserStory number="04" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
+	  		<UserStory number="03" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
+	  		<UserStory number="02" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
+	  		<UserStory number="01" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
 	  	</div>
     	);
     }
