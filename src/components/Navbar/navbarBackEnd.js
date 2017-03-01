@@ -1,4 +1,8 @@
 import React from 'react';
+//NewGame
+const teamName= "Teamname";
+const game="Game";
+
 // Rules
 
 const rulesHeader = "Rules";
