@@ -10,7 +10,6 @@ export default class NavBar extends React.Component {
 	constructor(){
 		super();
 		this.show = this.show.bind(this);
-		console.log(this);
 		this.state = {
 			navBar: {
 				newGame: false, 

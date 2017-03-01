@@ -1,5 +1,6 @@
-import './Hold.css';
 import React from 'react';
+import axios from 'axios';
+import './Hold.css';
 import UserStory from './User_Story.js';
 
 export default class Hold extends React.Component {
@@ -8,10 +9,13 @@ export default class Hold extends React.Component {
 		return parseInt(Math.random() * (max - min) + min);
 	}
 
-    render() {
+	componentDidMount() {
+		axios.get('localhost:8080/g2p2/src/ajax/Card_Info.php').then(function(result) {
+			console.log(result.data);
+		});
+	}
 
-    	// Generate cards
-    	let cards = [];
+    render() {
 
     	return (
 	  	<div className='hold'>
