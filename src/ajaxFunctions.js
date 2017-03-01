@@ -1,10 +1,12 @@
-import React from 'react';
+//import React from 'react';
 
 //you have to import the ajax funktion in your module:
 //import { ajax } from '../../ajaxFunctions.js';
 
 //example for local use: ajax('GET', 'http://localhost:80/rest/tablename?column=asd')
 //you may have to install a addon in chrome to allow acces: (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en-US)
+
+// to use binero database: ajax('GET', 'http://agileboardgame.com/rest/?table=test&column=*')
 
 export function ajax(method, url){
 	var xhr = new XMLHttpRequest();
@@ -22,6 +24,7 @@ export function ajax(method, url){
       			console.log('Error: ' + xhr.status); // An error occurred during the request.
     		}
   		}
+
 	}
 }
 export function test(){
