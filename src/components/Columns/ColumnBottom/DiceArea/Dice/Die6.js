@@ -3,12 +3,20 @@ import './Dice.css';
 
 
 export default class Die6 extends React.Component {
+
+
+	onClick() {
+		this.refs.die6.style.marginLeft = '160px'; 
+		this.refs.die6.style.display = 'inlineBlock';
+	}
+
+
 	render() {
 
 		var numb = this.props.rollDice6[`numberVI`];
 		
 		if(numb === 1) {
-			var d6 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One.png" };
+			var d6 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One.png')" };
 		}
 		else if(numb === 2) {
 		 	d6 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/Two.png')" }; 	
@@ -28,7 +36,7 @@ export default class Die6 extends React.Component {
 
 
 		return (
-			<div ref='die6' className='die6' style={d6}>	
+			<div ref='die6' className='die6' style={d6} onClick={this.onClick.bind(this)}>	
 			</div>
 		);
 	}

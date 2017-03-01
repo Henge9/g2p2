@@ -3,12 +3,20 @@ import './Dice.css';
 
 
 export default class Die2 extends React.Component {
+
+
+	onClick() {
+		this.refs.die2.style.marginLeft = '160px'; 
+		this.refs.die2.style.display = 'inlineBlock';
+	}
+
+
 	render() {
         
 		var numb = this.props.rollDice2[`numberII`];
 		
 		if(numb === 1) {
-			var d2 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One2.png" };
+			var d2 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One2.png')" };
 		}
 		else if(numb === 2) {
 		 	d2 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/Two2.png')" }; 	
@@ -27,7 +35,7 @@ export default class Die2 extends React.Component {
 		}
 
 		return (
-			<div ref='die2' className='die2' style={d2}>	
+			<div ref='die2' className='die2' style={d2} onClick={this.onClick.bind(this)}>	
 			</div>
 		);
 	}
