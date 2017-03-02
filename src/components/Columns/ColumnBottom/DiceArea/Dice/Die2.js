@@ -6,8 +6,22 @@ export default class Die2 extends React.Component {
 
 
 	onClick() {
-		this.refs.die2.style.marginLeft = '160px'; 
-		this.refs.die2.style.display = 'inlineBlock';
+		var obj = this.refs.die2;
+	
+		if(obj.parentNode.id === 'group1'){
+			var group2 = document.querySelector('#group2');
+			group2.appendChild(obj);
+		}
+
+		else if(obj.parentNode.id === 'group2') {
+			var group4 = document.querySelector('#group4');
+			group4.appendChild(obj);
+		}
+
+		else if(obj.parentNode.id === 'group4') {
+			var group1 = document.querySelector('#group1');
+			group1.appendChild(obj);
+		}
 	}
 
 

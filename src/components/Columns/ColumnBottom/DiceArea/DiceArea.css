@@ -18,11 +18,12 @@
 	padding-top: 7px;
 	padding-left: 7px;
   height: 100px;
-  border: 1px solid red;
-  display: inline-block;
+  /*border: 1px solid red;*/
+  /*display: inline-block;*/
   margin: 0;
   float: left;
-  text-align:left;
+  /*text-align:left;*/
+
 }
 
 .dice-group2 {
@@ -30,10 +31,12 @@
   padding-top: 7px;
   padding-left: 7px;
   height: 100px;
-  border: 1px solid red;
-  display: inline-block;
-  text-align:left;
+  /*border: 1px solid red;*/
+  /*display: inline-block;*/
+  /*text-align:left;*/
+  margin-left: 160px;
   margin-top: 0;
+  position:absolute;
 }
 
 .dice-group3 {
@@ -41,9 +44,11 @@
   padding-top: 7px;
   padding-left: 7px;
   height: 100px;
-  border: 1px solid red;
-  display: inline-block;
-
+  /*border: 1px solid red;*/
+  /*display: inline-block;*/
+  margin-left: 320px;
+  margin-top: 0;
+  position:absolute;
 }
 
 .dice-group4 {
@@ -51,7 +56,10 @@
   padding-top: 7px;
   padding-left: 7px;
   height: 100px;
-  border: 1px solid red;
-  display: inline-block;
-
+  /*border: 1px solid red;*/
+  /*display: inline-block;*/
+  margin-left: 480px;
+  margin-top: 0;
+  position:absolute;
+ 
 }
