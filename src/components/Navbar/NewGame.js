@@ -4,7 +4,7 @@ import { ajax } from '../../ajaxFunctions.js';
 
 
 var response = '"' + ajax('GET', 'http://agileboardgame.com/rest/?table=test&column=*') + '"';
-alert(response);
+
 export default class NewGame extends React.Component {
 
 	render() {
