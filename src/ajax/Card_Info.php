@@ -1,5 +1,10 @@
 <?php 
 
+header('Access-Control-Allow-Origin: http://localhost:3000');
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Methods: GET, POST, PUT');
+header('Content-Type: application/json');
+
 // Get card values from database
 
 // Assign card values
@@ -34,13 +39,5 @@ $cards = array(
 		),
 );
 
-for ($i=0; $i < count($cards); ++$i) { 
-	echo 
-	"Card " . $i . ": " . " " .
-	$cards[$i]["number"] . " " . 
-	$cards[$i]["value"] . " " . 
-	$cards[$i]["analyt$ics"] . " " . 
-	$cards[$i]["development"] . " " . 
-	$cards[$i]["test"] . " ";
-}
+	print_r(json_encode($cards));
  ?>

@@ -26,7 +26,7 @@ export default class UserStory extends React.Component {
 	onClick() {
 
 		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
-			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
+			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 155 + 'px';
 			
 			this.setState({
 				isMoving: true,
@@ -51,11 +51,13 @@ export default class UserStory extends React.Component {
 					this.setState({
 						column: 'development'
 					});
+					break;
 
 				case 'development':
 					this.setState({
 						column: 'test'
 					});
+					break;
 			}
 		}
 	}

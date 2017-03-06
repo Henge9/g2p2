@@ -22,7 +22,7 @@ export default class Defects extends React.Component {
 
 	onClick() {
 		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
-			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 150 + 'px';
+			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 155 + 'px';
 
 			this.setState({
 				isMoving: true,
