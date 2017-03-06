@@ -110,6 +110,7 @@ export default class NavBar extends React.Component {
 			{this.state.navBar[`rules`] ? <Rules navClose={(e) => this.show("rules")} /> : null}
 			{this.state.navBar[`highscore`] ? <Highscore /> : null}
 			{this.state.navBar[`about`] ? <About /> : null}
+			
 
 			
 		</div>

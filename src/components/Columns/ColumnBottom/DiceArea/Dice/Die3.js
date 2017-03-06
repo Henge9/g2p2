@@ -3,13 +3,40 @@ import './Dice.css';
 
 
 export default class Die3 extends React.Component {
+
+
+	onClick() {
+		var obj = this.refs.die3;
+	
+		if(obj.parentNode.id === 'group1'){
+			var group3 = document.querySelector('#group3');
+			group3.appendChild(obj);
+		}
+
+		else if(obj.parentNode.id === 'group3') {
+			var group2 = document.querySelector('#group2');
+			group2.appendChild(obj);
+		}
+
+		else if(obj.parentNode.id === 'group2') {
+			var group4 = document.querySelector('#group4');
+			group4.appendChild(obj);
+		}
+
+		else if(obj.parentNode.id === 'group4') {
+			var group1 = document.querySelector('#group1');
+			group1.appendChild(obj);
+		}
+	}
+
+
 	render() {
         
 
 		var numb = this.props.rollDice3[`numberIII`];
 		
 		if(numb === 1) {
-			var d3 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One.png" };
+			var d3 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/One.png')" };
 		}
 		else if(numb === 2) {
 		 	d3 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/Two.png')" };	 	
@@ -29,7 +56,7 @@ export default class Die3 extends React.Component {
 
 	
 		return (
-			<div ref='die3' className='die3' style={d3}>	
+			<div ref='die3' className='die3' style={d3} onClick={this.onClick.bind(this)}>	
 			</div>
 		);
 	}

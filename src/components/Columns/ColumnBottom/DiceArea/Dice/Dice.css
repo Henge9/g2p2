@@ -17,21 +17,21 @@
 }
 
 .die1 {
-	background-image: url('./DicePics/One2.png');
+	background-image: url('../../../../../images/DicePics/One2.png');
 }
 .die2 {
-	background-image: url('./DicePics/Two2.png');
+	background-image: url('../../../../../images/DicePics/Two2.png');
 }
 .die3 {
-	background-image: url('./DicePics/Three.png');
+	background-image: url('../../../../../images/DicePics/Three.png');
 }
 .die4 {
-	background-image: url('./DicePics/Four.png');
+	background-image: url('../../../../../images/DicePics/Four.png');
 }
 .die5 {
-	background-image: url('./DicePics/Five.png');
+	background-image: url('../../../../../images/DicePics/Five.png');
 }
 .die6 {
-	background-image: url('./DicePics/Six.png');
+	background-image: url('../../../../../images/DicePics/Six.png');
 }
 

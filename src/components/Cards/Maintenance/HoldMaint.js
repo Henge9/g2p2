@@ -5,7 +5,7 @@ import Maintenance from './Maintenance.js';
 export default class HoldMaint extends React.Component {
 
 	random(min, max) {
-		return parseInt(Math.random() * (max - min) + min);
+		return parseInt(Math.random() * (max - min) + min, 10);
 	}
 
 	render() {

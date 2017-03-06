@@ -21,8 +21,8 @@ export default class Defects extends React.Component {
 	}
 
 	onClick() {
-		if (parseInt(this.refs.card.style.left) < 550 && this.state.isMoving == false) {
-			this.refs.card.style.left = parseInt(this.refs.card.style.left) + 155 + 'px';
+		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
+			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 155 + 'px';
 
 			this.setState({
 				isMoving: true,
@@ -71,11 +71,12 @@ function randomCardPos(card) {
 
 	var randomNumber = Math.random();
 	var top = (Math.random() * 10).toString() + 'px';
+	var left;
 
 	if (randomNumber > 0.5) {
-		var left = (randomNumber * 10).toString() + 'px';
+		left = (randomNumber * 10).toString() + 'px';
 	} else {
-		var left = (randomNumber * -10).toString() + 'px';
+		left = (randomNumber * -10).toString() + 'px';
 	}
 
 	card.style.top = top;
