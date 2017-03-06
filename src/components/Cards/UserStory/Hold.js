@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import './Hold.css';
 import UserStory from './User_Story.js';
 
@@ -10,7 +10,7 @@ export default class Hold extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get('localhost:8080/g2p2/src/ajax/Card_Info.php').then(function(result) {
+		fetch('localhost:8080/g2p2/src/ajax/Card_Info.php').then(function(result) {
 			console.log(result.data);
 		});
 	}
