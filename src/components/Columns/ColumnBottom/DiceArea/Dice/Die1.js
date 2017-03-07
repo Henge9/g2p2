@@ -7,33 +7,41 @@ import './Dice.css';
 export default class Die1 extends React.Component {
 
 
-	// moveDice(event) {
-	// 		this.refs.die1.style.marginLeft = 160; 
-	// 		console.log("Tärning 1 klickad");
-
-		
-	// 		//var d1 = { marginLeft: '160px' };
-	// 	}
-
-	onClick() {
+	
+	changePos() {
 		
 		var obj = this.refs.die1;
+		var currentPos1 = 'group1';
 	
 		if(obj.parentNode.id === 'group1'){
 			var group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
+
+			currentPos1 = 'group2';
 		}
 
 		else if(obj.parentNode.id === 'group2') {
 			var group4 = document.querySelector('#group4');
 			group4.appendChild(obj);
+			
+			currentPos1 = 'group4';
 		}
 
 		else if(obj.parentNode.id === 'group4') {
-			var group1 = document.querySelector('#group1');
-			group1.appendChild(obj);
+			group2 = document.querySelector('#group2');
+			group2.appendChild(obj);
+			
+			currentPos1 = 'group2';
 		}
+
+		return currentPos1;
+		
 	}	
+
+
+	givePos(event) {
+		this.props.getPos(event);
+	}
 
 
 	render() {
@@ -62,7 +70,7 @@ export default class Die1 extends React.Component {
 
 
 		return (
-			<div ref='die1' className='die1' style={d1} /*onClick={(e) => this.moveDice(e)}*/ onClick={this.onClick.bind(this)} >	
+			<div ref='die1' className='die1' style={d1} onClick={(e) => {this.changePos(e); this.givePos(e)}}>	
 
 			</div>  
 		);

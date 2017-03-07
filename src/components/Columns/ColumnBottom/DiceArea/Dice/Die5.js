@@ -5,30 +5,42 @@ import './Dice.css';
 export default class Die5 extends React.Component {
 
 
-	onClick() {
+	changePos() {
 		var obj = this.refs.die5;
+		var currentPos5 = 'group1';
 	
 		if(obj.parentNode.id === 'group1'){
-			var group3 = document.querySelector('#group3');
-			group3.appendChild(obj);
-		}
-
-		else if(obj.parentNode.id === 'group3') {
 			var group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
+
+			currentPos5 = 'group2';
 		}
 
 		else if(obj.parentNode.id === 'group2') {
+			var group3 = document.querySelector('#group3');
+			group3.appendChild(obj);
+
+			currentPos5 = 'group3';
+		}
+
+		else if(obj.parentNode.id === 'group3') {
 			var group4 = document.querySelector('#group4');
 			group4.appendChild(obj);
+
+			currentPos5 = 'group4';
 		}
 
 		else if(obj.parentNode.id === 'group4') {
-			var group1 = document.querySelector('#group1');
-			group1.appendChild(obj);
+			group2 = document.querySelector('#group2');
+			group2.appendChild(obj);
+
+			currentPos5 = 'group2';
 		}
 	}
 
+	givePos(event) {
+		this.props.getPos(event);
+	}
 
 	render() {
 
@@ -55,7 +67,7 @@ export default class Die5 extends React.Component {
 
 	
 		return (
-			<div ref='die5' className='die5' style={d5} onClick={this.onClick.bind(this)}>	
+			<div ref='die5' className='die5' style={d5} onClick={(e) => {this.changePos(e); this.givePos(e)}}>	
 			</div>
 		);
 	}
