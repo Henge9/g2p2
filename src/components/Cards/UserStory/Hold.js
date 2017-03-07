@@ -3,27 +3,28 @@ import axios from 'axios';
 import './Hold.css';
 import UserStory from './User_Story.js';
 
+var cards;
+
 export default class Hold extends React.Component {
 
-	random(min, max) {
-		return parseInt(Math.random() * (max - min) + min);
-	}
+	generateCards() {
+		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php').then(function(result) {
 
-	componentDidMount() {
-		axios.get('localhost:8080/g2p2/src/ajax/Card_Info.php').then(function(result) {
-			console.log(result.data);
+			// Ajax code
+			cards = result.data;
+
+			for (var i = 0; i < cards.length; i++) {
+				console.log(cards[i]);
+			}
 		});
 	}
 
     render() {
 
     	return (
-	  	<div className='hold'>
-	  		<UserStory number="04" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
-	  		<UserStory number="03" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
-	  		<UserStory number="02" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
-	  		<UserStory number="01" value={this.random(50, 500)} analytics={this.random(1, 7)} development={this.random(1, 7)} test={this.random(1, 7)} />
-	  	</div>
+    	<div className='hold'>
+    		{this.generateCards()}
+    	</div>
     	);
     }
 }

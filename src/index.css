@@ -10,6 +10,10 @@
 }
 
 body {
+	background:url('images/wood2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
 	width: 100%;
 	height: 100%;
 	margin: 0;
