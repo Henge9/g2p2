@@ -18,7 +18,7 @@ if ($mysqli->connect_errno) {
 $query = "
 SELECT *
 FROM us_cards
-ORDER BY number
+ORDER BY 'number'
 ASC";
 
 if ($result = $mysqli->query($query)) {
