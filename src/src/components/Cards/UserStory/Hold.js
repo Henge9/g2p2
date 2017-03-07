@@ -13,12 +13,7 @@ export default class Hold extends React.Component {
 			// Ajax code
 			cards = result.data;
 
-			// Create JSX elements
-
-			console.log("Kort från databasen:");
 			console.log(cards);
-
-			// Return JSX elements
 		});
 	}
 

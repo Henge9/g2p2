@@ -1,0 +1,27 @@
+@import '../../variables.css';
+
+.release-plan {
+  position: relative;
+  display:table;
+  width: 100%;
+  height: 46px;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  float: right;
+  background-color: white;
+}
+
+.release-plan > h2 {
+  font-size: 2vw;
+}
+
+.release-plan-row {
+   display:table-row;
+}
+
+.release-plan-cell {
+  display:table-cell;
+  width: 12.5%;
+  background-color: #f3f3f3;
+  border: 1px solid black;
+}

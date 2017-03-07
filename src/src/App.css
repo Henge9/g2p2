@@ -1,0 +1,13 @@
+@import './variables.css';
+
+.app {
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	transform: translate(-50%, 25%);
+	width: 800px;
+  	height: 600px;
+	box-sizing: border-box;
+	margin: auto;
+  	border: 3px solid black;
+}

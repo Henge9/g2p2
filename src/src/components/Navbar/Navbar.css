@@ -1,0 +1,43 @@
+@import '../../variables.css';
+
+.nav {
+  	padding: 10px 0;
+  	background-color: white;
+  	box-sizing: border-box;
+}
+
+.nav > ul > li {
+  	display: inline-block;
+}
+
+.nav > ul > li > a {
+	transition: 0.2s;
+  	padding: 10px 20px;
+  	text-decoration: none;
+  	color: var(--font-color);
+}
+
+.nav > ul > li > a:hover {
+	color: var(--hover-color);
+}
+.nav-component {
+  position: absolute;
+  position: center;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: var(--border);
+  box-sizing: border-box;
+  left: 0px;
+  top: 40px;
+  z-index: 2;
+}
+.nav-close {
+  color: black;
+  float: right;
+  font-weight: bolder;
+}
+.nav-rules {
+  height: 500px;
+  overflow-y: scroll;
+}

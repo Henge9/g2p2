@@ -1,0 +1,10 @@
+div.members {
+  height: 200px;
+  width: 30%;
+  border: 2px solid black;
+  margin-left: 5%;
+  box-sizing: border-box;
+  float: left;
+  background-color: white;
+  padding: 10px;
+}
