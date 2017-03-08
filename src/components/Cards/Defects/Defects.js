@@ -35,6 +35,37 @@ export default class Defects extends React.Component {
 					isMoving: false,
 				});
 			}, 3000);
+
+			switch(this.state.column) {
+				case 'backlog':
+					this.setState({
+						column: 'analysis'	
+					});
+					break;
+
+				case 'analysis':
+					this.setState({
+						column: 'development'
+					});
+					break;
+
+				case 'development':
+					this.setState({
+						column: 'test'
+					});
+					break;
+
+				case 'test':
+					this.setState({
+						column: 'done'
+					});
+					break;
+
+				default:
+					this.setState({
+						column: 'backlog'
+					});
+			}
 		}
 	}
 

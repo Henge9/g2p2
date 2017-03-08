@@ -20,7 +20,7 @@ export default class Hold extends React.Component {
 		
 		self = this;
 
-		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php').then(function(result) {
+		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php?card=userstory').then(function(result) {
 
 			let jsx = [];
 

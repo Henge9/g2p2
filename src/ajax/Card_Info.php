@@ -15,26 +15,66 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-$query = "
-SELECT *
-FROM us_cards
-ORDER BY 'number'
-ASC";
+switch ($_GET["card"]) {
+	case 'userstory':
+		$query = "
+		SELECT *
+		FROM us_cards
+		ORDER BY 'number'
+		ASC";
+		break;
+
+	case 'maintenance':
+		$query = "
+		SELECT *
+		FROM m_cards
+		ORDER BY 'number'
+		ASC";
+		break;
+
+	case 'defect':
+		$query = "
+		SELECT *
+		FROM d_cards
+		ORDER BY 'number'
+		ASC";
+		break;
+	
+	default:
+		# code...
+		break;
+}
 
 if ($result = $mysqli->query($query)) {
 
-    /* fetch associative array */
-    while ($row = $result->fetch_assoc()) {
-        $card = array(
-		"number" => $row["number"],
-		"value" => $row["value"],
-		"analytics" => $row["analytics"],
-		"development" => $row["development"],
-		"test" => $row["test"]
-		);
+	switch ($_GET['card']) {
+		case 'userstory':
+		    while ($row = $result->fetch_assoc()) {
+		        $card = array(
+				"number" => $row["number"],
+				"value" => $row["value"],
+				"analytics" => $row["analytics"],
+				"development" => $row["development"],
+				"test" => $row["test"]
+				);
 
-		array_push($cards, $card);
-    }
+				array_push($cards, $card);
+		    }
+			break;
+		
+		default:
+		    while ($row = $result->fetch_assoc()) {
+		        $card = array(
+				"number" => $row["number"],
+				"analytics" => $row["analytics"],
+				"development" => $row["development"],
+				"test" => $row["test"]
+				);
+
+				array_push($cards, $card);
+		    }
+			break;
+	}
 
     $result->free(); // free result set
 }
