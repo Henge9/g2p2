@@ -58,6 +58,13 @@ export default class UserStory extends React.Component {
 						column: 'test'
 					});
 					break;
+
+				case 'test':
+					this.setState({
+						column: 'done'
+					});
+					break;
+
 				default:
 					this.setState({
 						column: 'backlog'
