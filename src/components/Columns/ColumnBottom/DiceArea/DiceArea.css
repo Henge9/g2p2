@@ -16,6 +16,7 @@
   box-sizing: border-box;
   box-shadow: var(--inset-shadow);
   border-radius: 2px;
+  opacity: 0.9;
 }
 
 .dice-group {
@@ -26,6 +27,7 @@
   margin: 0;
   float: left;
   /*text-align:left;*/
+  opacity: 0.9;
 
 }
 

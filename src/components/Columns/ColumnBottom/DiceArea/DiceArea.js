@@ -7,34 +7,19 @@ import Die4 from './Dice/Die4.js';
 import Die5 from './Dice/Die5.js';
 import Die6 from './Dice/Die6.js';
 
-
 export default class DiceArea extends React.Component {
 
 
 	
-
-	
-
-
-	
-
 	render() {
 
-
 		var die1numb = this.props.rollDice1[`numberI`];
-		console.log("Det här!!! " + die1numb);
 		var die2numb = this.props.rollDice2[`numberII`];
-		console.log("Det här!!! " + die2numb);
 		var die3numb = this.props.rollDice3[`numberIII`];
-		console.log("Det här!!! " + die3numb);
 		var die4numb = this.props.rollDice4[`numberIV`];
-		console.log("Det här!!! " + die4numb);
 		var die5numb = this.props.rollDice5[`numberV`];
-		console.log("Det här!!! " + die5numb);
 		var die6numb = this.props.rollDice6[`numberVI`];
-		console.log("Det här!!! " + die6numb);
 
-	
 
 
 		return (
@@ -50,7 +35,6 @@ export default class DiceArea extends React.Component {
 				<div className="dice-group2" id="group2"></div>
 			 	<div className="dice-group3" id="group3"></div>	
 				<div className="dice-group4" id="group4"></div>	
-			 	
 			</div>
 		);
 	}
