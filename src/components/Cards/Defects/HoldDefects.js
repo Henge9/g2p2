@@ -1,18 +1,51 @@
-import './HoldDefects.css';
 import React from 'react';
+import axios from 'axios';
+import './HoldDefects.css';
 import Defects from './Defects.js';
 
+var card;
+var cards = [];
+
 export default class HoldDefects extends React.Component {
+
+	constructor() {
+		super();
+		this.state = {
+			jsx: [],
+		}
+		this.componentWillMount = this.componentWillMount.bind(this);
+	}
+
+	componentWillMount() {
+		
+		var self3 = this;
+
+		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php?card=defect').then(function(result) {
+
+			let jsx = [];
+
+			// Ajax code
+			cards = result.data;
+
+			// Create JSX elements
+			for (var i = 0; i < cards.length; i++) {
+
+				card = <Defects number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
+
+				jsx = self3.state.jsx;
+				jsx.push(card);
+
+				self3.setState({
+					jsx: jsx
+				});
+			}
+		});
+	}
+
 	render() {
 		return(
 			<div className='holdDef'>
-				<Defects number="07" value="0" analytics="1" development="6" test="3" />
-				<Defects number="06" value="0" analytics="5" development="7" test="3" />
-				<Defects number="05" value="0" analytics="7" development="5" test="3" />
-				<Defects number="04" value="0" analytics="5" development="8" test="6" />
-				<Defects number="03" value="0" analytics="2" development="7" test="5" />
-				<Defects number="02" value="0" analytics="3" development="4" test="7" />
-	  			<Defects number="01" value="0" analytics="1" development="6" test="4" />
+				{this.state.jsx}
 	  		</div>
 		);
 	}

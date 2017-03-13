@@ -9,23 +9,8 @@ import Die6 from './Dice/Die6.js';
 
 export default class DiceArea extends React.Component {
 
-	constructor() {
-		super();
-		this.getPos = this.getPos.bind(this);
-		/*this.state = {
-			currentPos1: Die1.parentNode.id 
-		}*/
-	}
 
-	getPos() {
-
-			console.log("Funkar detta?");
-			//console.log("buhu " + currentPos1);
-			console.log("buhu " + Die1.parentNode.id);
-			//console.log("buhu2 " + Die2.parentNode.id);
-			//console.log("buhu3 " + Die3.parentNode.id);
-		}
-
+	
 	render() {
 
 		var die1numb = this.props.rollDice1[`numberI`];
@@ -35,10 +20,12 @@ export default class DiceArea extends React.Component {
 		var die5numb = this.props.rollDice5[`numberV`];
 		var die6numb = this.props.rollDice6[`numberVI`];
 
+
+
 		return (
-			<div className='dice-area' /*getPos={this.getPos}*/>		
+			<div className='dice-area' >		
 				<div className="dice-group" id="group1">
-					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} getPos={this.getPos} />
+					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} getPos={this.getPos} changePos1={this.changePos1}/>
 					<Die3 pushB={this.props.pushB} rollDice3={this.props.rollDice3} getPos={this.getPos} />
 					<Die5 pushB={this.props.pushB} rollDice5={this.props.rollDice5} getPos={this.getPos} />
 					<Die2 pushB={this.props.pushB} rollDice2={this.props.rollDice2} getPos={this.getPos} />

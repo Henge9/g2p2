@@ -20,8 +20,17 @@
 }
 
 .release-plan-cell {
-  display:table-cell;
-  width: 12.5%;
-  background-color: #f3f3f3;
-  border: 1px solid black;
+  display: table-cell;
+  border: 2px solid;
+  border-color: #00ACE7;
+  width: 10%;
+  height: 100%;
+  margin: auto;
+  opacity: 0.8;
+}
+
+.release-plan-cell-sprint-money {
+  background-color: #00ACE7;
+  color: white;
+  font-weight: bold;
 }

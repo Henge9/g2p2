@@ -9,7 +9,7 @@ export default class ReleasePlan extends React.Component {
 
     render(){
 
-    	const sprintNumber = this.props.sprintArray[`number`];
+    	const sprintNumber = "Sprint " + this.props.sprintArray[`number`];
     	const dayArray = this.props.dayArray[`number`];
 
     	if(this.props.releaseplan) {
@@ -57,7 +57,6 @@ export default class ReleasePlan extends React.Component {
 		  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} content={checked3} />
 		  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} content={checked4} />
 		  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} content={checked5} />
-		  			<ReleasePlanCellRetrospective />
 		  			<ReleasePlanCellMoney />
 		  		</div>
 		  	</div>
