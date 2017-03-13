@@ -52,10 +52,10 @@ if ($result = $mysqli->query($query)) {
 		    while ($row = $result->fetch_assoc()) {
 		        $card = array(
 				"number" => $row["number"],
-				"value" => $row["value"],
-				"analytics" => $row["analytics"],
-				"development" => $row["development"],
-				"test" => $row["test"]
+				"value" => (int)$row["value"],
+				"analytics" => (int)$row["analytics"],
+				"development" => (int)$row["development"],
+				"test" => (int)$row["test"]
 				);
 
 				array_push($cards, $card);
@@ -66,9 +66,9 @@ if ($result = $mysqli->query($query)) {
 		    while ($row = $result->fetch_assoc()) {
 		        $card = array(
 				"number" => $row["number"],
-				"analytics" => $row["analytics"],
-				"development" => $row["development"],
-				"test" => $row["test"]
+				"analytics" => (int)$row["analytics"],
+				"development" => (int)$row["development"],
+				"test" => (int)$row["test"]
 				);
 
 				array_push($cards, $card);

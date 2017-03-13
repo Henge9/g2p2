@@ -33,7 +33,7 @@ export default class HoldDefects extends React.Component {
 				card = <Defects number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
 
 				jsx = self3.state.jsx;
-				jsx.push(card);
+				jsx.unshift(card);
 
 				self3.setState({
 					jsx: jsx

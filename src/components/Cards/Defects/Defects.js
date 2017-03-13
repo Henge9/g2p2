@@ -7,6 +7,7 @@ export default class Defects extends React.Component {
 		super(props);
 		this.state = {
 			isMoving: false,
+			column: 'backlog'
 		};
 	}
 
@@ -22,7 +23,7 @@ export default class Defects extends React.Component {
 
 	onClick() {
 		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
-			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 155 + 'px';
+			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
 
 			this.setState({
 				isMoving: true,
@@ -34,31 +35,45 @@ export default class Defects extends React.Component {
 				that.setState({
 					isMoving: false,
 				});
-			}, 3000);
+			}, 2000);
 
 			switch(this.state.column) {
 				case 'backlog':
 					this.setState({
 						column: 'analysis'	
 					});
+					this.refs.analytics.style.color = "yellow";
+					this.refs.analytics.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 					break;
 
 				case 'analysis':
 					this.setState({
 						column: 'development'
 					});
+					this.refs.analytics.style.color = "black";
+					this.refs.analytics.style.textShadow = "none";
+
+					this.refs.development.style.color = "lightblue";
+					this.refs.development.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 					break;
 
 				case 'development':
 					this.setState({
 						column: 'test'
 					});
+					this.refs.development.style.color = "black";
+					this.refs.development.style.textShadow = "none";
+
+					this.refs.test.style.color = "yellow";
+					this.refs.test.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 					break;
 
 				case 'test':
 					this.setState({
 						column: 'done'
 					});
+					this.refs.test.style.color = "black";
+					this.refs.test.style.textShadow = "none";
 					break;
 
 				default:

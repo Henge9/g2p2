@@ -8,6 +8,7 @@
 }
 
 .die1, .die2, .die3, .die4, .die5, .die6 {
+	cursor: pointer;
 	background-size: 40px;
 	width: 39px;
 	height: 39px;
