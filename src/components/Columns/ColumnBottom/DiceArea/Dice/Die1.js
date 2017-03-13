@@ -1,15 +1,12 @@
 import React from 'react';
 import './Dice.css';
 
-
-
-
 export default class Die1 extends React.Component {
 
+	changePosition(){
+	}
 
-	
 	changePos() {
-		
 		var obj = this.refs.die1;
 		var currentPos1 = 'group1';
 		console.log(obj);
@@ -35,18 +32,12 @@ export default class Die1 extends React.Component {
 			currentPos1 = 'group2';
 		}
 
-	
-
 		console.log("1: " + currentPos1);
-
-
+		return currentPos1;
 	}	
 
-
-
-
 	render() {
-
+		this.props.dice1Position
 
 		var numb = this.props.rollDice1[`numberI`];
 		
@@ -69,14 +60,9 @@ export default class Die1 extends React.Component {
 			d1 = { backgroundImage: "url('http://agnetaaxelsson.se/dice/Six2.png')" };
 		}
 
-
 		return (
-
-			<div ref='die1' className='die1' style={d1} onClick={(e) => {this.changePos(e)} >	
-
-
+			<div ref='die1' className='die1' style={d1} onClick={(e) => {this.props.dicePositions(e); this.changePos(e)}} >	
 			</div>  
 		);
 	}
 }
-

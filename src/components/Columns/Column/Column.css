@@ -30,7 +30,7 @@
 }
 
 #Cards .container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #FF6200;
 }
 
 #Backlog .container {
@@ -38,7 +38,7 @@
 }
 
 #Analysis .container {
-  background-color: rgba(255, 255, 0, 0.9);
+  background-color: #FF6200;
 }
 
 #Development .container {
@@ -47,7 +47,8 @@
 }
 
 #Testing .container {
-  background-color: rgba(255, 255, 0, 0.9);
+  background-color: #FF6200;
+  opacity: 0.85;
 }
 
 #Done .container {

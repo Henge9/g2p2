@@ -20,7 +20,7 @@ export default class ColumnBottom extends React.Component {
 	}
 
 	pushB(){
-		var rollDice1 = {...this.state.rollDice1}; 
+		var rollDice1 = {...this.state.rollDice1};
 		var rollDice2 = {...this.state.rollDice2};  
 		var rollDice3 = {...this.state.rollDice3};  
 		var rollDice4 = {...this.state.rollDice4};  
