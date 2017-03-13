@@ -13,9 +13,10 @@ export default class NewGame extends React.Component {
 	getNewGame() {
 		const newGame = {...this.state.newGame}
 		console.log(newGame);
-		axios.get('http://agileboardgame.com/rest?table=test&column=*').then(function(result) {
-			newGame[`blaj`] = result;
-			console.log(result);
+		axios.get('http://localhost/rest/?/test').then(function(result) {
+			let array = result.data;
+			newGame[`blaj`] = array[1];
+			console.log(array[1]);
 		});
 
 	 	//newGame[`blaj`] = 'ssdf';
