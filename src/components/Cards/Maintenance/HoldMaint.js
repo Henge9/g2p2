@@ -20,7 +20,7 @@ export default class HoldMaint extends React.Component {
 		
 		var self2 = this;
 
-		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php?card=maintenance').then(function(result) {
+		axios.get('http://agileboardgame.com/rest/?/m_cards').then(function(result) {
 
 			let jsx = [];
 

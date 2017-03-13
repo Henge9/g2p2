@@ -6,17 +6,32 @@ import React from 'react';
 // Rules
 
 const rulesHeader = "Rules";
-const rulesText = <div><p>Welcome to the agile board game – rules section. This document describes the rules for playing this game, with the goal to learn as much as possible about how to work agile in teams and of course, to earn as much money as possible. Just as in real life, moving the cards on the Scrum board from left to right is the way to go. One sprint equals five days. After each sprint all user stories that are in done column are released, which means team get paid. The user stories are then removed from Done column and a new sprint starts.</p><br />
-<p>Each team consists of:<br />
+const rulesText = <div>
+<p>Welcome to the agile board game – rules section. This document 
+describes the rules for playing this game, with the goal to learn 
+as much as possible about how to work agile in teams and of 
+course, to earn as much money as possible. Just as in real life, 
+moving the cards on the Scrum board from left to right is the way 
+to go. One sprint equals five days. After each sprint all user 
+stories that are in done column are released, which means team 
+get paid. The user stories are then removed from Done column and 
+a new sprint starts.<br />
+Each team consists of:<br />
 1 Analyst = 1 dice/day<br />
 4 developers = 4 dice/day<br />
 1 tester = 1 dice/day<br />
 
 Note: <br />
-It is allowed to re-assign people between roles, for example assign developers to Analyst work, if that is decided when the day starts. The Analyst can do Test work and vice versa, but neither Test nor Analyst can do development work. <br />
+It is allowed to re-assign people between roles, for example 
+assign developers to Analyst work, if that is decided when the 
+day starts. The Analyst can do Test work and vice versa, but 
+neither Test nor Analyst can do development work. <br />
 Each team member is one roll of dice for each day. <br />
-Team members cannot start work if there is nothing in the corresponding column, so the day is wasted for that team member if there is nothing to do. <br />
-Team members can only work on stories that are in their respective column when the day starts. 
+Team members cannot start work if there is nothing in the 
+corresponding column, so the day is wasted for that team member
+ if there is nothing to do. <br />
+Team members can only work on stories that are in their 
+respective column when the day starts. 
 Scrum board: <br />
 
 <br /><br />
@@ -24,23 +39,38 @@ Scrum board: <br />
 
 
 Types of stories: <br />
-Stories are what moves from left to right on the Scrum board. There are three types of stories: <br />
+Stories are what moves from left to right on the Scrum board. 
+There are three types of stories: <br />
 User stories (US)<br />
 Defects (D)<br />
 Maintenance tasks (M)<br />
 A = Analysis task<br />
 D = Development<br />
 T = Testing<br />
-$ = the amount of money received at release, if US is completed. Defect and Maintenance tasks usually do not include any money. <br />
-The team can choose whether or not to spend time on Defects or Maintenance tasks in the beginning of each sprint. When the die is cast, cross over one point for each number on the die on each of the stories. <br />
+$ = the amount of money received at release, if US is completed. 
+Defect and Maintenance tasks usually do not include any money. <br />
+The team can choose whether or not to spend time on Defects or 
+Maintenance tasks in the beginning of each sprint. When the die 
+is cast, cross over one point for each number on the die on each 
+of the stories. <br />
 <br />
 Cards:<br />
-There are two types of cards; Action cards and multiple choice cards. When to draw a card is determined in the Release plan (see below). The card is drawn in the beginning of the day and read out loud by Scrum Master. <br />
+There are two types of cards; Action cards and multiple choice 
+cards. When to draw a card is determined in the Release plan (see 
+below). The card is drawn in the beginning of the day and read 
+out loud by Scrum Master. <br />
 Action cards: <br />
-Each action card is tied to a specific time in sprint. The action cards all have an impact on the current sprint for a limited duration of time. Each card that has an impact on sprint is placed over the Scrum board during the impact period. <br />
+Each action card is tied to a specific time in sprint. The action 
+cards all have an impact on the current sprint for a limited 
+duration of time. Each card that has an impact on sprint is 
+placed over the Scrum board during the impact period. <br />
 <br />
 Multiple choice cards:<br />
-The multiple choice cards provide some additional spice into the sprints. Each option has the possibility to provide the team with certain consequences, for a limited time. The consequences can both have negative and positive impact. Team has to agree on an option together.  <br />
+The multiple choice cards provide some additional spice into the 
+sprints. Each option has the possibility to provide the team with 
+certain consequences, for a limited time. The consequences can 
+both have negative and positive impact. Team has to agree on an 
+option together.  <br />
 <br />
 
 Retrospective:<br />

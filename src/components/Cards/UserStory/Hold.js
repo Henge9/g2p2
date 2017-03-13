@@ -59,13 +59,13 @@ export default class Hold extends React.Component {
 // =======
 		self = this;
 
-		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php?card=userstory').then(function(result) {
+		axios.get('http://agileboardgame.com/rest/?/us_cards').then(function(result) {
 
 			let jsx = [];
 
 			// Ajax code
 			cards = result.data;
-
+			console.log(cards);
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
