@@ -22,6 +22,11 @@ export default class Hold extends React.Component {
 
 	updateCard(column, points, analytics, development, test) {
 
+		points = parseInt(points);
+		analytics = parseInt(analytics);
+		development = parseInt(development);
+		test = parseInt(test);
+
 		switch(column) {
 				case 'analysis':
 					this.setState({
@@ -60,7 +65,7 @@ export default class Hold extends React.Component {
 
 			// Ajax code
 			cards = result.data;
-			console.log(cards);
+
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 

@@ -10,17 +10,24 @@ export default class HoldMaint extends React.Component {
 
 	constructor() {
 		super();
+
 		this.state = {
 			jsx: [],
 			analytics: 0,
 			development: 0,
 			test: 0
 		}
+
 		this.componentWillMount = this.componentWillMount.bind(this);
 		this.updateCard = this.updateCard.bind(this);
 	}
 
 	updateCard(column, points, analytics, development, test) {
+
+		points = parseInt(points);
+		analytics = parseInt(analytics);
+		development = parseInt(development);
+		test = parseInt(test);
 
 		switch(column) {
 				case 'analysis':
@@ -51,7 +58,7 @@ export default class HoldMaint extends React.Component {
 	}
 
 	componentWillMount() {
-		
+
 		var self2 = this;
 
 		axios.get('http://agileboardgame.com/rest/?/m_cards').then(function(result) {
@@ -64,7 +71,7 @@ export default class HoldMaint extends React.Component {
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
-				card = <Maintenance updateCard={self.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
+				card = <Maintenance updateCard={self2.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
 
 				jsx = self2.state.jsx;
 				jsx.unshift(card);

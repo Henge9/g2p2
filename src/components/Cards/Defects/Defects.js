@@ -4,10 +4,13 @@ import React from 'react';
 export default class Defects extends React.Component {
 
 	constructor(props) {
+
 		super(props);
+
 		this.state = {
 			isMoving: false,
-			column: 'backlog'
+			column: 'backlog',
+			points: 0
 		};
 	}
 
@@ -22,6 +25,8 @@ export default class Defects extends React.Component {
 	}
 
 	onClick() {
+
+		/* Move card */	
 		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
 			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
 
@@ -40,16 +45,20 @@ export default class Defects extends React.Component {
 			switch(this.state.column) {
 				case 'backlog':
 					this.setState({
-						column: 'analysis'	
-					});
+						column: 'analysis',
+						points: this.props.analytics
+					}, this.route);
+
 					this.refs.analytics.style.color = "yellow";
 					this.refs.analytics.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 					break;
 
 				case 'analysis':
 					this.setState({
-						column: 'development'
-					});
+						column: 'development',
+						points: this.props.development
+					}, this.route);
+
 					this.refs.analytics.style.color = "black";
 					this.refs.analytics.style.textShadow = "none";
 
@@ -59,8 +68,10 @@ export default class Defects extends React.Component {
 
 				case 'development':
 					this.setState({
-						column: 'test'
-					});
+						column: 'test',
+						points: this.props.test
+					}, this.route);
+
 					this.refs.development.style.color = "black";
 					this.refs.development.style.textShadow = "none";
 
@@ -70,8 +81,10 @@ export default class Defects extends React.Component {
 
 				case 'test':
 					this.setState({
-						column: 'done'
-					});
+						column: 'done',
+						points: null
+					}, this.route);
+
 					this.refs.test.style.color = "black";
 					this.refs.test.style.textShadow = "none";
 					break;
@@ -79,20 +92,21 @@ export default class Defects extends React.Component {
 				default:
 					this.setState({
 						column: 'backlog'
-					});
+					}, this.route);
 			}
 		}
 	}
 
+	route() {
+		this.props.updateCard(this.state.column, this.state.points, this.props.analytics, this.props.development, this.props.test);
+	}
+
 	componentDidMount() {
-		let analEl = this.refs.analytics;
-		let devEl = this.refs.development;
-		let testEl = this.refs.test;
 
 		// Insert points
-		insertLetters(this.props.analytics, analEl, 'A');
-		insertLetters(this.props.development, devEl, 'D');
-		insertLetters(this.props.test, testEl, 'T');
+		insertLetters(this.props.analytics, this.refs.analytics, 'A');
+		insertLetters(this.props.development, this.refs.development, 'D');
+		insertLetters(this.props.test, this.refs.test, 'T');
 
 		// Randomize card position
 		var card = this.refs.card;
