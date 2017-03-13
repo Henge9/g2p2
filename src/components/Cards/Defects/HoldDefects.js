@@ -20,7 +20,7 @@ export default class HoldDefects extends React.Component {
 		
 		var self3 = this;
 
-		axios.get('http://localhost:8080/g2p2/src/ajax/Card_Info.php?card=defect').then(function(result) {
+		axios.get('http://agileboardgame.com/rest/?/d_cards').then(function(result) {
 
 			let jsx = [];
 
