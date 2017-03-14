@@ -38,9 +38,9 @@ export default class Die4 extends React.Component {
 		}
 	}
 
-	givePos(event) {
-		this.props.getPos(event);
-	}
+	// givePos(event) {
+	// 	this.props.getPos(event);
+	// }
 
 	render() {
 
@@ -66,7 +66,7 @@ export default class Die4 extends React.Component {
 		}
 
 		return (
-			<div ref='die4' className='die4' style={d4} onClick={(e) => {this.changePos(e); this.givePos(e)}}>	
+			<div ref='die4' className='die4' style={d4} onClick={(e) => {this.props.dice4Positions(e); this.changePos(e); this.givePos(e)}}>	
 			</div>
 		);
 	}
