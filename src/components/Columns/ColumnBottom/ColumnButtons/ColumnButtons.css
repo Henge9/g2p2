@@ -6,12 +6,20 @@
 }
 
 .column-buttons > button {
-	background-color: red;
+	background-color: #FF2800;
 	color: white;
 	font-size: 1.3em;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
 	cursor: pointer;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
 }
 
+.column-buttons > button:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}

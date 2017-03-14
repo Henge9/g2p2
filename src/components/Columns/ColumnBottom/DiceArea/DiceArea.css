@@ -1,10 +1,10 @@
 @import '../../../../variables.css';
 
 .dice-area{
-  background-image: url('../../../../images/TEL_h_pos_3D_4cp_200mm.jpg');
+  /*background-image: url('../../../../images/TEL_h_pos_3D_4cp_200mm.jpg');
   background-size: 34%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
 
   border-top: var(--border);
   display: inline-block;

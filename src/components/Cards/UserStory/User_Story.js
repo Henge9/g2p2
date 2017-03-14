@@ -16,12 +16,13 @@ export default class UserStory extends React.Component {
 	}
 
 	onMouseEnter() {
-		this.refs.card.style.border = '1px solid cyan';
-		this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
+		//this.refs.card.style.border = '1px solid cyan';
+		// this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
+		this.refs.card.style.boxShadow = '0px 0px 1px 1px rgba(0, 0, 0, 0.7)';
 	}
 
 	onMouseLeave() {
-		this.refs.card.style.border = '1px solid black';
+		//this.refs.card.style.border = '1px solid black';
 		this.refs.card.style.boxShadow = 'none';
 	}
 

@@ -11,9 +11,9 @@
 
 body {
 	background: #00ACE7;
-	background: -webkit-radial-gradient(#00ACE7, white); /* Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(#00ACE7, white); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(#00ACE7, white); /* For Firefox 3.6 to 15 */
+	background: -webkit-radial-gradient(#00ACE7, white); 
+    background: -o-radial-gradient(#00ACE7, white); 
+    background: -moz-radial-gradient(#00ACE7, white); 
     background: radial-gradient(#00ACE7, white); /* Standard syntax (must be last) */
 
 
@@ -26,6 +26,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	/*font-family: sans-serif;*/
+	font-family: 'Amatic SC', sans-serif;
 	text-align: center;
 }

@@ -71,6 +71,8 @@ export default class Hold extends React.Component {
 
 				card = <UserStory updateCard={self.updateCard} number={cards[i].number} value={cards[i].value} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
 
+				var totalSum =+ cards[i].value
+
 				jsx = self.state.jsx;
 				jsx.unshift(card);
 
@@ -78,7 +80,7 @@ export default class Hold extends React.Component {
 					jsx: jsx
 				});
 			}
-
+			
 			console.log(cards);
 		});
 	}

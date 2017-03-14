@@ -5,7 +5,6 @@ import ColumnButtons from './ColumnButtons/ColumnButtons.js';
 
 export default class ColumnBottom extends React.Component {
 
-	
 	constructor() {
 		super();
 		this.pushB = this.pushB.bind(this);

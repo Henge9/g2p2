@@ -25,7 +25,7 @@
 }
 
 .column > .container {
-  /*box-shadow: var(--inset-shadow);*/
+  box-shadow: var(--inset-shadow);
   height: 90%;
 }
 
@@ -34,23 +34,22 @@
 }
 
 #Backlog .container {
-  background-color: rgba(255, 255, 255, 0.9);
+  /*background-color: #37c4f1;*/
+  background-color: #03A7DE;
 }
 
 #Analysis .container {
-  background-color: #FF6200;
+  background-color: #0EB4EB;
 }
 
 #Development .container {
-  background-color: #37c4f1;
-  opacity: 0.8;
+  background-color: #37C3F1;
 }
 
 #Testing .container {
-  background-color: #FF6200;
-  opacity: 0.85;
+  background-color: #5FCFF4;
 }
 
 #Done .container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #8FDDF7;
 }

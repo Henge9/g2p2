@@ -22,15 +22,21 @@
 .release-plan-cell {
   display: table-cell;
   border: 2px solid;
+  /*border-color: #37c4f1;*/
+
   border-color: #00ACE7;
+  border-color: -webkit-linear-gradient(left, #00ACE7, white); 
+    border-color: -o-linear-gradient(#00ACE7, white); 
+    border-color: -moz-linear-gradient(#00ACE7, white); 
+    border-color: linear-gradient(#00ACE7, white); /* Standard syntax (must be last) */
+
   width: 10%;
   height: 100%;
   margin: auto;
-  opacity: 0.8;
 }
 
 .release-plan-cell-sprint-money {
-  background-color: #00ACE7;
+  background-color: #37c4f1;
   color: white;
   font-weight: bold;
 }
