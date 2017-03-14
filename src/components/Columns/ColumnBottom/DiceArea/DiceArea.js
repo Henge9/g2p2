@@ -267,12 +267,12 @@ export default class DiceArea extends React.Component {
 		return (
 			<div className='dice-area' >		
 				<div className="dice-group" id="group1">
-					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} getPos={this.getPos} changePos1={this.changePos1} dice1Positions={this.dice1Positions}/>
-					<Die3 pushB={this.props.pushB} rollDice3={this.props.rollDice3} getPos={this.getPos} dice3Positions={this.dice3Positions} />
-					<Die5 pushB={this.props.pushB} rollDice5={this.props.rollDice5} getPos={this.getPos} dice5Positions={this.dice5Positions} />
-					<Die2 pushB={this.props.pushB} rollDice2={this.props.rollDice2} getPos={this.getPos} dice2Positions={this.dice2Positions} />
-					<Die4 pushB={this.props.pushB} rollDice4={this.props.rollDice4} getPos={this.getPos} dice4Positions={this.dice4Positions} />
-					<Die6 pushB={this.props.pushB} rollDice6={this.props.rollDice6} getPos={this.getPos} dice6Positions={this.dice6Positions} />
+					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.dice1Positions}/>
+					<Die3 pushB={this.props.pushB} rollDice3={this.props.rollDice3} dice3Positions={this.dice3Positions} />
+					<Die5 pushB={this.props.pushB} rollDice5={this.props.rollDice5} dice5Positions={this.dice5Positions} />
+					<Die2 pushB={this.props.pushB} rollDice2={this.props.rollDice2} dice2Positions={this.dice2Positions} />
+					<Die4 pushB={this.props.pushB} rollDice4={this.props.rollDice4} dice4Positions={this.dice4Positions} />
+					<Die6 pushB={this.props.pushB} rollDice6={this.props.rollDice6} dice6Positions={this.dice6Positions} />
 				</div>
 				<div className="dice-group2" id="group2" ref="group2"></div>
 			 	<div className="dice-group3" id="group3"></div>	
