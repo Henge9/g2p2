@@ -59,7 +59,7 @@ export default class ColumnBottom extends React.Component {
 	render() {
 		return (
 			<div className='column-bottom'>
-				<DiceArea pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} />	
+				<DiceArea changePoints={this.props.changePoints} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} />	
 					
 				<ColumnButtons addX={this.props.addX} pushB={this.pushB} />
 			</div>

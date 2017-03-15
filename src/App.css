@@ -9,5 +9,9 @@
   	height: 600px;
 	box-sizing: border-box;
 	margin: auto;
-  	border: 3px solid black;
+  	border: 3px solid #1581A4;
+  	/*border-left: #05F055;
+  	border-top: #05F055;
+  	border-right: #F3507B;
+  	border-bottom: #F3507B;*/
 }

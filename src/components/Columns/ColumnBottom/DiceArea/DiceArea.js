@@ -265,7 +265,7 @@ export default class DiceArea extends React.Component {
 		console.log('4 e: ', column4Value)
 
 		return (
-			<div className='dice-area' >		
+			<div className='dice-area' onClick={(e) => {this.props.changePoints(column2Value, column3Value, column4Value)}}>		
 				<div className="dice-group" id="group1">
 					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.dice1Positions}/>
 					<Die3 pushB={this.props.pushB} rollDice3={this.props.rollDice3} dice3Positions={this.dice3Positions} />

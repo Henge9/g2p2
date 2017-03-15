@@ -22,7 +22,8 @@
 .release-plan-cell {
   display: table-cell;
   border: 2px solid;
-  border-color: #37c4f1;
+  /*border-color: #37c4f1;*/
+  border-color: #1581A4;
 
   width: 10%;
   height: 100%;
@@ -33,7 +34,7 @@
 }
 
 .release-plan-cell-sprint-money {
-  background-color: #37c4f1;
+  background-color: #1581A4;
   color: white;
   font-weight: bold;
 }
