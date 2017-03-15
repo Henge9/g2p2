@@ -6,7 +6,8 @@
 }
 
 .column-buttons > button {
-	background-color: #FF2800;
+	/*background-color: #FF2800;*/
+	background-color: #e91e3e;
 	color: white;
 	font-size: 1.3em;
 	width: 80px;

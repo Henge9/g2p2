@@ -8,7 +8,8 @@
 
   box-sizing: border-box;
   /*background-image: url('../../../images/paper.png');*/
-  background-color: #00E74E;
+  /*background-color: #00E74E;*/
+  background-color:  #d99bf0;
   background-position: left top;
   background-size: 120px;
   cursor: pointer;
