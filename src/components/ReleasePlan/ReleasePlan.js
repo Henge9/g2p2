@@ -11,37 +11,42 @@ export default class ReleasePlan extends React.Component {
 
     	const sprintNumber = "Sprint " + this.props.sprintArray[`number`];
     	const dayArray = this.props.dayArray[`number`];
+    	var checked1 = 'MON'
+    	var checked2 = 'TUE'
+    	var checked3 = 'WED'
+    	var checked4 = 'THU'
+    	var checked5 = 'FRI'
 
     	if(this.props.releaseplan) {
 	    	switch(dayArray) {
 	    		case 1:
-	    			var checked1 = 'X'
+	    			checked1 = '✓'
 	    			break;
 
 	    		case 2:
-	    			checked1 = 'X'
-	    			var checked2 = 'X'
+	    			checked1 = '✓'
+	    			var checked2 = '✓'
 	    			break;
 
 	    		case 3:
-	    			checked1 = 'X'
-	    			checked2 = 'X'
-	    			var checked3 = 'X'
+	    			checked1 = '✓'
+	    			checked2 = '✓'
+	    			var checked3 = '✓'
 	    			break;
 
 	    		case 4:
-	    			checked1 = 'X'
-	    			checked2 = 'X'
-	    			checked3 = 'X'
-	    			var checked4 = 'X'
+	    			checked1 = '✓'
+	    			checked2 = '✓'
+	    			checked3 = '✓'
+	    			var checked4 = '✓'
 	    			break;
 
 	    		case 5:
-	    			checked1 = 'X'
-	    			checked2 = 'X'
-	    			checked3 = 'X'
-	    			checked4 = 'X'
-	    			var checked5 = 'X'
+	    			checked1 = '✓'
+	    			checked2 = '✓'
+	    			checked3 = '✓'
+	    			checked4 = '✓'
+	    			var checked5 = '✓'
 	    			break;
 
 	    		default:

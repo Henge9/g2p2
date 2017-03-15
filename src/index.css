@@ -9,6 +9,8 @@
 	padding:0;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Overlock:700');
+
 body {
 	background: #00ACE7;
 	background: -webkit-radial-gradient(#00ACE7, white); 
@@ -26,7 +28,6 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	/*font-family: sans-serif;*/
-	font-family: 'Amatic SC', sans-serif;
+	font-family: 'Overlock', sans-serif;
 	text-align: center;
 }

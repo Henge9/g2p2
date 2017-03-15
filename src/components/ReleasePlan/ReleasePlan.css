@@ -12,7 +12,7 @@
 }
 
 .release-plan > h2 {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 .release-plan-row {
@@ -22,17 +22,14 @@
 .release-plan-cell {
   display: table-cell;
   border: 2px solid;
-  /*border-color: #37c4f1;*/
-
-  border-color: #00ACE7;
-  border-color: -webkit-linear-gradient(left, #00ACE7, white); 
-    border-color: -o-linear-gradient(#00ACE7, white); 
-    border-color: -moz-linear-gradient(#00ACE7, white); 
-    border-color: linear-gradient(#00ACE7, white); /* Standard syntax (must be last) */
+  border-color: #37c4f1;
 
   width: 10%;
   height: 100%;
   margin: auto;
+  padding-top: 7px;
+
+  font-size: 1.25em;
 }
 
 .release-plan-cell-sprint-money {
