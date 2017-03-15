@@ -4,32 +4,23 @@ import './Dice.css';
 
 export default class Die2 extends React.Component {
 
-
 	changePos() {
 		var obj = this.refs.die2;
-		var currentPos2 = 'group1';
 	
 		if(obj.parentNode.id === 'group1'){
 			var group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
-
-			currentPos2 = 'group2';
 		}
 
 		else if(obj.parentNode.id === 'group2') {
 			var group4 = document.querySelector('#group4');
 			group4.appendChild(obj);
-			
-			currentPos2 = 'group4';
 		}
 
 		else if(obj.parentNode.id === 'group4') {
 			group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
-			
-			currentPos2 = 'group2';
 		}
-
 	}
 
 	

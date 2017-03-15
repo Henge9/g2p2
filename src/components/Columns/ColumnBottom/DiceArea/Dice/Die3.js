@@ -7,34 +7,25 @@ export default class Die3 extends React.Component {
 
 	changePos() {
 		var obj = this.refs.die3;
-		var currentPos3 = 'group1';
 	
 		if(obj.parentNode.id === 'group1'){
 			var group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
-
-			currentPos3 = 'group2';
 		}
 
 		else if(obj.parentNode.id === 'group2') {
 			var group3 = document.querySelector('#group3');
 			group3.appendChild(obj);
-
-			currentPos3 = 'group3';
 		}
 
 		else if(obj.parentNode.id === 'group3') {
 			var group4 = document.querySelector('#group4');
 			group4.appendChild(obj);
-
-			currentPos3 = 'group4';
 		}
 
 		else if(obj.parentNode.id === 'group4') {
 			group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
-
-			currentPos3 = 'group2';
 		}
 	}
 

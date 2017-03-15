@@ -267,7 +267,7 @@ export default class DiceArea extends React.Component {
 		return (
 			<div className='dice-area' >		
 				<div className="dice-group" id="group1">
-					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.dice1Positions}/>
+					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.dice1Positions} />
 					<Die3 pushB={this.props.pushB} rollDice3={this.props.rollDice3} dice3Positions={this.dice3Positions} />
 					<Die5 pushB={this.props.pushB} rollDice5={this.props.rollDice5} dice5Positions={this.dice5Positions} />
 					<Die2 pushB={this.props.pushB} rollDice2={this.props.rollDice2} dice2Positions={this.dice2Positions} />

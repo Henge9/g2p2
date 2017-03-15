@@ -8,32 +8,23 @@ export default class Die1 extends React.Component {
 
 	changePos() {
 		var obj = this.refs.die1;
-		var currentPos1 = 'group1';
-		console.log(obj);
 	
 		if(obj.parentNode.id === 'group1'){
 			var group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
-
-			currentPos1 = 'group2';
 		}
 
 		else if(obj.parentNode.id === 'group2') {
 			var group4 = document.querySelector('#group4');
 			group4.appendChild(obj);
-			
-			currentPos1 = 'group4';
 		}
 
 		else if(obj.parentNode.id === 'group4') {
 			group2 = document.querySelector('#group2');
 			group2.appendChild(obj);
-			
-			currentPos1 = 'group2';
 		}
 
-		console.log("1: " + currentPos1);
-		return currentPos1;
+		
 	}	
 
 	render() {

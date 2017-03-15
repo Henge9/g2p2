@@ -8,11 +8,6 @@ export default class ColumnButtons extends React.Component {
     this.props.pushB(event);
   }
 
-		
-	// createX(event){
-	// 	this.props.addX(event);
-	// }
-
 
 	render() {
 		return (
