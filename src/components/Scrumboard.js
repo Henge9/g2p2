@@ -42,12 +42,15 @@ export default class ScrumBoard extends React.Component {
 		this.setState({dayArray});
 	}
 
+	changePoints(column2Value, column3Value, column4Value){
+	}
+
 	render() {
 		return (
 			<div className="scrumboard">
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
-				<Columns addX={this.addX} />
+				<Columns addX={this.addX} changePoints={this.changePoints} />
 				<Hold />
 				<HoldMaint />
 				<HoldDefects />

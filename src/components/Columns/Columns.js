@@ -16,7 +16,7 @@ export default class Columns extends React.Component{
 					<Column name='Testing' />
 					<Column name='Done' />
 				</div>
-				<ColumnBottom addX={this.props.addX} />
+				<ColumnBottom addX={this.props.addX} changePoints={this.props.changePoints} />
 			</article>
 		);
 	}
