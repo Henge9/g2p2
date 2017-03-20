@@ -52,7 +52,7 @@ export default class Die1 extends React.Component {
 		}
 
 		return (
-			<div ref='die1' className='die1' style={d1} onClick={(e) => {this.props.dice1Positions(e); this.changePos(e);}} >
+			<div ref='die1' className='die1' style={d1} onClick={(e) => {this.props.dice1Positions(e); this.changePos(e)}} >
 			</div>  
 		);
 	}
