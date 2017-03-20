@@ -31,6 +31,8 @@ export default class Hold extends React.Component {
 				case 'analysis':
 					this.setState({
 						analytics: this.state.analytics + points
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 					break;
 
@@ -38,6 +40,8 @@ export default class Hold extends React.Component {
 					this.setState({
 						analytics: this.state.analytics - analytics,
 						development: this.state.development + points
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 					break;
 
@@ -45,12 +49,16 @@ export default class Hold extends React.Component {
 					this.setState({
 						development: this.state.development - development,
 						test: this.state.test + points
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 					break;
 
 				default:
 					this.setState({
 						test: this.state.test - test
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 			}
 	}
@@ -80,8 +88,6 @@ export default class Hold extends React.Component {
 					jsx: jsx
 				});
 			}
-			
-			console.log(cards);
 		});
 	}
 

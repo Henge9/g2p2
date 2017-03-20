@@ -12,9 +12,10 @@
 
 .nav > ul > li > a {
 	transition: 0.2s;
-  	padding: 10px 20px;
-  	text-decoration: none;
-  	color: var(--font-color);
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--font-color);
+  cursor: pointer;
 }
 
 .nav > ul > li > a:hover {

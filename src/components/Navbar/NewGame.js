@@ -22,15 +22,12 @@ export default class NewGame extends React.Component {
 	 	//newGame[`blaj`] = 'ssdf';
 		console.table(newGame[`blaj`]);
 	 	this.setState({newGame});
-		
 	}
 	render() {
 		return (
-
 		  	<div className="nav-component">
 		  		<p>nytt spel {this.state.newGame[`blaj`]}</p>
 		  		<button onClick={(e) => this.getNewGame(e)}>Ajaxtest</button>
-
 		  	</div>
 		);
  	}

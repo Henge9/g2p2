@@ -14,6 +14,7 @@ export default class ScrumBoard extends React.Component {
 		this.addX = this.addX.bind(this); //ReleasePlanCell.js - ColumnButton.js
 		this.getPoints = this.getPoints.bind(this)
 		this.sendPoints = this.sendPoints.bind(this)
+		this.updatePoints = this.updatePoints.bind(this)
 		
 		//getInitialState
 		this.state = {
@@ -23,6 +24,9 @@ export default class ScrumBoard extends React.Component {
 			col2Value: 0,
 			col3Value: 0, 
 			col4Value: 0,
+			analytics: 0,
+			development: 0,
+			test: 0,
 		};
 	}
 
@@ -66,15 +70,45 @@ export default class ScrumBoard extends React.Component {
 		console.log ('denna 4: ', this.state.col4Value)
 	}
 
+	updatePoints(column, points, analytics, development, test) {
+
+		switch(column) {
+				case 'analysis':
+					this.setState({
+						analytics: this.state.analytics + points
+					});
+					break;
+
+				case 'development':
+					this.setState({
+						analytics: this.state.analytics - analytics,
+						development: this.state.development + points
+					});
+					break;
+
+				case 'test':
+					this.setState({
+						development: this.state.development - development,
+						test: this.state.test + points
+					});
+					break;
+
+				default:
+					this.setState({
+						test: this.state.test - test
+					});
+			}
+	}
+
 	render() {
 		return (
 			<div className="scrumboard">
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
 				<Columns addX={this.addX} getPoints={this.getPoints} sendPoints={this.sendPoints} />
-				<Hold />
-				<HoldMaint />
-				<HoldDefects />
+				<Hold updatePoints={this.updatePoints} />
+				<HoldMaint updatePoints={this.updatePoints} />
+				<HoldDefects updatePoints={this.updatePoints} />
 			</div>
 		);
 	}
