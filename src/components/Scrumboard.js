@@ -11,21 +11,16 @@ export default class ScrumBoard extends React.Component {
 	
 	constructor(){
 		super();
-		this.addX = this.addX.bind(this); //ReleasePlanCell.js - ColumnButton.js
-<<<<<<< HEAD
-		this.getPoints = this.getPoints.bind(this)
-		this.sendPoints = this.sendPoints.bind(this)
-		this.updatePoints = this.updatePoints.bind(this)
-=======
-		this.pushB = this.pushB.bind(this);
-		this.countBajs = this.countBajs.bind(this)
-		this.dice1Positions = this.dice1Positions.bind(this);
-		this.dice2Positions = this.dice2Positions.bind(this);
-		this.dice3Positions = this.dice3Positions.bind(this);
-		this.dice4Positions = this.dice4Positions.bind(this);
-		this.dice5Positions = this.dice5Positions.bind(this);
-		this.dice6Positions = this.dice6Positions.bind(this);
->>>>>>> 0c74564599f913b52553c69d1f02de7677c5f043
+		this.addX				=	 this.addX.bind(this); //ReleasePlanCell.js - ColumnButton.js
+		this.updatePoints		=	 this.updatePoints.bind(this);
+		this.pushB				=	 this.pushB.bind(this);
+		this.countBajs			=	 this.countBajs.bind(this);
+		this.dice1Positions		=	 this.dice1Positions.bind(this);
+		this.dice2Positions		=	 this.dice2Positions.bind(this);
+		this.dice3Positions		=	 this.dice3Positions.bind(this);
+		this.dice4Positions		=	 this.dice4Positions.bind(this);
+		this.dice5Positions		=	 this.dice5Positions.bind(this);
+		this.dice6Positions		=	 this.dice6Positions.bind(this);
 		
 		//getInitialState
 		this.state = {
@@ -35,11 +30,9 @@ export default class ScrumBoard extends React.Component {
 			col2Value: 0,
 			col3Value: 0, 
 			col4Value: 0,
-<<<<<<< HEAD
 			analytics: 0,
 			development: 0,
 			test: 0,
-=======
 
 			rollDice1: {numberI: 1},
 			rollDice2: {numberII: 2},
@@ -54,7 +47,6 @@ export default class ScrumBoard extends React.Component {
 			dice4Position: {column: 1},
 			dice5Position: {column: 1},
 			dice6Position: {column: 1},
->>>>>>> 0c74564599f913b52553c69d1f02de7677c5f043
 		};
 	}
 
@@ -385,9 +377,9 @@ export default class ScrumBoard extends React.Component {
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
 				<Columns addX={this.addX} countBajs={this.countBajs} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions}/>
-				<Hold />
-				<HoldMaint />
-				<HoldDefects />
+				<Hold updatePoints={this.updatePoints} />
+				<HoldMaint updatePoints={this.updatePoints} />
+				<HoldDefects updatePoints={this.updatePoints} />
 			</div>
 		);
 	}

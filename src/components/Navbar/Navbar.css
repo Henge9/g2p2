@@ -37,8 +37,12 @@
   color: black;
   float: right;
   font-weight: bolder;
+  cursor: pointer;
 }
 .nav-rules {
   height: 500px;
   overflow-y: scroll;
+}
+.nav-rules:hover {
+  color: cyan;
 }
