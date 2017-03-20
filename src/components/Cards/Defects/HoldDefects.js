@@ -71,7 +71,7 @@ export default class HoldDefects extends React.Component {
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
-				card = <Defects updateCard={self3.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
+				card = <Defects key={i.toString()} updateCard={self3.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
 
 				jsx = self3.state.jsx;
 				jsx.unshift(card);

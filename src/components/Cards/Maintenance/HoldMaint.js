@@ -71,7 +71,7 @@ export default class HoldMaint extends React.Component {
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
-				card = <Maintenance updateCard={self2.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
+				card = <Maintenance key={i.toString()} updateCard={self2.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
 
 				jsx = self2.state.jsx;
 				jsx.unshift(card);
