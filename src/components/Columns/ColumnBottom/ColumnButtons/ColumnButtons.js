@@ -11,7 +11,7 @@ export default class ColumnButtons extends React.Component {
 	render() {
 		return (
 			<div className='column-buttons'>
-				<button onClick={(e) => { this.roll(e); this.props.addX(e); this.props.sendPoints(e); this.props.triggerCountBajs(e)}}>GO</button>
+				<button onClick={(e) => { this.roll(e); this.props.addX(e); this.props.countBajs(e)}}>GO</button>
 			</div>
 		);
 	}
