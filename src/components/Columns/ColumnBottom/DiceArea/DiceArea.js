@@ -12,7 +12,7 @@ export default class DiceArea extends React.Component {
 	constructor(){
 		super();
 		this.countBajs = this.countBajs.bind(this)
-		this.triggerCountBajs = this.triggerCountBajs.bind(this)
+		// this.triggerCountBajs = this.triggerCountBajs.bind(this)
 
 		this.dice1Positions = this.dice1Positions.bind(this);
 		this.dice2Positions = this.dice2Positions.bind(this);
@@ -155,12 +155,6 @@ export default class DiceArea extends React.Component {
 		this.setState({dice6Position}, this.countBajs);
 	}
 
-	triggerCountBajs(){
-		if (this.props.triggerCountBajs){
-			alert('tjoho!')
-		}
-	}
-
 	countBajs(){
 		var die1numb = this.props.rollDice1[`numberI`];
 		var die2numb = this.props.rollDice2[`numberII`];
@@ -273,6 +267,12 @@ export default class DiceArea extends React.Component {
 		console.log('4 e: ', column4Value)
 
 		this.props.getPoints(column2Value, column3Value, column4Value)
+	}
+
+	triggerCountBajs(){
+		if (this.props.triggerCountBajs){
+			alert('hejhej')
+		}
 	}
 
 	render() {
