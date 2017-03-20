@@ -8,13 +8,16 @@ export default class ColumnBottom extends React.Component {
 	constructor() {
 		super();
 		this.pushB = this.pushB.bind(this);
+		this.triggerCountBajs = this.triggerCountBajs.bind(this);
 		this.state = {
 			rollDice1: {numberI: 1},
 			rollDice2: {numberII: 2},
 			rollDice3: {numberIII: 3},
 			rollDice4: {numberIV: 4},
 			rollDice5: {numberV: 5},
-			rollDice6: {numberVI: 6}
+			rollDice6: {numberVI: 6},
+
+			triggerCountBajs: false,
 		};
 	}
 
@@ -54,14 +57,18 @@ export default class ColumnBottom extends React.Component {
 		this.setState({rollDice6});
 	}
 
-
+	triggerCountBajs(e){
+		const triggerCountBajs = {...this.state.triggerCountBajs}
+		triggerCountBajs[``] = true
+		this.setState({triggerCountBajs})
+	}
 
 	render() {
 		return (
 			<div className='column-bottom'>
-				<DiceArea changePoints={this.props.changePoints} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} />	
+				<DiceArea triggerCountBajs={this.state.triggerCountBajs} getPoints={this.props.getPoints} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} />	
 					
-				<ColumnButtons addX={this.props.addX} pushB={this.pushB} />
+				<ColumnButtons addX={this.props.addX} sendPoints={this.props.sendPoints} pushB={this.pushB} triggerCountBajs={this.triggerCountBajs} />
 			</div>
 		);
 	}

@@ -7,19 +7,22 @@ import HoldDefects from './Cards/Defects/HoldDefects.js';
 import ReleasePlan from './ReleasePlan/ReleasePlan.js';
 import Columns from './Columns/Columns.js';
 
- 
-
 export default class ScrumBoard extends React.Component {
 	
 	constructor(){
 		super();
 		this.addX = this.addX.bind(this); //ReleasePlanCell.js - ColumnButton.js
+		this.getPoints = this.getPoints.bind(this)
+		this.sendPoints = this.sendPoints.bind(this)
 		
 		//getInitialState
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
 			dayArray: {number: 0}, //Releaseplan.js
 			sprintArray: {number: 1}, //Releaseplan.js
+			col2Value: 0,
+			col3Value: 0, 
+			col4Value: 0,
 		};
 	}
 
@@ -42,7 +45,25 @@ export default class ScrumBoard extends React.Component {
 		this.setState({dayArray});
 	}
 
-	changePoints(column2Value, column3Value, column4Value){
+	getPoints(column2Value, column3Value, column4Value){
+		const col2Value = {...this.state.col2Value}
+		const col3Value = {...this.state.col3Value}
+		const col4Value = {...this.state.col4Value}
+
+		col2Value[``] = column2Value
+		col3Value[``] = column3Value
+		col4Value[``] = column4Value
+
+		this.setState({col2Value})
+		this.setState({col3Value})
+		this.setState({col4Value})
+		// this.setState({column2Value: column2Value, column3Value: column3Value, column4Value: column4Value})
+	}
+
+	sendPoints(e){
+		console.log ('denna 2: ', this.state.col2Value)
+		console.log ('denna 3: ', this.state.col3Value)
+		console.log ('denna 4: ', this.state.col4Value)
 	}
 
 	render() {
@@ -50,7 +71,7 @@ export default class ScrumBoard extends React.Component {
 			<div className="scrumboard">
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
-				<Columns addX={this.addX} changePoints={this.changePoints} />
+				<Columns addX={this.addX} getPoints={this.getPoints} sendPoints={this.sendPoints} />
 				<Hold />
 				<HoldMaint />
 				<HoldDefects />

@@ -11,6 +11,9 @@ export default class DiceArea extends React.Component {
 
 	constructor(){
 		super();
+		this.countBajs = this.countBajs.bind(this)
+		this.triggerCountBajs = this.triggerCountBajs.bind(this)
+
 		this.dice1Positions = this.dice1Positions.bind(this);
 		this.dice2Positions = this.dice2Positions.bind(this);
 		this.dice3Positions = this.dice3Positions.bind(this);
@@ -43,7 +46,7 @@ export default class DiceArea extends React.Component {
         		dice1Position[`column`] = 2
         	break;
 		}
-		this.setState({dice1Position});
+		this.setState({dice1Position}, this.countBajs);
 	}
 
 	dice2Positions(){
@@ -61,7 +64,7 @@ export default class DiceArea extends React.Component {
         		dice2Position[`column`] = 2
         	break;
 		}
-		this.setState({dice2Position});
+		this.setState({dice2Position}, this.countBajs);
 	}
 
 	dice3Positions(){
@@ -83,7 +86,7 @@ export default class DiceArea extends React.Component {
         		dice3Position[`column`] = 2
         	break;
 		}
-		this.setState({dice3Position});
+		this.setState({dice3Position}, this.countBajs);
 	}
 
 	dice4Positions(){
@@ -105,7 +108,7 @@ export default class DiceArea extends React.Component {
         		dice4Position[`column`] = 2
         	break;
 		}
-		this.setState({dice4Position});
+		this.setState({dice4Position}, this.countBajs);
 	}
 
 	dice5Positions(){
@@ -127,7 +130,7 @@ export default class DiceArea extends React.Component {
         		dice5Position[`column`] = 2
         	break;
 		}
-		this.setState({dice5Position});
+		this.setState({dice5Position}, this.countBajs);
 	}
 
 	dice6Positions(){
@@ -149,11 +152,16 @@ export default class DiceArea extends React.Component {
         		dice6Position[`column`] = 2
         	break;
 		}
-		this.setState({dice6Position});
+		this.setState({dice6Position}, this.countBajs);
 	}
 
-	render() {
+	triggerCountBajs(){
+		if (this.props.triggerCountBajs){
+			alert('tjoho!')
+		}
+	}
 
+	countBajs(){
 		var die1numb = this.props.rollDice1[`numberI`];
 		var die2numb = this.props.rollDice2[`numberII`];
 		var die3numb = this.props.rollDice3[`numberIII`];
@@ -264,15 +272,20 @@ export default class DiceArea extends React.Component {
 		console.log('3 e: ', column3Value)
 		console.log('4 e: ', column4Value)
 
+		this.props.getPoints(column2Value, column3Value, column4Value)
+	}
+
+	render() {
+
 		return (
-			<div className='dice-area' onClick={(e) => {this.props.changePoints(column2Value, column3Value, column4Value)}}>		
+			<div className='dice-area'>	
 				<div className="dice-group" id="group1">
-					<Die1 pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.dice1Positions} />
+					<Die1 countBajs={this.countBajs} pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.dice1Positions} />
 					<Die3 pushB={this.props.pushB} rollDice3={this.props.rollDice3} dice3Positions={this.dice3Positions} />
 					<Die5 pushB={this.props.pushB} rollDice5={this.props.rollDice5} dice5Positions={this.dice5Positions} />
 					<Die2 pushB={this.props.pushB} rollDice2={this.props.rollDice2} dice2Positions={this.dice2Positions} />
 					<Die4 pushB={this.props.pushB} rollDice4={this.props.rollDice4} dice4Positions={this.dice4Positions} />
-					<Die6 pushB={this.props.pushB} rollDice6={this.props.rollDice6} dice6Positions={this.dice6Positions} />
+					<Die6 pushB={this.props.pushB} rollDice6={this.props.rollDice6} dice6Positions={this.dice6Positions} />	
 				</div>
 				<div className="dice-group2" id="group2" ref="group2"></div>
 			 	<div className="dice-group3" id="group3"></div>	

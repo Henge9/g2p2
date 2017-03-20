@@ -7,6 +7,11 @@ import ReleasePlanCellMoney from './ReleasePlanCell/ReleasePlanCellMoney.js';
 
 export default class ReleasePlan extends React.Component {
 
+	// constructor(){
+	// 	super();
+	// 	this.checked5 = this.checked5.bind(this)
+	// }
+
     render(){
 
     	const sprintNumber = "Sprint " + this.props.sprintArray[`number`];
@@ -25,33 +30,25 @@ export default class ReleasePlan extends React.Component {
 
 	    		case 2:
 	    			checked1 = '✓'
-	    			var checked2 = '✓'
+	    			checked2 = '✓'
 	    			break;
 
 	    		case 3:
 	    			checked1 = '✓'
 	    			checked2 = '✓'
-	    			var checked3 = '✓'
+	    			checked3 = '✓'
 	    			break;
 
 	    		case 4:
 	    			checked1 = '✓'
 	    			checked2 = '✓'
 	    			checked3 = '✓'
-	    			var checked4 = '✓'
-	    			break;
-
-	    		case 5:
-	    			checked1 = '✓'
-	    			checked2 = '✓'
-	    			checked3 = '✓'
 	    			checked4 = '✓'
-	    			var checked5 = '✓'
 	    			break;
 
 	    		default:
 	    	}
-    	}
+	    }
 
 		return (
 		  	<div className='release-plan'>
