@@ -6,7 +6,7 @@ export default class Highscore extends React.Component {
     render(){
 		return (
 		  	<div className="nav-component">
-		  		<p>highscore</p>
+		  		<iframe src="http://localhost/rest/admin/admin.php"> </iframe>
 		  	</div>
 		);
     }
