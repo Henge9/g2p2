@@ -100,11 +100,11 @@ export default class NavBar extends React.Component {
 		<div>	
 			<nav className='nav'>
 				<ul>
-					<li><a onClick={(e) => location.reload()}>New game</a></li>
+					<li><a onClick={(e) => this.show("newGame")}>New game</a></li>
 					<li><a onClick={(e) => this.show("rules")}>Rules</a></li>
 				</ul>
 			</nav>
-			{this.state.navBar[`newGame`] ? <NewGame /> : null}
+			{this.state.navBar[`newGame`] ? <NewGame navClose={(e) => this.show("newGame")}/> : null}
 			{this.state.navBar[`rules`] ? <Rules navClose={(e) => this.show("rules")} /> : null}
 			{this.state.navBar[`highscore`] ? <Highscore /> : null}
 			{this.state.navBar[`about`] ? <About /> : null}
