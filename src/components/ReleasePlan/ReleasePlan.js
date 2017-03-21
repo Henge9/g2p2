@@ -59,7 +59,7 @@ export default class ReleasePlan extends React.Component {
 		  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} content={checked3} />
 		  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} content={checked4} />
 		  			<ReleasePlanCell addX={this.props.addX} releaseplan={this.props.releaseplan} content={checked5} />
-		  			<ReleasePlanCellMoney />
+		  			<ReleasePlanCellMoney earnedTotalSumState={this.props.earnedTotalSumState} />
 		  		</div>
 		  	</div>
 		  );

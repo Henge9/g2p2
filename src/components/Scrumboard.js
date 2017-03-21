@@ -13,6 +13,8 @@ export default class ScrumBoard extends React.Component {
 		super();
 		this.addX				=	 this.addX.bind(this); //ReleasePlanCell.js - ColumnButton.js
 		this.updatePoints		=	 this.updatePoints.bind(this);
+		this.cardSum			=	 this.cardSum.bind(this);
+		this.cardsColumn		=	 this.cardsColumn.bind(this);
 		this.pushB				=	 this.pushB.bind(this);
 		this.countBajs			=	 this.countBajs.bind(this);
 		this.dice1Positions		=	 this.dice1Positions.bind(this);
@@ -22,17 +24,23 @@ export default class ScrumBoard extends React.Component {
 		this.dice5Positions		=	 this.dice5Positions.bind(this);
 		this.dice6Positions		=	 this.dice6Positions.bind(this);
 		
-		//getInitialState
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
 			dayArray: {number: 0}, //Releaseplan.js
 			sprintArray: {number: 1}, //Releaseplan.js
+
 			col2Value: 0,
 			col3Value: 0, 
 			col4Value: 0,
+
 			analytics: 0,
 			development: 0,
 			test: 0,
+
+			cardsColumnState: {column: 'backlog'},
+			finishedCards: {number: 0},
+			totalSumState: [],
+			earnedTotalSumState: [],
 
 			rollDice1: {numberI: 1},
 			rollDice2: {numberII: 2},
@@ -371,13 +379,85 @@ export default class ScrumBoard extends React.Component {
 			}
 	}
 
+	//När det sätts till test ska summan adderas till totala summan
+	//I ifen, pusha in i array så då är test-korten samlade i en array
+
+	cardsColumn(cardsColumn){
+		// for (var i=0; i<cardSum.length; i++){
+		// 	console.log('column?: ', cardSum[i].column)
+		// }
+
+		var cardsColumnState = {...this.state.cardsColumnState};
+		var finishedCards = {...this.state.finishedCards};
+		var totalSumState = {...this.state.totalSumState};
+		var earnedTotalSumState = {...this.state.earnedTotalSumState};
+		var helpArray = []
+
+		if (cardsColumn === 'test') {
+			finishedCards[`number`] += 1
+			// cardsColumnState[`column`] = 'development';
+			// this.setState({cardsColumnState});
+			this.setState({finishedCards})
+
+			console.log('fN', finishedCards[`number`])
+
+			for(var i=0; i<finishedCards[`number`]; i++){
+				helpArray.push(Number(totalSumState[i]))
+			}
+
+			helpArray = helpArray.reduce((total, sum) => { 
+			return total + sum
+			}, 0)
+
+			earnedTotalSumState = helpArray
+			this.setState({earnedTotalSumState})
+			console.log('e', earnedTotalSumState)
+		}
+	}
+
+	//Om den är test, pusha in i state-arrayen. Om cards-column-state är test, pusha in värdena.
+
+	cardSum(cardSum){
+		if (this.state.cardsColumnState[`column`] === 'analysis'){
+			alert('bas')
+		}
+		var totalSum = []
+		var totalSumState = {...this.state.totalSumState};
+
+		for (var i=0; i<cardSum.length; i++){
+			totalSum.push(cardSum[i].value)
+		}
+
+		totalSumState = totalSum
+
+		this.setState({totalSumState})
+		
+		// totalSum = cardSum.reduce((total, sum) => { 
+		// 	return total + sum
+		// }, 0)
+
+		console.log('totalsum: ', totalSumState)
+		// console.log('totala värdet: ', cardSum)
+			// for (var i=0; i<cardSum.length; i++){
+			// 	console.log('column?: ', cardSum[i].column)
+			// }
+
+		// var moneyArray = []
+		// // moneyArray.push(Number(cards[i].value))
+		// moneyArray.push(cardSum)
+
+		// var totalSumState = {...this.state.totalSumState}
+		// totalSumState.push(totalSum)
+		// this.setState({totalSumState})
+	}
+
 	render() {
 		return (
 			<div className="scrumboard">
 				<NavBar />
-				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray}/>
-				<Columns addX={this.addX} countBajs={this.countBajs} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions}/>
-				<Hold updatePoints={this.updatePoints} />
+				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
+				<Columns addX={this.addX} countBajs={this.countBajs} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
+				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
 				<HoldMaint updatePoints={this.updatePoints} />
 				<HoldDefects updatePoints={this.updatePoints} />
 			</div>

@@ -13,6 +13,13 @@ export default class UserStory extends React.Component {
 			points: 0
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
+		this.sendCardsColumn = this.sendCardsColumn.bind(this)
+	}
+
+	sendCardsColumn(){
+		// const cardsColumn = this.state.column
+		// this.props.cardsColumn(cardsColumn)
+
 	}
 
 	onMouseEnter() {
@@ -98,6 +105,10 @@ export default class UserStory extends React.Component {
 					}, this.route);
 			}
 		}
+		// this.sendCardsColumn()
+
+		const cardsColumn = this.state.column
+		this.props.cardsColumn(cardsColumn)
 	}
 
 	insertLetters(prop, ref, letter) {
