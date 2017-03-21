@@ -1,13 +1,7 @@
 @import '../../variables.css';
 
 article {
-	background-image: url('../../images/TEL_h_pos_3D_4cp_200mm.jpg');
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    background-color: white;
-
+  /*background-color: white;*/
 	position: relative;
 	top: 0px;
 	float: left;

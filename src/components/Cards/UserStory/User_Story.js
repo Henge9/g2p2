@@ -9,10 +9,10 @@ export default class UserStory extends React.Component {
 
 		this.state = {
 			isMoving: false,
-			hasMoved: false,
 			column: 'backlog',
 			points: 0
 		};
+		this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
 	onMouseEnter() {
@@ -29,7 +29,7 @@ export default class UserStory extends React.Component {
 	onClick() {
 
 		/* Move card */
-		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false && this.state.hasMoved === false) {
+		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
 			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
 			
 			this.setState({
@@ -100,6 +100,33 @@ export default class UserStory extends React.Component {
 		}
 	}
 
+	insertLetters(prop, ref, letter) {
+		for (var i = 0; i < prop; i++) {
+
+			// Create new element
+			var newElement = document.createElement('p');
+			newElement.innerHTML = letter;
+
+			// Insert new element into div
+			ref.appendChild(newElement);
+		}
+	} // Creates one letter for each point
+
+	randomCardPos(card) {
+		var randomNumber = Math.random();
+		var top = (Math.random() * 10).toString() + 'px';
+		var left;
+
+		if (randomNumber > 0.5) {
+			left = (randomNumber * 10).toString() + 'px';
+		} else {
+			left = (randomNumber * -10).toString() + 'px';
+		}
+
+		card.style.top = top;
+		card.style.left = left;
+	} // Randomizes card starting position
+
 	route() {
 		this.props.updateCard(this.state.column, this.state.points, this.props.analytics, this.props.development, this.props.test);
 	}
@@ -107,13 +134,13 @@ export default class UserStory extends React.Component {
 	componentDidMount() {
 
 		// Insert points
-		insertLetters(this.props.analytics, this.refs.analytics, 'A');
-		insertLetters(this.props.development, this.refs.development, 'D');
-		insertLetters(this.props.test, this.refs.test, 'T');
+		this.insertLetters(this.props.analytics, this.refs.analytics, 'A');
+		this.insertLetters(this.props.development, this.refs.development, 'D');
+		this.insertLetters(this.props.test, this.refs.test, 'T');
 
 		// Randomize card position
 		var card = this.refs.card;
-		randomCardPos(card);
+		this.randomCardPos(card);
 	}
 
     render(){
@@ -129,31 +156,3 @@ export default class UserStory extends React.Component {
 	  	);
     }
 }
-
-function randomCardPos(card) {
-	var randomNumber = Math.random();
-	var top = (Math.random() * 10).toString() + 'px';
-	var left;
-
-	if (randomNumber > 0.5) {
-		left = (randomNumber * 10).toString() + 'px';
-	} else {
-		left = (randomNumber * -10).toString() + 'px';
-	}
-
-	card.style.top = top;
-	card.style.left = left;
-} // Randomizes card starting position
-
-function insertLetters(prop, ref, letter) {
-
-	for (var i = 0; i < prop; i++) {
-
-		// Create new element
-		var newElement = document.createElement('p');
-		newElement.innerHTML = letter;
-
-		// Insert new element into div
-		ref.appendChild(newElement);
-	}
-} // Creates one letter for each point8

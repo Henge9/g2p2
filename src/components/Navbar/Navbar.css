@@ -12,9 +12,10 @@
 
 .nav > ul > li > a {
 	transition: 0.2s;
-  	padding: 10px 20px;
-  	text-decoration: none;
-  	color: var(--font-color);
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--font-color);
+  cursor: pointer;
 }
 
 .nav > ul > li > a:hover {
@@ -36,8 +37,12 @@
   color: black;
   float: right;
   font-weight: bolder;
+  cursor: pointer;
 }
 .nav-rules {
   height: 500px;
   overflow-y: scroll;
+}
+.nav-rules:hover {
+  color: cyan;
 }

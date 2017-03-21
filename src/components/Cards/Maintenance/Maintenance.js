@@ -9,7 +9,6 @@ export default class Maintenance extends React.Component {
 
 		this.state = {
 			isMoving: false,
-			hasMoved: false,
 			column: 'backlog',
 			points: 0
 		};
@@ -28,7 +27,7 @@ export default class Maintenance extends React.Component {
 	onClick() {
 
 		/* Move card */
-		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false && this.state.hasMoved === false) {
+		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
 			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
 
 			this.setState({

@@ -12,11 +12,11 @@
 @import url('https://fonts.googleapis.com/css?family=Overlock:700');
 
 body {
-	background: #00ACE7;
-	background: -webkit-radial-gradient(#00ACE7, white); 
-    background: -o-radial-gradient(#00ACE7, white); 
-    background: -moz-radial-gradient(#00ACE7, white); 
-    background: radial-gradient(#00ACE7, white); /* Standard syntax (must be last) */
+	background: #1ab6f1;
+	background: -webkit-radial-gradient(#1ab6f1, white); 
+    background: -o-radial-gradient(#1ab6f1, white); 
+    background: -moz-radial-gradient(#1ab6f1, white); 
+    background: radial-gradient(#1ab6f1, white); /* Standard syntax (must be last) */
 
 
 	background-size: center;

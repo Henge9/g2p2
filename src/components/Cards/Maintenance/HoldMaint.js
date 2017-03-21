@@ -33,6 +33,8 @@ export default class HoldMaint extends React.Component {
 				case 'analysis':
 					this.setState({
 						analytics: this.state.analytics + points
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 					break;
 
@@ -40,6 +42,8 @@ export default class HoldMaint extends React.Component {
 					this.setState({
 						analytics: this.state.analytics - analytics,
 						development: this.state.development + points
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 					break;
 
@@ -47,12 +51,16 @@ export default class HoldMaint extends React.Component {
 					this.setState({
 						development: this.state.development - development,
 						test: this.state.test + points
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 					break;
 
 				default:
 					this.setState({
 						test: this.state.test - test
+					}, function() {
+						this.props.updatePoints(column, points, analytics, development, test)
 					});
 			}
 	}
@@ -71,7 +79,7 @@ export default class HoldMaint extends React.Component {
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
-				card = <Maintenance updateCard={self2.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
+				card = <Maintenance key={i.toString()} updateCard={self2.updateCard} number={cards[i].number} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test}/>
 
 				jsx = self2.state.jsx;
 				jsx.unshift(card);
