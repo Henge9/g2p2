@@ -29,6 +29,8 @@ export default class Defects extends React.Component {
 		/* Move card */	
 		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
 			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
+			this.refs.card.style.width = "105px";
+			this.refs.card.style.height = "105px";
 
 			this.setState({
 				isMoving: true,
@@ -41,6 +43,8 @@ export default class Defects extends React.Component {
 				that.setState({
 					isMoving: false,
 				});
+				that.refs.card.style.width = "100px";
+				that.refs.card.style.height = "100px";
 			}, 2000);
 
 			switch(this.state.column) {
