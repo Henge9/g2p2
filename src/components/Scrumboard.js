@@ -404,7 +404,7 @@ export default class ScrumBoard extends React.Component {
 			}
 	}
 
-	removePoints(e){
+	removePoints(){
 		this.setState({analytics: this.state.analytics - this.state.col2Value})
 		this.setState({development: this.state.development - this.state.col3Value})
 		this.setState({test: this.state.test - this.state.col4Value})

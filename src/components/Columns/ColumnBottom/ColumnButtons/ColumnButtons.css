@@ -7,7 +7,6 @@
 
 .column-buttons > button {
 	/*background-color: #FF2800;*/
-	background-color: #1ab6f1;
 	color: white;
 	font-size: 1.3em;
 	width: 80px;
@@ -23,4 +22,14 @@
 .column-buttons > button:hover {
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
+}
+
+.set-button {
+	background-color: #1ab6f1;
+	display: inline-block;
+}
+
+.go-button {
+	display: none;
+	background-color: #0EF9B9;
 }
