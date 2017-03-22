@@ -405,15 +405,9 @@ export default class ScrumBoard extends React.Component {
 	}
 
 	removePoints(e){
-		var analytics = {...this.state.analytics};
-		var development = {...this.state.development};
-		var test = {...this.state.test};
-
-		analytics = 
-
-		this.setState({analytics: this.state.analytics})
-		this.setState({analytics: this.state.analytics})
-		this.setState({analytics: this.state.analytics})
+		this.setState({analytics: this.state.analytics - this.state.col2Value})
+		this.setState({development: this.state.development - this.state.col3Value})
+		this.setState({test: this.state.test - this.state.col4Value})
 	}
 
 	//När det sätts till test ska summan adderas till totala summan
