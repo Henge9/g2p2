@@ -17,6 +17,7 @@ export default class ScrumBoard extends React.Component {
 		this.cardsColumn		=	 this.cardsColumn.bind(this);
 		this.pushB				=	 this.pushB.bind(this);
 		this.countBajs			=	 this.countBajs.bind(this);
+		this.removePoints		=	 this.removePoints.bind(this);
 		this.dice1Positions		=	 this.dice1Positions.bind(this);
 		this.dice2Positions		=	 this.dice2Positions.bind(this);
 		this.dice3Positions		=	 this.dice3Positions.bind(this);
@@ -252,101 +253,125 @@ export default class ScrumBoard extends React.Component {
 		var dice5Position = {...this.state.dice5Position};
 		var dice6Position = {...this.state.dice6Position};
 
-		const column2Array = [];
-		const column3Array = [];
-		const column4Array = [];
+		// const column2Array = [];
+		// const column3Array = [];
+		// const column4Array = [];
+
+		var helpNumber2 = 0
+		var helpNumber3 = 0
+		var helpNumber4 = 0
 
 		switch (dice1Position[`column`]){
 			case 2:
-        		column2Array.push(die1numb)
+        		// column2Array.push(die1numb)
+        		helpNumber2 += die1numb
         	break;
 
         	case 4:
-        		column4Array.push(die1numb)
+        		// column4Array.push(die1numb)
+        		helpNumber4 += die1numb
         	break;
 		}
 
 		switch (dice2Position[`column`]){
 			case 2:
-        		column2Array.push(die2numb)
+        		// column2Array.push(die2numb)
+        		helpNumber2 += die2numb
         	break;
 
         	case 4:
-        		column4Array.push(die2numb)
+        		// column4Array.push(die2numb)
+        		helpNumber4 += die2numb
         	break;
 		}
 
 		switch (dice3Position[`column`]){
 			case 2:
-        		column2Array.push(die3numb)
+        		// column2Array.push(die3numb)
+        		helpNumber2 += die3numb
         	break;
 
         	case 3:
-        		column3Array.push(die3numb)
+        		// column3Array.push(die3numb)
+        		helpNumber3 += die3numb
         	break;
 
         	case 4:
-        		column4Array.push(die3numb)
+        		// column4Array.push(die3numb)
+        		helpNumber4 += die3numb
         	break;
 		}
 
 		switch (dice4Position[`column`]){
 			case 2:
-        		column2Array.push(die4numb)
+        		// column2Array.push(die4numb)
+        		helpNumber2 += die4numb
         	break;
 
         	case 3:
-        		column3Array.push(die4numb)
+        		// column3Array.push(die4numb)
+        		helpNumber3 += die4numb
         	break;
 
         	case 4:
-        		column4Array.push(die4numb)
+        		// column4Array.push(die4numb)
+        		helpNumber4 += die4numb
         	break;
 		}
 
 		switch (dice5Position[`column`]){
 			case 2:
-        		column2Array.push(die5numb)
+        		// column2Array.push(die5numb)
+        		helpNumber2 += die5numb
         	break;
 
         	case 3:
-        		column3Array.push(die5numb)
+        		// column3Array.push(die5numb)
+        		helpNumber3 += die5numb
         	break;
 
         	case 4:
-        		column4Array.push(die5numb)
+        		// column4Array.push(die5numb)
+        		helpNumber4 += die5numb
         	break;
 		}
 
 		switch (dice6Position[`column`]){
 			case 2:
-        		column2Array.push(die6numb)
+        		// column2Array.push(die6numb)
+        		helpNumber2 += die6numb
         	break;
 
         	case 3:
-        		column3Array.push(die6numb)
+        		// column3Array.push(die6numb)
+        		helpNumber3 += die6numb
         	break;
 
         	case 4:
-        		column4Array.push(die6numb)
+        		// column4Array.push(die6numb)
+        		helpNumber4 += die6numb
         	break;
 		}
 
-		var column2Value = column2Array.reduce((total, sum) => {
-			return total + sum
-		}, 0)
+		// var column2Value = column2Array.reduce((total, sum) => {
+		// 	return total + sum
+		// }, 0)
 
-		var column3Value = column3Array.reduce((total, sum) => {
-			return total + sum
-		}, 0)
+		// var column3Value = column3Array.reduce((total, sum) => {
+		// 	return total + sum
+		// }, 0)
 
-		var column4Value = column4Array.reduce((total, sum) => {
-			return total + sum
-		}, 0)
+		// var column4Value = column4Array.reduce((total, sum) => {
+		// 	return total + sum
+		// }, 0)
 
-		console.log('2 e: ', column2Value)
-		console.log('3 e: ', column3Value)
-		console.log('4 e: ', column4Value)	
+		// console.log('2 e: ', column2Value)
+		// console.log('3 e: ', column3Value)
+		// console.log('4 e: ', column4Value)
+
+		this.setState({col2Value: helpNumber2})
+		this.setState({col3Value: helpNumber3})
+		this.setState({col4Value: helpNumber4})	
 	}
 
 	updatePoints(column, points, analytics, development, test) {
@@ -379,6 +404,18 @@ export default class ScrumBoard extends React.Component {
 			}
 	}
 
+	removePoints(e){
+		var analytics = {...this.state.analytics};
+		var development = {...this.state.development};
+		var test = {...this.state.test};
+
+		analytics = 
+
+		this.setState({analytics: this.state.analytics})
+		this.setState({analytics: this.state.analytics})
+		this.setState({analytics: this.state.analytics})
+	}
+
 	//När det sätts till test ska summan adderas till totala summan
 	//I ifen, pusha in i array så då är test-korten samlade i en array
 
@@ -399,8 +436,6 @@ export default class ScrumBoard extends React.Component {
 			// this.setState({cardsColumnState});
 			this.setState({finishedCards})
 
-			console.log('fN', finishedCards[`number`])
-
 			for(var i=0; i<finishedCards[`number`]; i++){
 				helpArray.push(Number(totalSumState[i]))
 			}
@@ -411,7 +446,6 @@ export default class ScrumBoard extends React.Component {
 
 			earnedTotalSumState = helpArray
 			this.setState({earnedTotalSumState})
-			console.log('e', earnedTotalSumState)
 		}
 	}
 
@@ -436,7 +470,6 @@ export default class ScrumBoard extends React.Component {
 		// 	return total + sum
 		// }, 0)
 
-		console.log('totalsum: ', totalSumState)
 		// console.log('totala värdet: ', cardSum)
 			// for (var i=0; i<cardSum.length; i++){
 			// 	console.log('column?: ', cardSum[i].column)
@@ -456,7 +489,7 @@ export default class ScrumBoard extends React.Component {
 			<div className="scrumboard">
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
-				<Columns addX={this.addX} countBajs={this.countBajs} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
+				<Columns removePoints={this.removePoints} addX={this.addX} countBajs={this.countBajs} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
 				<HoldMaint updatePoints={this.updatePoints} />
 				<HoldDefects updatePoints={this.updatePoints} />

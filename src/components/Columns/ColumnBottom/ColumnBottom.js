@@ -312,7 +312,7 @@ export default class ColumnBottom extends React.Component {
 			<div className='column-bottom'>
 				<DiceArea countBajs={this.props.countBajs} pushB={this.props.pushB} rollDice1={this.props.rollDice1} rollDice2={this.props.rollDice2} rollDice3={this.props.rollDice3} rollDice4={this.props.rollDice4} rollDice5={this.props.rollDice5} rollDice6={this.props.rollDice6} dice1Positions={this.props.dice1Positions} dice2Positions={this.props.dice2Positions} dice3Positions={this.props.dice3Positions} dice4Positions={this.props.dice4Positions} dice5Positions={this.props.dice5Positions} dice6Positions={this.props.dice6Positions} />	
 					
-				<ColumnButtons countBajs={this.props.countBajs} addX={this.props.addX} pushB={this.props.pushB} />
+				<ColumnButtons removePoints={this.props.removePoints} countBajs={this.props.countBajs} addX={this.props.addX} pushB={this.props.pushB} />
 			</div>
 		);
 	}
