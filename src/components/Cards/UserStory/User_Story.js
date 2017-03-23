@@ -16,6 +16,7 @@ export default class UserStory extends React.Component {
 			test: []
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
+		this.onClick = this.onClick.bind(this);
 	}
 
 	onMouseEnter() {
@@ -30,7 +31,12 @@ export default class UserStory extends React.Component {
 
 		// Remove points from card
 		if(this.refs.analytics.childElementCount > 0) {
-			for (var i = 0; i < this.props.removeAn; i++) {
+
+			console.log(`
+			Children: ${this.refs.analytics.childElementCount}
+			col2Value: ${this.props.col2Value}`);
+
+			for (var i = 0; i < this.props.col2Value; i++) {
 				this.refs.analytics.removeChild(this.refs.analytics.lastChild);
 			}
 		}

@@ -78,7 +78,7 @@ export default class Hold extends React.Component {
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
-				card = <UserStory key={i.toString()} removeAn={self.props.removeAn} updateCard={self.updateCard} number={cards[i].number} value={cards[i].value} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test} cardsColumn={self.props.cardsColumn}/>
+				card = <UserStory key={i.toString()} col2Value={self.props.col2Value} updateCard={self.updateCard} number={cards[i].number} value={cards[i].value} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test} cardsColumn={self.props.cardsColumn}/>
 
 				jsx = self.state.jsx;
 				jsx.unshift(card);
