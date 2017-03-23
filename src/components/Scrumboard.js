@@ -25,7 +25,9 @@ export default class ScrumBoard extends React.Component {
 		this.dice5Positions		=	 this.dice5Positions.bind(this);
 		this.dice6Positions		=	 this.dice6Positions.bind(this);
 		this.clickArrow			= 	 this.clickArrow.bind(this);
-		this.updateCol2Value    =    this.updateCol2Value.bind(this)
+		this.updateCol2Value    =    this.updateCol2Value.bind(this);
+		this.updateCol3Value    =    this.updateCol3Value.bind(this);
+		this.updateCol4Value    =    this.updateCol4Value.bind(this);
 		
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
@@ -63,9 +65,41 @@ export default class ScrumBoard extends React.Component {
 		};
 	}
 
-	updateCol2Value(){
-		var col2Value = {...this.state.col2Value}
-		return this.state.col2Value
+	updateCol2Value(sub) {
+		if (this.state.col2Value - sub <= 0) {
+			this.setState({
+				col2Value: 0
+			});
+		} else {
+			this.setState({
+				col2Value: this.state.col2Value - sub
+			});
+		}
+		return this.state.col2Value;
+	}
+	updateCol3Value(sub) {
+		if (this.state.col3Value - sub <= 0) {
+			this.setState({
+				col3Value: 0
+			});
+		} else {
+			this.setState({
+				col3Value: this.state.col3Value - sub
+			});
+		}
+		return this.state.col3Value;
+	}
+	updateCol4Value(sub) {
+		if (this.state.col4Value - sub <= 0) {
+			this.setState({
+				col4Value: 0
+			});
+		} else {
+			this.setState({
+				col4Value: this.state.col4Value - sub
+			});
+		}
+		return this.state.col4Value;
 	}
 
 	//ReleasePlanCell.js - ColumnButton.js
@@ -435,8 +469,7 @@ export default class ScrumBoard extends React.Component {
 			}
 	}
 
-	removePoints(e){
-		alert('remove')
+	removePoints(e) {
 		this.setState({analytics: this.state.analytics - this.state.col2Value})
 		this.setState({development: this.state.development - this.state.col3Value})
 		this.setState({test: this.state.test - this.state.col4Value})
@@ -509,10 +542,10 @@ export default class ScrumBoard extends React.Component {
 			<div className="scrumboard">
 				<NavBar earnedTotalSumState={this.state.earnedTotalSumState} />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
-				<Hold updateCol2Value={this.updateCol2Value} updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
+				<Hold updateCol2Value={this.updateCol2Value} updateCol3Value={this.updateCol3Value} updateCol4Value={this.updateCol4Value} updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
 				<Columns clickArrow={this.clickArrow} removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
-				<HoldMaint updatePoints={this.updatePoints} />
-				<HoldDefects updatePoints={this.updatePoints} />
+				<HoldMaint updateCol2Value={this.updateCol2Value} updateCol3Value={this.updateCol3Value} updatePoints={this.updatePoints} />
+				<HoldDefects updateCol2Value={this.updateCol2Value} updateCol3Value={this.updateCol3Value} updatePoints={this.updatePoints} />
 				<p className="total">{this.state.analytics}</p>
 				<p className="total">{this.state.development}</p>
 				<p className="total">{this.state.test}</p>

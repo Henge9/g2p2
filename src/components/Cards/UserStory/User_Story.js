@@ -10,19 +10,24 @@ export default class UserStory extends React.Component {
 		this.state = {
 			isMoving: false,
 			column: 'backlog',
-			points: 0,
-			analytics: [],
-			development: [],
-			test: [],
+			points: 0
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
 		this.onClick = this.onClick.bind(this);
 		this.moveCard = this.moveCard.bind(this);
 	}
 
-	updateCol2Value(){
-		var ab = this.props.updateCol2Value()
-		return ab
+	updateCol2Value(sub){
+		var v = this.props.updateCol2Value(sub);
+		return v;
+	}
+	updateCol3Value(sub) {
+		var v = this.props.updateCol3Value(sub);
+		return v;
+	}
+	updateCol4Value(sub) {
+		var v = this.props.updateCol4Value(sub);
+		return v;
 	}
 
 	moveCard() {
@@ -55,12 +60,17 @@ export default class UserStory extends React.Component {
 
 	onClick() {
 
-		var updateCol2Value = this.updateCol2Value();
+		var updateCol2Value;
+		var updateCol3Value;
+		var updateCol4Value;
 
 		/* Move card */
 		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
 
 			if (this.state.column === "backlog") {
+
+				updateCol2Value = this.updateCol2Value(0);
+
 				this.moveCard();
 				this.setState({
 					column: 'analysis',
@@ -71,13 +81,15 @@ export default class UserStory extends React.Component {
 				this.refs.analytics.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 			}
 			else if (this.state.column === "analysis") {
+				updateCol2Value = this.updateCol2Value(this.refs.analytics.childElementCount);
 
 				// Remove points from card
 				if(this.refs.analytics.childElementCount > 0) {
 
 					// Remove points
 					for (var i = 0; i < updateCol2Value; i++) {
-						this.refs.analytics.removeChild(this.refs.analytics.lastChild);
+						let lastChild = this.refs.analytics.lastChild;
+						this.refs.analytics.removeChild(lastChild);
 					}
 				} else {
 					this.moveCard();
@@ -94,9 +106,18 @@ export default class UserStory extends React.Component {
 				}
 			}
 			else if(this.state.column === "development") {
+
+				updateCol3Value = this.updateCol3Value(this.refs.development.childElementCount);
+
 				if(this.refs.development.childElementCount > 0) {
 
+					// Remove points
+					for (var i = 0; i < updateCol3Value; i++) {
+						let lastChild = this.refs.development.lastChild;
+						this.refs.development.removeChild(lastChild);
+					}
 				} else {
+					this.moveCard();
 					this.setState({
 						column: 'test',
 						points: this.props.test
@@ -110,9 +131,18 @@ export default class UserStory extends React.Component {
 				}
 			}
 			else if(this.state.column === "test") {
+
+				updateCol4Value = this.updateCol4Value(this.refs.test.childElementCount);
+
 				if(this.refs.test.childElementCount > 0) {
 
+					// Remove points
+					for (var i = 0; i < updateCol4Value; i++) {
+						let lastChild = this.refs.test.lastChild;
+						this.refs.test.removeChild(lastChild);
+					}
 				} else {
+					this.moveCard();
 					this.setState({
 						column: 'done',
 						points: null
@@ -123,7 +153,6 @@ export default class UserStory extends React.Component {
 				}
 			}
 		}
-
 		const cardsColumn = this.state.column
 		this.props.cardsColumn(cardsColumn)
 	}
@@ -175,7 +204,7 @@ export default class UserStory extends React.Component {
 	return (
 	  	<div ref='card' className='user-story' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} onClick={this.onClick.bind(this)}>
 	  		<p className='header'>US{this.props.number}</p><p className='value'>${this.props.value}</p>
-	  		<div className='points' onClick={(e) => this.props.updateCol2Value(e)}>
+	  		<div className='points'>
 	  			<div ref='analytics'></div>
 	  			<div ref='development'></div>
 	  			<div ref='test'></div>
