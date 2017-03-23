@@ -109,7 +109,7 @@ export default class ScrumBoard extends React.Component {
 			rollDice4,
 			rollDice5,
 			rollDice6
-		}, this.countDice());
+		}, function() {this.countDice()});
 	}
 
 	dice1Positions() {
@@ -127,7 +127,7 @@ export default class ScrumBoard extends React.Component {
         		dice1Position[`column`] = 2
         	break;
 		}
-		this.setState({dice1Position}, this.countDice);
+		this.setState({dice1Position});
 	}
 
 	dice2Positions(){
@@ -145,7 +145,7 @@ export default class ScrumBoard extends React.Component {
         		dice2Position[`column`] = 2
         	break;
 		}
-		this.setState({dice2Position}, this.countDice);
+		this.setState({dice2Position});
 	}
 
 	dice3Positions(){
@@ -167,7 +167,7 @@ export default class ScrumBoard extends React.Component {
         		dice3Position[`column`] = 2
         	break;
 		}
-		this.setState({dice3Position}, this.countDice);
+		this.setState({dice3Position});
 	}
 
 	dice4Positions(){
@@ -189,7 +189,7 @@ export default class ScrumBoard extends React.Component {
         		dice4Position[`column`] = 2
         	break;
 		}
-		this.setState({dice4Position}, this.countDice);
+		this.setState({dice4Position});
 	}
 
 	dice5Positions(){
@@ -211,7 +211,7 @@ export default class ScrumBoard extends React.Component {
         		dice5Position[`column`] = 2
         	break;
 		}
-		this.setState({dice5Position}, this.countDice);
+		this.setState({dice5Position});
 	}
 
 	dice6Positions(){
@@ -233,7 +233,7 @@ export default class ScrumBoard extends React.Component {
         		dice6Position[`column`] = 2
         	break;
 		}
-		this.setState({dice6Position}, this.countDice);
+		this.setState({dice6Position});
 	}
 
 	countDice(e) {
@@ -243,6 +243,8 @@ export default class ScrumBoard extends React.Component {
 		var die4numb = this.state.rollDice4[`numberIV`];
 		var die5numb = this.state.rollDice5[`numberV`];
 		var die6numb = this.state.rollDice6[`numberVI`];
+
+		console.log(`${die1numb} ${die2numb} ${die3numb} ${die4numb} ${die5numb} ${die6numb}`);
 
 		var dice1Position = {...this.state.dice1Position};
 		var dice2Position = {...this.state.dice2Position};
