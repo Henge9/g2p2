@@ -47,3 +47,11 @@
   width: 700px;
   height: 500px;
 }
+
+.highscore {
+  background-color: #1ab6f1;
+}
+
+.highscore p {
+  color: white;
+}
