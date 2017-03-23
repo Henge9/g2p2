@@ -129,7 +129,7 @@ export default class ScrumBoard extends React.Component {
         		dice1Position[`column`] = 2
         	break;
 		}
-		this.setState({dice1Position}, this.countBajs);
+		this.setState({dice1Position});
 	}
 
 	dice2Positions(){
@@ -147,7 +147,7 @@ export default class ScrumBoard extends React.Component {
         		dice2Position[`column`] = 2
         	break;
 		}
-		this.setState({dice2Position}, this.countBajs);
+		this.setState({dice2Position});
 	}
 
 	dice3Positions(){
@@ -169,7 +169,7 @@ export default class ScrumBoard extends React.Component {
         		dice3Position[`column`] = 2
         	break;
 		}
-		this.setState({dice3Position}, this.countBajs);
+		this.setState({dice3Position});
 	}
 
 	dice4Positions(){
@@ -191,7 +191,7 @@ export default class ScrumBoard extends React.Component {
         		dice4Position[`column`] = 2
         	break;
 		}
-		this.setState({dice4Position}, this.countBajs);
+		this.setState({dice4Position});
 	}
 
 	dice5Positions(){
@@ -213,7 +213,7 @@ export default class ScrumBoard extends React.Component {
         		dice5Position[`column`] = 2
         	break;
 		}
-		this.setState({dice5Position}, this.countBajs);
+		this.setState({dice5Position});
 	}
 
 	dice6Positions(){
@@ -235,7 +235,7 @@ export default class ScrumBoard extends React.Component {
         		dice6Position[`column`] = 2
         	break;
 		}
-		this.setState({dice6Position}, this.countBajs);
+		this.setState({dice6Position});
 	}
 
 	countBajs(e){
@@ -252,10 +252,6 @@ export default class ScrumBoard extends React.Component {
 		var dice4Position = {...this.state.dice4Position};
 		var dice5Position = {...this.state.dice5Position};
 		var dice6Position = {...this.state.dice6Position};
-
-		// const column2Array = [];
-		// const column3Array = [];
-		// const column4Array = [];
 
 		var helpNumber2 = 0
 		var helpNumber3 = 0
@@ -404,7 +400,8 @@ export default class ScrumBoard extends React.Component {
 			}
 	}
 
-	removePoints(){
+	removePoints(e){
+		alert('remove')
 		this.setState({analytics: this.state.analytics - this.state.col2Value})
 		this.setState({development: this.state.development - this.state.col3Value})
 		this.setState({test: this.state.test - this.state.col4Value})

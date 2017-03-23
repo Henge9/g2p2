@@ -12,14 +12,7 @@ export default class ColumnButtons extends React.Component {
   	super()
   	this.toggleGoButton = this.toggleGoButton.bind(this);
   	this.toggleSetButton = this.toggleSetButton.bind(this);
-  }
-
-  toggleGoButton(){
-  	if(this.refs.goButton.style.display == 'inline-block'){
-  		this.refs.goButton.style.display = 'none'
-  	} else {
-  		this.refs.goButton.style.display = 'inline-block'
-  	}	
+  	// this.hej = this.hej.bind(this);
   }
 
   toggleSetButton(){
@@ -30,11 +23,19 @@ export default class ColumnButtons extends React.Component {
   	}
   }
 
+  toggleGoButton(){
+  	if(this.refs.goButton.style.display == 'inline-block'){
+  		this.refs.goButton.style.display = 'none'
+  	} else {
+  		this.refs.goButton.style.display = 'inline-block'
+  	}	
+  }
+
 	render() {
 		return (
 			<div className='column-buttons'>
-				<button ref='goButton' className='go-button' onClick={(e) => {this.props.countBajs(e); this.toggleGoButton(); this.toggleSetButton(); this.props.removePoints(e); this.props.pushB(e); this.props.addX(e)}}>GO</button>
-				<button ref='setButton' className='set-button' onClick={(e) => {this.toggleSetButton(); this.toggleGoButton()}}>SET</button>
+				<button ref='setButton' className='set-button' onClick={(e) => {this.toggleSetButton(); this.props.pushB(e); this.toggleGoButton()}}>SET</button>
+				<button ref='goButton' className='go-button' onClick={(e) => {this.fakeClick(); this.toggleGoButton(); this.toggleSetButton(); this.props.countBajs(e); this.props.addX(e)}}>GO</button>
 			</div>
 		);
 	}

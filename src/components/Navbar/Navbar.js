@@ -15,7 +15,6 @@ export default class NavBar extends React.Component {
 				newGame: false, 
 				rules: false, 
 				highscore: false, 
-				about: false
 			},
 		};
 	}
@@ -102,6 +101,7 @@ export default class NavBar extends React.Component {
 				<ul>
 					<li><a onClick={(e) => this.show("newGame")}>New game</a></li>
 					<li><a onClick={(e) => this.show("rules")}>Rules</a></li>
+					<li><a onClick={(e) => this.show("highscore")}>Highscore</a></li>
 				</ul>
 			</nav>
 			{this.state.navBar[`newGame`] ? <NewGame navClose={(e) => this.show("newGame")}/> : null}
