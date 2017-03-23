@@ -136,7 +136,7 @@ export default class NavBar extends React.Component {
 			</nav>
 			{this.state.navBar[`newGame`] ? <NewGame navClose={(e) => this.show("newGame")}/> : null}
 			{this.state.navBar[`rules`] ? <Rules navClose={(e) => this.show("rules")} /> : null}
-			{this.state.navBar[`saveGame`] ? <SaveGame navClose={(e) => this.show("saveGame")} /> : null}
+			{this.state.navBar[`saveGame`] ? <SaveGame earnedTotalSumState={this.props.earnedTotalSumState} navClose={(e) => this.show("saveGame")} /> : null}
 			{this.state.navBar[`highscore`] ? <Highscore navClose={(e) => this.show("highscore")} /> : null}
 			{this.state.navBar[`about`] ? <About navClose={(e) => this.show("about")} /> : null}
 		</div>

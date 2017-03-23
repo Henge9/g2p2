@@ -412,7 +412,6 @@ export default class ScrumBoard extends React.Component {
 
 	cardSum(cardSum){
 		if (this.state.cardsColumnState[`column`] === 'analysis'){
-			alert('bas')
 		}
 		var totalSum = []
 		var totalSumState = {...this.state.totalSumState};
@@ -446,7 +445,7 @@ export default class ScrumBoard extends React.Component {
 	render() {
 		return (
 			<div className="scrumboard">
-				<NavBar />
+				<NavBar earnedTotalSumState={this.state.earnedTotalSumState} />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
 				<Columns removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />

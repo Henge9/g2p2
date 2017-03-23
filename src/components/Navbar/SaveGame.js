@@ -10,7 +10,7 @@ export default class Highscore extends React.Component {
 		  		<label>Enter teamname:</label>
 		  		<input/>
 		  		<input type="submit"/>
-		  		<label>Total points: </label>
+		  		<label>Total points: ${this.props.earnedTotalSumState}</label>
 		  		<p></p>
 		  	</div>
 		);
