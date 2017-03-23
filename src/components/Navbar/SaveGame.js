@@ -7,7 +7,11 @@ export default class Highscore extends React.Component {
 		return (
 		  	<div className="nav-component highscore">
 		  		<div className="nav-close" onClick={(e) => {this.props.navClose(e)}}>X</div>
-		  		<p>hfjskghjk</p>
+		  		<label>Enter teamname:</label>
+		  		<input/>
+		  		<input type="submit"/>
+		  		<label>Total points: </label>
+		  		<p></p>
 		  	</div>
 		);
     }
