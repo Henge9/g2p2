@@ -21,3 +21,40 @@ header.header {
   padding-top: 2%;
   padding-bottom: 2%;
 }
+
+p.total {
+  position: absolute;
+  top: 95px;
+  color: black;
+  font-size: 16px;
+}
+
+p.total:nth-of-type(1) {
+  left: 170px;
+}
+
+p.total:nth-of-type(2) {
+  left: 330px;
+}
+
+p.total:nth-of-type(3) {
+  left: 490px;
+}
+
+p.total:nth-of-type(4) {
+  left: 296px;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+p.total:nth-of-type(5) {
+  left: 456px;
+  color: blue;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+p.total:nth-of-type(6) {
+  left: 616px;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

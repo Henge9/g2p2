@@ -73,9 +73,11 @@ export default class ScrumBoard extends React.Component {
 			sprintArray[`number`] += 1;
 		}
 		
-		this.setState({releaseplan});
-		this.setState({sprintArray});
-		this.setState({dayArray});
+		this.setState({
+			releaseplan,
+			sprintArray,
+			dayArray
+		});
 	}
 
 	pushB(){
@@ -127,7 +129,9 @@ export default class ScrumBoard extends React.Component {
         		dice1Position[`column`] = 2
         	break;
 		}
-		this.setState({dice1Position});
+		this.setState({
+			dice1Position
+		});
 	}
 
 	dice2Positions(){
@@ -333,9 +337,11 @@ export default class ScrumBoard extends React.Component {
         	break;
 		}
 
-		this.setState({col2Value: helpNumber2})
-		this.setState({col3Value: helpNumber3})
-		this.setState({col4Value: helpNumber4})	
+		this.setState({
+			col2Value: helpNumber2,
+			col3Value: helpNumber3,
+			col4Value: helpNumber4
+		});
 	}
 
 	updatePoints(column, points, analytics, development, test) {
@@ -377,10 +383,7 @@ export default class ScrumBoard extends React.Component {
 	//När det sätts till test ska summan adderas till totala summan
 	//I ifen, pusha in i array så då är test-korten samlade i en array
 
-	cardsColumn(cardsColumn){
-		// for (var i=0; i<cardSum.length; i++){
-		// 	console.log('column?: ', cardSum[i].column)
-		// }
+	cardsColumn(cardsColumn) {
 
 		var cardsColumnState = {...this.state.cardsColumnState};
 		var finishedCards = {...this.state.finishedCards};
@@ -390,8 +393,6 @@ export default class ScrumBoard extends React.Component {
 
 		if (cardsColumn === 'test') {
 			finishedCards[`number`] += 1
-			// cardsColumnState[`column`] = 'development';
-			// this.setState({cardsColumnState});
 			this.setState({finishedCards})
 
 			for(var i=0; i<finishedCards[`number`]; i++){
@@ -448,9 +449,15 @@ export default class ScrumBoard extends React.Component {
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
 				<Columns removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
-				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
+				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} removeAn={this.state.col2Value} />
 				<HoldMaint updatePoints={this.updatePoints} />
 				<HoldDefects updatePoints={this.updatePoints} />
+				<p className="total">{this.state.analytics}</p>
+				<p className="total">{this.state.development}</p>
+				<p className="total">{this.state.test}</p>
+				<p className="total">{this.state.col2Value}</p>
+				<p className="total">{this.state.col3Value}</p>
+				<p className="total">{this.state.col4Value}</p>
 			</div>
 		);
 	}
