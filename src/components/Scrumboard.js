@@ -25,6 +25,7 @@ export default class ScrumBoard extends React.Component {
 		this.dice5Positions		=	 this.dice5Positions.bind(this);
 		this.dice6Positions		=	 this.dice6Positions.bind(this);
 		this.clickArrow			= 	 this.clickArrow.bind(this);
+		this.updateCol2Value    =    this.updateCol2Value.bind(this)
 		
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
@@ -60,6 +61,11 @@ export default class ScrumBoard extends React.Component {
 
 			clickedArrow: {click: false},
 		};
+	}
+
+	updateCol2Value(){
+		var col2Value = {...this.state.col2Value}
+		return this.state.col2Value
 	}
 
 	//ReleasePlanCell.js - ColumnButton.js
@@ -503,7 +509,7 @@ export default class ScrumBoard extends React.Component {
 			<div className="scrumboard">
 				<NavBar earnedTotalSumState={this.state.earnedTotalSumState} />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
-				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} col2Value={this.state.col2Value} />
+				<Hold updateCol2Value={this.updateCol2Value} updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
 				<Columns clickArrow={this.clickArrow} removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<HoldMaint updatePoints={this.updatePoints} />
 				<HoldDefects updatePoints={this.updatePoints} />

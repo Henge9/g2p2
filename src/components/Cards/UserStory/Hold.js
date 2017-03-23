@@ -14,11 +14,20 @@ export default class Hold extends React.Component {
 			jsx: [],
 			analytics: 0,
 			development: 0,
-			test: 0
+			test: 0,
+			// col2Value: 0,
 		}
 		this.componentWillMount = this.componentWillMount.bind(this);
 		this.updateCard = this.updateCard.bind(this);
+		// this.updateCol2Value = this.updateCol2Value.bind(this)
 	}
+
+	// updateCol2Value(e){
+	// 	const col2Value = {...this.state.col2Value};
+	// 	col2Value[``] = this.props.col2Value;
+	// 	this.setState({col2Value})
+	// 	return ({col2Value})
+	// }
 
 	updateCard(column, points, analytics, development, test) {
 
@@ -78,7 +87,7 @@ export default class Hold extends React.Component {
 			// Create JSX elements
 			for (var i = 0; i < cards.length; i++) {
 
-				card = <UserStory key={i.toString()} col2Value={self.props.col2Value} updateCard={self.updateCard} number={cards[i].number} value={cards[i].value} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test} cardsColumn={self.props.cardsColumn}/>
+				card = <UserStory key={i.toString()} updateCol2Value={self.props.updateCol2Value} updateCard={self.updateCard} number={cards[i].number} value={cards[i].value} analytics={cards[i].analytics} development={cards[i].development} test={cards[i].test} cardsColumn={self.props.cardsColumn}/>
 
 				jsx = self.state.jsx;
 				jsx.unshift(card);

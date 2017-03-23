@@ -13,10 +13,15 @@ export default class UserStory extends React.Component {
 			points: 0,
 			analytics: [],
 			development: [],
-			test: []
+			test: [],
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
 		this.onClick = this.onClick.bind(this);
+	}
+
+	updateCol2Value(){
+		var ab = this.props.updateCol2Value()
+		return ab
 	}
 
 	onMouseEnter() {
@@ -29,12 +34,14 @@ export default class UserStory extends React.Component {
 
 	onClick() {
 
+		var updateCol2Value = this.updateCol2Value()
+
 		// Remove points from card
 		if(this.refs.analytics.childElementCount > 0) {
 
 			console.log(`
 			Children: ${this.refs.analytics.childElementCount}
-			col2Value: ${this.props.col2Value}`);
+			col2Value: ${updateCol2Value}`);
 
 			for (var i = 0; i < this.props.col2Value; i++) {
 				this.refs.analytics.removeChild(this.refs.analytics.lastChild);
@@ -167,7 +174,7 @@ export default class UserStory extends React.Component {
 	return (
 	  	<div ref='card' className='user-story' onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} onClick={this.onClick.bind(this)}>
 	  		<p className='header'>US{this.props.number}</p><p className='value'>${this.props.value}</p>
-	  		<div className='points'>
+	  		<div className='points' onClick={(e) => this.props.updateCol2Value(e)}>
 	  			<div ref='analytics'></div>
 	  			<div ref='development'></div>
 	  			<div ref='test'></div>
