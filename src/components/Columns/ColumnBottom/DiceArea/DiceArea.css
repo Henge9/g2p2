@@ -67,3 +67,28 @@
   z-index: 10;
   font-size: 2em;
 }
+
+.arrow {
+  width: 20px;
+  height: 100px;
+  padding-top: 7px;
+  padding-left: 7px;
+  margin-left: 135px;
+  margin-top: 0;
+  position: absolute;
+}
+
+#innerarrow {
+  margin-top: 10px;
+  margin-left: -10px;
+  font-size: 40px;
+  color: #76a3bf;
+  /*color: #da3e77;*/
+}
+
+#innerarrow:hover {
+  color: #da3e77;
+  font-size: 45px;
+  margin-top: 7px;
+  cursor: pointer;
+}

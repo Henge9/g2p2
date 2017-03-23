@@ -29,6 +29,11 @@ export default class Die6 extends React.Component {
 		}
 	}
 
+	back(event) {
+		var obj = this.refs.die6;
+		var group1 = document.querySelector('#group1');
+			group1.appendChild(obj);
+	}
 
 	render() {
 
