@@ -17,11 +17,32 @@ export default class UserStory extends React.Component {
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
 		this.onClick = this.onClick.bind(this);
+		this.moveCard = this.moveCard.bind(this);
 	}
 
 	updateCol2Value(){
 		var ab = this.props.updateCol2Value()
 		return ab
+	}
+
+	moveCard() {
+		this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
+		this.refs.card.style.width = "105px";
+		this.refs.card.style.height = "105px";
+
+		this.setState({
+			isMoving: true
+		});
+
+		let that = this;
+
+		setTimeout(function() {
+			that.setState({
+				isMoving: false,
+			});
+			that.refs.card.style.width = "100px";
+			that.refs.card.style.height = "100px";
+		}, 2000);
 	}
 
 	onMouseEnter() {
@@ -34,52 +55,32 @@ export default class UserStory extends React.Component {
 
 	onClick() {
 
-		var updateCol2Value = this.updateCol2Value()
-
-		// Remove points from card
-		if(this.refs.analytics.childElementCount > 0) {
-
-			console.log(`
-			Children: ${this.refs.analytics.childElementCount}
-			col2Value: ${updateCol2Value}`);
-
-			for (var i = 0; i < this.props.col2Value; i++) {
-				this.refs.analytics.removeChild(this.refs.analytics.lastChild);
-			}
-		}
+		var updateCol2Value = this.updateCol2Value();
 
 		/* Move card */
 		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
-			this.refs.card.style.left = parseInt(this.refs.card.style.left, 10) + 158 + 'px';
-			this.refs.card.style.width = "105px";
-			this.refs.card.style.height = "105px";
-			
-			this.setState({
-				isMoving: true
-			});
 
-			let that = this;
+			if (this.state.column === "backlog") {
+				this.moveCard();
+				this.setState({
+					column: 'analysis',
+					points: this.props.analytics
+				}, this.route);
 
-			setTimeout(function() {
-				that.setState({
-					isMoving: false,
-				});
-				that.refs.card.style.width = "100px";
-				that.refs.card.style.height = "100px";
-			}, 2000);
+				this.refs.analytics.style.color = "yellow";
+				this.refs.analytics.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
+			}
+			else if (this.state.column === "analysis") {
 
-			switch(this.state.column) {
-				case 'backlog':
-					this.setState({
-						column: 'analysis',
-						points: this.props.analytics
-					}, this.route);
+				// Remove points from card
+				if(this.refs.analytics.childElementCount > 0) {
 
-					this.refs.analytics.style.color = "yellow";
-					this.refs.analytics.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
-					break;
-
-				case 'analysis':
+					// Remove points
+					for (var i = 0; i < updateCol2Value; i++) {
+						this.refs.analytics.removeChild(this.refs.analytics.lastChild);
+					}
+				} else {
+					this.moveCard();
 					this.setState({
 						column: 'development',
 						points: this.props.development
@@ -90,9 +91,12 @@ export default class UserStory extends React.Component {
 
 					this.refs.development.style.color = "lightblue";
 					this.refs.development.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
-					break;
+				}
+			}
+			else if(this.state.column === "development") {
+				if(this.refs.development.childElementCount > 0) {
 
-				case 'development':
+				} else {
 					this.setState({
 						column: 'test',
 						points: this.props.test
@@ -103,9 +107,12 @@ export default class UserStory extends React.Component {
 
 					this.refs.test.style.color = "yellow";
 					this.refs.test.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
-					break;
+				}
+			}
+			else if(this.state.column === "test") {
+				if(this.refs.test.childElementCount > 0) {
 
-				case 'test':
+				} else {
 					this.setState({
 						column: 'done',
 						points: null
@@ -113,15 +120,9 @@ export default class UserStory extends React.Component {
 
 					this.refs.test.style.color = "black";
 					this.refs.test.style.textShadow = "none";
-					break;
-
-				default:
-					this.setState({
-						column: 'backlog'
-					}, this.route);
+				}
 			}
 		}
-		// this.sendCardsColumn()
 
 		const cardsColumn = this.state.column
 		this.props.cardsColumn(cardsColumn)

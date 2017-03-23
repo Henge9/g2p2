@@ -42,22 +42,22 @@ export default class Die3 extends React.Component {
 		var numb = this.props.rollDice3[`numberIII`];
 		
 		if(numb === 1) {
-			var d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/One.png')" };
+			var d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/OneG.png')" };
 		}
 		else if(numb === 2) {
-		 	d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Two.png')" };	 	
+		 	d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/TwoG.png')" };	 	
 		}
 		else if(numb === 3) {
-		 	d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Three.png')" }
+		 	d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/ThreeG.png')" }
 		} 	
 		else if(numb === 4) {
-			d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Four.png')" };
+			d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FourG.png')" };
 		}	
 		else if(numb === 5) {
-			d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Five.png')" };	
+			d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FiveG.png')" };	
 		}
 		else if(numb === 6) {
-			d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Six.png')" };
+			d3 = { backgroundImage: "url('http://agileboardgame.com/diceimg/SixG.png')" };
 		}
 
 	

@@ -42,22 +42,22 @@ export default class Die5 extends React.Component {
 		var numb = this.props.rollDice5[`numberV`];
 
 		if(numb === 1) {
-			var d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/One.png')" };
+			var d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/OneGg.png')" };
 		}
 		else if(numb === 2) {
-		 	d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Two.png')" };	 	
+		 	d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/TwoGg.png')" };	 	
 		}
 		else if(numb === 3) {
-		 	d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Three.png')" }
+		 	d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/ThreeGg.png')" }
 		} 	
 		else if(numb === 4) {
-			d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Four.png')" };
+			d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FourGg.png')" };
 		}	
 		else if(numb === 5) {
-			d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Five.png')" };	
+			d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FiveGg.png')" };	
 		}
 		else if(numb === 6) {
-			d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Six.png')" };
+			d5 = { backgroundImage: "url('http://agileboardgame.com/diceimg/SixGg.png')" };
 		}
 
 	

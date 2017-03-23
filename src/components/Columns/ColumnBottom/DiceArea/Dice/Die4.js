@@ -40,22 +40,22 @@ export default class Die4 extends React.Component {
 		var numb = this.props.rollDice4[`numberIV`];
 		
 		if(numb === 1) {
-			var d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/One.png')" };
+			var d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/OneG.png')" };
 		}
 		else if(numb === 2) {
-		 	d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Two.png')" };	 	
+		 	d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/TwoG.png')" };	 	
 		}
 		else if(numb === 3) {
-		 	d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Three.png')" }
+		 	d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/ThreeG.png')" }
 		} 	
 		else if(numb === 4) {
-			d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Four.png')" };
+			d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FourG.png')" };
 		}	
 		else if(numb === 5) {
-			d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Five.png')" };	
+			d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FiveG.png')" };	
 		}
 		else if(numb === 6) {
-			d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Six.png')" };
+			d4 = { backgroundImage: "url('http://agileboardgame.com/diceimg/SixG.png')" };
 		}
 
 		return (
