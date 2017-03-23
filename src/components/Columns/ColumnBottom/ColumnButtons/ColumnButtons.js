@@ -34,8 +34,8 @@ export default class ColumnButtons extends React.Component {
 	render() {
 		return (
 			<div className='column-buttons'>
-				<button ref='setButton' className='set-button' onClick={(e) => {this.toggleSetButton(); this.props.pushB(e); this.toggleGoButton()}}>SET</button>
-				<button ref='goButton' className='go-button' onClick={(e) => {this.fakeClick(); this.toggleGoButton(); this.toggleSetButton(); this.props.countBajs(e); this.props.addX(e)}}>GO</button>
+				<button ref='goButton' className='go-button' onClick={(e) => {this.toggleGoButton(); this.toggleSetButton(); this.props.removePoints(e); this.props.addX(e)}}>GO</button>
+				<button ref='setButton' className='set-button' onClick={(e) => {this.props.pushB(e); this.toggleSetButton(); this.toggleGoButton()}}>SET</button>
 			</div>
 		);
 	}

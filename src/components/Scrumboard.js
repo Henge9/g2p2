@@ -16,7 +16,7 @@ export default class ScrumBoard extends React.Component {
 		this.cardSum			=	 this.cardSum.bind(this);
 		this.cardsColumn		=	 this.cardsColumn.bind(this);
 		this.pushB				=	 this.pushB.bind(this);
-		this.countBajs			=	 this.countBajs.bind(this);
+		this.countDice			=	 this.countDice.bind(this);
 		this.removePoints		=	 this.removePoints.bind(this);
 		this.dice1Positions		=	 this.dice1Positions.bind(this);
 		this.dice2Positions		=	 this.dice2Positions.bind(this);
@@ -96,25 +96,23 @@ export default class ScrumBoard extends React.Component {
   		var number6 = Math.floor(Math.random() * (max - min)) + min;
 
 		rollDice1[`numberI`] = number1;
-		this.setState({rollDice1});
-
 		rollDice2[`numberII`] = number2;
-		this.setState({rollDice2});
-
 		rollDice3[`numberIII`] = number3;
-		this.setState({rollDice3});
-
 		rollDice4[`numberIV`] = number4;
-		this.setState({rollDice4});
-
 		rollDice5[`numberV`] = number5;
-		this.setState({rollDice5});
-
 		rollDice6[`numberVI`] = number6;
-		this.setState({rollDice6});
+
+		this.setState({
+			rollDice1,
+			rollDice2,
+			rollDice3,
+			rollDice4,
+			rollDice5,
+			rollDice6
+		}, function() {this.countDice()});
 	}
 
-	dice1Positions(){
+	dice1Positions() {
 		const dice1Position = {...this.state.dice1Position};
 		switch(dice1Position[`column`]) {
     		case 1:
@@ -238,13 +236,15 @@ export default class ScrumBoard extends React.Component {
 		this.setState({dice6Position});
 	}
 
-	countBajs(e){
+	countDice(e) {
 		var die1numb = this.state.rollDice1[`numberI`];
 		var die2numb = this.state.rollDice2[`numberII`];
 		var die3numb = this.state.rollDice3[`numberIII`];
 		var die4numb = this.state.rollDice4[`numberIV`];
 		var die5numb = this.state.rollDice5[`numberV`];
 		var die6numb = this.state.rollDice6[`numberVI`];
+
+		console.log(`${die1numb} ${die2numb} ${die3numb} ${die4numb} ${die5numb} ${die6numb}`);
 
 		var dice1Position = {...this.state.dice1Position};
 		var dice2Position = {...this.state.dice2Position};
@@ -259,111 +259,79 @@ export default class ScrumBoard extends React.Component {
 
 		switch (dice1Position[`column`]){
 			case 2:
-        		// column2Array.push(die1numb)
         		helpNumber2 += die1numb
         	break;
 
         	case 4:
-        		// column4Array.push(die1numb)
         		helpNumber4 += die1numb
         	break;
 		}
 
 		switch (dice2Position[`column`]){
 			case 2:
-        		// column2Array.push(die2numb)
         		helpNumber2 += die2numb
         	break;
 
         	case 4:
-        		// column4Array.push(die2numb)
         		helpNumber4 += die2numb
         	break;
 		}
 
 		switch (dice3Position[`column`]){
 			case 2:
-        		// column2Array.push(die3numb)
         		helpNumber2 += die3numb
         	break;
 
         	case 3:
-        		// column3Array.push(die3numb)
         		helpNumber3 += die3numb
         	break;
 
         	case 4:
-        		// column4Array.push(die3numb)
         		helpNumber4 += die3numb
         	break;
 		}
 
 		switch (dice4Position[`column`]){
 			case 2:
-        		// column2Array.push(die4numb)
         		helpNumber2 += die4numb
         	break;
 
         	case 3:
-        		// column3Array.push(die4numb)
         		helpNumber3 += die4numb
         	break;
 
         	case 4:
-        		// column4Array.push(die4numb)
         		helpNumber4 += die4numb
         	break;
 		}
 
 		switch (dice5Position[`column`]){
 			case 2:
-        		// column2Array.push(die5numb)
         		helpNumber2 += die5numb
         	break;
 
         	case 3:
-        		// column3Array.push(die5numb)
         		helpNumber3 += die5numb
         	break;
 
         	case 4:
-        		// column4Array.push(die5numb)
         		helpNumber4 += die5numb
         	break;
 		}
 
 		switch (dice6Position[`column`]){
 			case 2:
-        		// column2Array.push(die6numb)
         		helpNumber2 += die6numb
         	break;
 
         	case 3:
-        		// column3Array.push(die6numb)
         		helpNumber3 += die6numb
         	break;
 
         	case 4:
-        		// column4Array.push(die6numb)
         		helpNumber4 += die6numb
         	break;
 		}
-
-		// var column2Value = column2Array.reduce((total, sum) => {
-		// 	return total + sum
-		// }, 0)
-
-		// var column3Value = column3Array.reduce((total, sum) => {
-		// 	return total + sum
-		// }, 0)
-
-		// var column4Value = column4Array.reduce((total, sum) => {
-		// 	return total + sum
-		// }, 0)
-
-		// console.log('2 e: ', column2Value)
-		// console.log('3 e: ', column3Value)
-		// console.log('4 e: ', column4Value)
 
 		this.setState({col2Value: helpNumber2})
 		this.setState({col3Value: helpNumber3})
@@ -480,7 +448,7 @@ export default class ScrumBoard extends React.Component {
 			<div className="scrumboard">
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
-				<Columns removePoints={this.removePoints} addX={this.addX} countBajs={this.countBajs} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
+				<Columns removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} />
 				<HoldMaint updatePoints={this.updatePoints} />
 				<HoldDefects updatePoints={this.updatePoints} />

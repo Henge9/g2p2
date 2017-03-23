@@ -8,7 +8,7 @@ export default class ColumnBottom extends React.Component {
 	// constructor() {
 	// 	super();
 	// 	// this.pushB = this.pushB.bind(this);
-	// 	// this.countBajs = this.countBajs.bind(this)
+	// 	// this.countDice = this.countDice.bind(this)
 	// 	// this.dice1Positions = this.dice1Positions.bind(this);
 	// 	// this.dice2Positions = this.dice2Positions.bind(this);
 	// 	// this.dice3Positions = this.dice3Positions.bind(this);
@@ -84,7 +84,7 @@ export default class ColumnBottom extends React.Component {
  //        		dice1Position[`column`] = 2
  //        	break;
 	// 	}
-	// 	this.setState({dice1Position}, this.countBajs);
+	// 	this.setState({dice1Position}, this.countDice);
 	// }
 
 	// dice2Positions(){
@@ -102,7 +102,7 @@ export default class ColumnBottom extends React.Component {
  //        		dice2Position[`column`] = 2
  //        	break;
 	// 	}
-	// 	this.setState({dice2Position}, this.countBajs);
+	// 	this.setState({dice2Position}, this.countDice);
 	// }
 
 	// dice3Positions(){
@@ -124,7 +124,7 @@ export default class ColumnBottom extends React.Component {
  //        		dice3Position[`column`] = 2
  //        	break;
 	// 	}
-	// 	this.setState({dice3Position}, this.countBajs);
+	// 	this.setState({dice3Position}, this.countDice);
 	// }
 
 	// dice4Positions(){
@@ -146,7 +146,7 @@ export default class ColumnBottom extends React.Component {
  //        		dice4Position[`column`] = 2
  //        	break;
 	// 	}
-	// 	this.setState({dice4Position}, this.countBajs);
+	// 	this.setState({dice4Position}, this.countDice);
 	// }
 
 	// dice5Positions(){
@@ -168,7 +168,7 @@ export default class ColumnBottom extends React.Component {
  //        		dice5Position[`column`] = 2
  //        	break;
 	// 	}
-	// 	this.setState({dice5Position}, this.countBajs);
+	// 	this.setState({dice5Position}, this.countDice);
 	// }
 
 	// dice6Positions(){
@@ -190,10 +190,10 @@ export default class ColumnBottom extends React.Component {
  //        		dice6Position[`column`] = 2
  //        	break;
 	// 	}
-	// 	this.setState({dice6Position}, this.countBajs);
+	// 	this.setState({dice6Position}, this.countDice);
 	// }
 
-	// countBajs(e){
+	// countDice(e){
 	// 	var die1numb = this.state.rollDice1[`numberI`];
 	// 	var die2numb = this.state.rollDice2[`numberII`];
 	// 	var die3numb = this.state.rollDice3[`numberIII`];
@@ -310,9 +310,8 @@ export default class ColumnBottom extends React.Component {
 	render() {
 		return (
 			<div className='column-bottom'>
-				<DiceArea countBajs={this.props.countBajs} pushB={this.props.pushB} rollDice1={this.props.rollDice1} rollDice2={this.props.rollDice2} rollDice3={this.props.rollDice3} rollDice4={this.props.rollDice4} rollDice5={this.props.rollDice5} rollDice6={this.props.rollDice6} dice1Positions={this.props.dice1Positions} dice2Positions={this.props.dice2Positions} dice3Positions={this.props.dice3Positions} dice4Positions={this.props.dice4Positions} dice5Positions={this.props.dice5Positions} dice6Positions={this.props.dice6Positions} />	
-					
-				<ColumnButtons removePoints={this.props.removePoints} countBajs={this.props.countBajs} addX={this.props.addX} pushB={this.props.pushB} />
+				<DiceArea countDice={this.props.countDice} pushB={this.props.pushB} rollDice1={this.props.rollDice1} rollDice2={this.props.rollDice2} rollDice3={this.props.rollDice3} rollDice4={this.props.rollDice4} rollDice5={this.props.rollDice5} rollDice6={this.props.rollDice6} dice1Positions={this.props.dice1Positions} dice2Positions={this.props.dice2Positions} dice3Positions={this.props.dice3Positions} dice4Positions={this.props.dice4Positions} dice5Positions={this.props.dice5Positions} dice6Positions={this.props.dice6Positions} />
+				<ColumnButtons removePoints={this.props.removePoints} countDice={this.props.countDice} addX={this.props.addX} pushB={this.props.pushB} />
 			</div>
 		);
 	}
