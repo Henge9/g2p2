@@ -40,22 +40,22 @@ export default class Die6 extends React.Component {
 		var numb = this.props.rollDice6[`numberVI`];
 		
 		if(numb === 1) {
-			var d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/One.png')" };
+			var d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/OneGg.png')" };
 		}
 		else if(numb === 2) {
-		 	d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Two.png')" };	 	
+		 	d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/TwoGg.png')" };	 	
 		}
 		else if(numb === 3) {
-		 	d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Three.png')" }
+		 	d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/ThreeGg.png')" }
 		} 	
 		else if(numb === 4) {
-			d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Four.png')" };
+			d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FourGg.png')" };
 		}	
 		else if(numb === 5) {
-			d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Five.png')" };	
+			d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/FiveGg.png')" };	
 		}
 		else if(numb === 6) {
-			d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/Six.png')" };
+			d6 = { backgroundImage: "url('http://agileboardgame.com/diceimg/SixGg.png')" };
 		}
 
 		return (
