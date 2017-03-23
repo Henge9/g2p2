@@ -25,7 +25,14 @@ export default class Die1 extends React.Component {
 		}
 
 		
-	}	
+	}
+
+	back(event) {
+		var obj = this.refs.die1;
+		var group1 = document.querySelector('#group1');
+			group1.appendChild(obj);
+	}
+	
 
 	render() {
 		this.props.dice1Position

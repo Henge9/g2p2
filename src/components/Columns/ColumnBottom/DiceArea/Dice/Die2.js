@@ -23,7 +23,11 @@ export default class Die2 extends React.Component {
 		}
 	}
 
-	
+	back(event) {
+		var obj = this.refs.die2;
+		var group1 = document.querySelector('#group1');
+			group1.appendChild(obj);
+	}	
 
 
 	render() {

@@ -1,6 +1,7 @@
 @import '../../../variables.css';
 
 .hold {
+	z-index: 1;
 	position: absolute;
 	top: 140px;
 	left: 25px;

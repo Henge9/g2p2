@@ -12,14 +12,7 @@ export default class ColumnButtons extends React.Component {
   	super()
   	this.toggleGoButton = this.toggleGoButton.bind(this);
   	this.toggleSetButton = this.toggleSetButton.bind(this);
-  }
-
-  toggleGoButton(){
-  	if(this.refs.goButton.style.display == 'inline-block'){
-  		this.refs.goButton.style.display = 'none'
-  	} else {
-  		this.refs.goButton.style.display = 'inline-block'
-  	}	
+  	// this.hej = this.hej.bind(this);
   }
 
   toggleSetButton(){
@@ -28,6 +21,14 @@ export default class ColumnButtons extends React.Component {
   	} else {
   		this.refs.setButton.style.display = 'none'
   	}
+  }
+
+  toggleGoButton(){
+  	if(this.refs.goButton.style.display == 'inline-block'){
+  		this.refs.goButton.style.display = 'none'
+  	} else {
+  		this.refs.goButton.style.display = 'inline-block'
+  	}	
   }
 
 	render() {

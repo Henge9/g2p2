@@ -24,6 +24,7 @@ export default class ScrumBoard extends React.Component {
 		this.dice4Positions		=	 this.dice4Positions.bind(this);
 		this.dice5Positions		=	 this.dice5Positions.bind(this);
 		this.dice6Positions		=	 this.dice6Positions.bind(this);
+		this.clickArrow			= 	 this.clickArrow.bind(this);
 		
 		this.state = {
 			releaseplan: false, //ReleasePlanCell.js - ColumnButton.js
@@ -56,6 +57,8 @@ export default class ScrumBoard extends React.Component {
 			dice4Position: {column: 1},
 			dice5Position: {column: 1},
 			dice6Position: {column: 1},
+
+			clickedArrow: {click: false},
 		};
 	}
 
@@ -112,6 +115,59 @@ export default class ScrumBoard extends React.Component {
 			rollDice5,
 			rollDice6
 		}, function() {this.countDice()});
+	}
+
+	clickArrow(event) {
+		var clickedArrow = {...this.state.clickedArrow};
+
+		var dice1Position = {...this.state.dice1Position};
+		var dice2Position = {...this.state.dice2Position};
+		var dice3Position = {...this.state.dice3Position};
+		var dice4Position = {...this.state.dice4Position};
+		var dice5Position = {...this.state.dice5Position};
+		var dice6Position = {...this.state.dice6Position};
+
+		clickedArrow[`click`] = true;
+
+		//console.log(clickedArrow);
+		
+		this.setState({clickedArrow});
+
+		if(clickedArrow[`click`] === true && dice1Position[`column`] > 1) {
+			dice1Position[`column`] = 1;	
+		}	
+
+		if(clickedArrow[`click`] === true && dice2Position[`column`] > 1) {
+			dice2Position[`column`] = 1;	
+		}	
+
+		if(clickedArrow[`click`] === true && dice3Position[`column`] > 1) {
+			dice3Position[`column`] = 1;
+		}	
+
+		if(clickedArrow[`click`] === true && dice4Position[`column`] > 1) {
+			dice4Position[`column`] = 1;
+		}	
+
+		if(clickedArrow[`click`] === true && dice5Position[`column`] > 1) {
+			dice5Position[`column`] = 1;
+		}	
+
+		if(clickedArrow[`click`] === true && dice6Position[`column`] > 1) {
+			dice6Position[`column`] = 1;
+		}	
+
+		this.setState({dice1Position});
+		this.setState({dice2Position});
+		this.setState({dice3Position});
+		this.setState({dice4Position});		
+		this.setState({dice5Position});
+		this.setState({dice6Position});
+
+		clickedArrow[`click`] = false;
+		this.setState({clickedArrow});
+
+		//console.log("last", clickedArrow)
 	}
 
 	dice1Positions() {
@@ -336,7 +392,6 @@ export default class ScrumBoard extends React.Component {
         		helpNumber4 += die6numb
         	break;
 		}
-
 		this.setState({
 			col2Value: helpNumber2,
 			col3Value: helpNumber3,
@@ -374,7 +429,8 @@ export default class ScrumBoard extends React.Component {
 			}
 	}
 
-	removePoints(){
+	removePoints(e){
+		alert('remove')
 		this.setState({analytics: this.state.analytics - this.state.col2Value})
 		this.setState({development: this.state.development - this.state.col3Value})
 		this.setState({test: this.state.test - this.state.col4Value})
@@ -448,8 +504,8 @@ export default class ScrumBoard extends React.Component {
 			<div className="scrumboard">
 				<NavBar />
 				<ReleasePlan addX={this.addX} releaseplan={this.state.releaseplan} sprintArray={this.state.sprintArray} dayArray={this.state.dayArray} earnedTotalSumState={this.state.earnedTotalSumState}/>
-				<Columns removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<Hold updatePoints={this.updatePoints} cardSum={this.cardSum} cardsColumn={this.cardsColumn} removeAn={this.state.col2Value} />
+				<Columns clickArrow={this.clickArrow} removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<HoldMaint updatePoints={this.updatePoints} />
 				<HoldDefects updatePoints={this.updatePoints} />
 				<p className="total">{this.state.analytics}</p>

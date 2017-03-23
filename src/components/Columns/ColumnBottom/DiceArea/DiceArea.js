@@ -9,6 +9,7 @@ import Die6 from './Dice/Die6.js';
 
 export default class DiceArea extends React.Component {
 
+
 	// constructor(){
 	// 	super();
 		// this.countDice = this.countDice.bind(this)
@@ -273,13 +274,14 @@ export default class DiceArea extends React.Component {
 		return (
 			<div className='dice-area'>	
 				<div className="dice-group" id="group1">
-					<Die1 countDice={this.props.countDice} pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.props.dice1Positions} />
-					<Die3 countDice={this.props.countDice} pushB={this.props.pushB} rollDice3={this.props.rollDice3} dice3Positions={this.props.dice3Positions} />
-					<Die5 countDice={this.props.countDice} pushB={this.props.pushB} rollDice5={this.props.rollDice5} dice5Positions={this.props.dice5Positions} />
-					<Die2 countDice={this.props.countDice} pushB={this.props.pushB} rollDice2={this.props.rollDice2} dice2Positions={this.props.dice2Positions} />
-					<Die4 countDice={this.props.countDice} pushB={this.props.pushB} rollDice4={this.props.rollDice4} dice4Positions={this.props.dice4Positions} />
-					<Die6 countDice={this.props.countDice} pushB={this.props.pushB} rollDice6={this.props.rollDice6} dice6Positions={this.props.dice6Positions} />	
+					<Die1 ref="back1" countDice={this.props.countDice} pushB={this.props.pushB} rollDice1={this.props.rollDice1} dice1Positions={this.props.dice1Positions} />
+					<Die3 ref="back3" countDice={this.props.countDice} pushB={this.props.pushB} rollDice3={this.props.rollDice3} dice3Positions={this.props.dice3Positions} />
+					<Die5 ref="back5" countDice={this.props.countDice} pushB={this.props.pushB} rollDice5={this.props.rollDice5} dice5Positions={this.props.dice5Positions} />
+					<Die2 ref="back2" countDice={this.props.countDice} pushB={this.props.pushB} rollDice2={this.props.rollDice2} dice2Positions={this.props.dice2Positions} />
+					<Die4 ref="back4" countDice={this.props.countDice} pushB={this.props.pushB} rollDice4={this.props.rollDice4} dice4Positions={this.props.dice4Positions} />
+					<Die6 ref="back6" countDice={this.props.countDice} pushB={this.props.pushB} rollDice6={this.props.rollDice6} dice6Positions={this.props.dice6Positions} />	
 				</div>
+				<div className="arrow" id="arrow" onClick={(e) => {this.props.clickArrow(e); this.refs.back1.back(e); this.refs.back2.back(e); this.refs.back3.back(e); this.refs.back4.back(e); this.refs.back5.back(e); this.refs.back6.back(e)}}><div id="innerarrow">&#10094;</div></div>
 				<div className="dice-group2" id="group2" ref="group2"></div>
 			 	<div className="dice-group3" id="group3"></div>	
 				<div className="dice-group4" id="group4"></div>	
