@@ -1,6 +1,7 @@
 @import '../../../variables.css';
 
 .holdDef {
+	z-index: 1;
 	position: absolute;
 	top: 370px;
 	left: 25px;

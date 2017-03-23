@@ -1,6 +1,7 @@
 @import '../../../variables.css';
 
 .holdMaint {
+	z-index: 1;
 	position: absolute;
 	top: 255px;
 	left: 25px;

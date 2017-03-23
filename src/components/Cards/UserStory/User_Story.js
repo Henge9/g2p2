@@ -10,30 +10,36 @@ export default class UserStory extends React.Component {
 		this.state = {
 			isMoving: false,
 			column: 'backlog',
-			points: 0
+			points: 0,
+			analytics: [],
+			development: [],
+			test: []
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
-		this.sendCardsColumn = this.sendCardsColumn.bind(this)
-	}
-
-	sendCardsColumn(){
-		// const cardsColumn = this.state.column
-		// this.props.cardsColumn(cardsColumn)
-
+		this.onClick = this.onClick.bind(this);
 	}
 
 	onMouseEnter() {
-		//this.refs.card.style.border = '1px solid cyan';
-		// this.refs.card.style.boxShadow = '0px 0px 3px 3px rgba(0, 255, 255, 0.7)';
 		this.refs.card.style.boxShadow = '0px 0px 1px 1px rgba(0, 0, 0, 0.7)';
 	}
 
 	onMouseLeave() {
-		//this.refs.card.style.border = '1px solid black';
 		this.refs.card.style.boxShadow = 'none';
 	}
 
 	onClick() {
+
+		// Remove points from card
+		if(this.refs.analytics.childElementCount > 0) {
+
+			console.log(`
+			Children: ${this.refs.analytics.childElementCount}
+			col2Value: ${this.props.col2Value}`);
+
+			for (var i = 0; i < this.props.col2Value; i++) {
+				this.refs.analytics.removeChild(this.refs.analytics.lastChild);
+			}
+		}
 
 		/* Move card */
 		if (parseInt(this.refs.card.style.left, 10) < 550 && this.state.isMoving === false) {
@@ -42,8 +48,7 @@ export default class UserStory extends React.Component {
 			this.refs.card.style.height = "105px";
 			
 			this.setState({
-				isMoving: true,
-				hasMoved: true
+				isMoving: true
 			});
 
 			let that = this;
