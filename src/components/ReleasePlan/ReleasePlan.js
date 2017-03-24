@@ -46,6 +46,14 @@ export default class ReleasePlan extends React.Component {
 	    			checked4 = '✓'
 	    			break;
 
+	    		case 5:
+	    			checked1 = '✓'
+	    			checked2 = '✓'
+	    			checked3 = '✓'
+	    			checked4 = '✓'
+	    			checked5 = '✓'
+	    			break;
+
 	    		default:
 	    	}
 	    }

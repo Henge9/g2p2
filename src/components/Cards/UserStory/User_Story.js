@@ -77,7 +77,7 @@ export default class UserStory extends React.Component {
 					points: this.props.analytics
 				}, this.route);
 
-				this.refs.analytics.style.color = "yellow";
+				this.refs.analytics.style.color = "#d99bf0";
 				this.refs.analytics.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 			}
 			else if (this.state.column === "analysis") {
@@ -101,7 +101,7 @@ export default class UserStory extends React.Component {
 					this.refs.analytics.style.color = "black";
 					this.refs.analytics.style.textShadow = "none";
 
-					this.refs.development.style.color = "lightblue";
+					this.refs.development.style.color = "#1ab6f1";
 					this.refs.development.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 				}
 			}
@@ -126,7 +126,7 @@ export default class UserStory extends React.Component {
 					this.refs.development.style.color = "black";
 					this.refs.development.style.textShadow = "none";
 
-					this.refs.test.style.color = "yellow";
+					this.refs.test.style.color = "#d99bf0";
 					this.refs.test.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
 				}
 			}

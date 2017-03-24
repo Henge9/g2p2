@@ -22,7 +22,7 @@ export default class Highscore extends React.Component {
 
 		// axios.get('http://agileboardgame.com/rest/?/us_cards').then(function(result)
 
-		axios.post('http://agileboardgame.com/rest/?/highscore', {
+		axios.post('http://agileboardgame.com/rest/?/highscore/lagnamn/resultat', {
 		    team: 'Fred',
 		    score: 'Flintstone'
 	    })
