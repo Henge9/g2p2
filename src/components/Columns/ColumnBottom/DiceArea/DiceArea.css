@@ -1,6 +1,7 @@
 @import '../../../../variables.css';
 
 .dice-area{
+  border-bottom: var(--border);
   border-top: var(--border);
   display: inline-block;
   width: 80%;
