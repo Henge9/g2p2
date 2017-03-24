@@ -546,9 +546,6 @@ export default class ScrumBoard extends React.Component {
 				<Columns clickArrow={this.clickArrow} removePoints={this.removePoints} addX={this.addX} countDice={this.countDice} pushB={this.pushB} rollDice1={this.state.rollDice1} rollDice2={this.state.rollDice2} rollDice3={this.state.rollDice3} rollDice4={this.state.rollDice4} rollDice5={this.state.rollDice5} rollDice6={this.state.rollDice6} dice1Positions={this.dice1Positions} dice2Positions={this.dice2Positions} dice3Positions={this.dice3Positions} dice4Positions={this.dice4Positions} dice5Positions={this.dice5Positions} dice6Positions={this.dice6Positions} />
 				<HoldMaint updateCol2Value={this.updateCol2Value} updateCol3Value={this.updateCol3Value} updatePoints={this.updatePoints} />
 				<HoldDefects updateCol2Value={this.updateCol2Value} updateCol3Value={this.updateCol3Value} updatePoints={this.updatePoints} />
-				<p className="total">{this.state.analytics}</p>
-				<p className="total">{this.state.development}</p>
-				<p className="total">{this.state.test}</p>
 				<p className="total">{this.state.col2Value}</p>
 				<p className="total">{this.state.col3Value}</p>
 				<p className="total">{this.state.col4Value}</p>
