@@ -14,7 +14,8 @@
 	transition: 0.2s;
   padding: 10px 20px;
   text-decoration: none;
-  color: var(--font-color);
+  /*color: var(--font-color);*/
+  color: black;
   cursor: pointer;
 }
 
@@ -25,8 +26,8 @@
   position: absolute;
   position: center;
   width: 100%;
-  padding: 10px;
-  background-color: white;
+  padding: 10px 50px;
+  background-color: #1ab6f1;
   border: var(--border);
   box-sizing: border-box;
   left: 0px;
@@ -34,13 +35,13 @@
   z-index: 2;
 }
 .nav-close {
-  color: black;
+  color: white;
   float: right;
   font-weight: bolder;
   cursor: pointer;
 }
 .nav-rules {
-  height: 500px;
+  height: 550px;
   overflow-y: scroll;
 }
 .admin {
