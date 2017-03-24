@@ -1,7 +1,6 @@
 @import '../../variables.css';
 
 article {
-  /*background-color: white;*/
 	position: relative;
 	top: 0px;
 	float: left;
@@ -9,7 +8,8 @@ article {
 }
 
 .columns {
-  	height: 411px;
+	border-bottom: var(--border);
+  	height: 408px;
   	width: auto;
   	opacity: 0.8;
 }
